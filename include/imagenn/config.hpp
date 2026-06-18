@@ -7,12 +7,12 @@
 
 #include "imagenn/model.hpp"
 
-/// @file config.hpp
-/// @brief Конфигурация архитектуры сети и параметров обучения.
+/// \file config.hpp
+/// \brief Конфигурация архитектуры сети и параметров обучения.
 
 namespace imagenn {
 
-/// @brief Описание одного слоя.
+/// \brief Описание одного слоя.
 ///
 /// Тип слоя задаётся полем type ("dense", "conv", "maxpool", "flatten");
 /// используются те поля, что относятся к данному типу.
@@ -27,7 +27,7 @@ struct LayerConfig {
     int pool = 0;               ///< Сторона окна подвыборки (maxpool).
 };
 
-/// @brief Параметры обучения.
+/// \brief Параметры обучения.
 struct TrainingConfig {
     double learning_rate = 0.1;    ///< Скорость обучения.
     int epochs = 10;               ///< Число эпох.
@@ -35,45 +35,45 @@ struct TrainingConfig {
     bool use_cross_entropy = true; ///< Использовать ли кросс-энтропию.
 };
 
-/// @brief Полная конфигурация сети.
+/// \brief Полная конфигурация сети.
 struct NetworkConfig {
     std::vector<LayerConfig> layers; ///< Слои сети.
     TrainingConfig training;         ///< Параметры обучения.
 };
 
-/// @brief Загружает конфигурацию из файла.
+/// \brief Загружает конфигурацию из файла.
 ///
 /// Метка порядка байтов (BOM), которую добавляют некоторые редакторы, в начале
 /// файла отбрасывается.
-/// @param path путь к файлу конфигурации
-/// @return разобранная конфигурация
-/// @throws PathError если файл не найден
-/// @throws ValidationError при ошибке формата
+/// \param[in] path путь к файлу конфигурации
+/// \return разобранная конфигурация
+/// \throw PathError если файл не найден
+/// \throw ValidationError при ошибке формата
 NetworkConfig parse_config_file(const std::string& path);
 
-/// @brief Сохраняет конфигурацию в файл.
-/// @param config конфигурация для сохранения
-/// @param path путь к файлу
-/// @throws PathError если файл не удаётся открыть на запись
+/// \brief Сохраняет конфигурацию в файл.
+/// \param[in] config конфигурация для сохранения
+/// \param[in] path путь к файлу
+/// \throw PathError если файл не удаётся открыть на запись
 void save_config(const NetworkConfig& config, const std::string& path);
 
-/// @brief Создаёт файл-шаблон конфигурации со стандартной архитектурой.
-/// @param path путь к создаваемому файлу
-/// @throws PathError если файл не удаётся открыть на запись
+/// \brief Создаёт файл-шаблон конфигурации со стандартной архитектурой.
+/// \param[in] path путь к создаваемому файлу
+/// \throw PathError если файл не удаётся открыть на запись
 void create_config_template(const std::string& path);
 
-/// @brief Возвращает конфигурацию стандартной архитектуры.
-/// @return конфигурация по умолчанию
+/// \brief Возвращает конфигурацию стандартной архитектуры.
+/// \return конфигурация по умолчанию
 NetworkConfig default_config();
 
-/// @brief Строит модель по конфигурации.
+/// \brief Строит модель по конфигурации.
 ///
 /// Свёрточные слои, подвыборка и выпрямление образуют экстрактор признаков; за
 /// ними следуют полносвязные слои. Если слой выпрямления не указан, он
 /// добавляется автоматически перед первым полносвязным слоем.
-/// @param config конфигурация сети
-/// @return построенная модель
-/// @throws ValidationError если тип слоя неизвестен или порядок слоёв недопустим
+/// \param[in] config конфигурация сети
+/// \return построенная модель
+/// \throw ValidationError если тип слоя неизвестен или порядок слоёв недопустим
 Model build_model(const NetworkConfig& config);
 
 } // namespace imagenn
