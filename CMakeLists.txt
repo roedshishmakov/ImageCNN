@@ -58,6 +58,7 @@ add_library(imagecnn_core STATIC
     src/config.cpp
     src/plot.cpp
     src/dataset.cpp
+    src/model_io.cpp
 )
 target_include_directories(imagecnn_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(imagecnn_core PUBLIC stb_image)

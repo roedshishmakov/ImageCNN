@@ -15,6 +15,7 @@
 #include "imagenn/dataset.hpp"
 #include "imagenn/exceptions.hpp"
 #include "imagenn/model.hpp"
+#include "imagenn/model_io.hpp"
 #include "imagenn/network.hpp"
 #include "imagenn/plot.hpp"
 #include "imagenn/rng.hpp"
@@ -477,4 +478,80 @@ TEST_CASE("images are loaded with file names") {
 
 TEST_CASE("loading from a missing directory reports a path error") {
     CHECK_THROWS_AS(load_images(temp_path("imagecnn_no_such_dir")), PathError);
+}
+
+TEST_CASE("a saved network reloads into an identical network") {
+    set_random_seed(11);
+    NeuralNetwork source = make_small_network();
+    const std::vector<double> input = {0.3, 0.9};
+    source.run(input);
+    const std::vector<double> expected = source.get_output();
+    const std::string path = temp_path("imagecnn_model.nn");
+    save_model(source, path);
+
+    set_random_seed(222);
+    NeuralNetwork target = make_small_network();
+    load_model(target, path);
+    target.run(input);
+    const std::vector<double> restored = target.get_output();
+    REQUIRE(restored.size() == expected.size());
+    for (std::size_t i = 0; i < expected.size(); ++i) {
+        CHECK(restored[i] == doctest::Approx(expected[i]));
+    }
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("loading a missing model reports a path error") {
+    NeuralNetwork nn = make_small_network();
+    CHECK_THROWS_AS(load_model(nn, temp_path("imagecnn_missing.nn")), PathError);
+}
+
+TEST_CASE("loading a corrupted model file reports a validation error") {
+    const std::string path = temp_path("imagecnn_corrupt.nn");
+    {
+        std::ofstream file(path);
+        file << "this is not a model\n";
+    }
+    NeuralNetwork nn = make_small_network();
+    CHECK_THROWS_AS(load_model(nn, path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("loss history survives a save/load round trip and append") {
+    const std::string path = temp_path("imagecnn_loss.txt");
+    save_losses({0.1}, path, false);
+    save_losses({0.2}, path, true);
+    const std::vector<double> restored = load_losses(path);
+    REQUIRE(restored.size() == 2);
+    CHECK(restored[0] == doctest::Approx(0.1));
+    CHECK(restored[1] == doctest::Approx(0.2));
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("loading missing loss history reports a path error") {
+    CHECK_THROWS_AS(load_losses(temp_path("imagecnn_no_loss.txt")), PathError);
+}
+
+TEST_CASE("a saved convolution model reloads identically") {
+    set_random_seed(11);
+    Model source = make_conv_model();
+    Tensor image(1, 6, 6);
+    for (int i = 0; i < image.size(); ++i) {
+        image.data[static_cast<std::size_t>(i)] = 0.02 * i;
+    }
+    source.run(image);
+    const std::vector<double> expected = source.get_output();
+    const std::string path = temp_path("imagecnn_conv_model.nn");
+    save_model(source, path);
+
+    set_random_seed(222);
+    Model target = make_conv_model();
+    load_model(target, path);
+    target.run(image);
+    const std::vector<double> restored = target.get_output();
+    REQUIRE(restored.size() == expected.size());
+    for (std::size_t i = 0; i < expected.size(); ++i) {
+        CHECK(restored[i] == doctest::Approx(expected[i]));
+    }
+    std::filesystem::remove(path);
 }
