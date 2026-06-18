@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['last_5finput_5f_0',['last_input_',['../classimagenn_1_1_conv_layer.html#a75b7975d7fea8fdb1bc3c678a1c80696',1,'imagenn::ConvLayer']]],
+  ['last_5fz_5f_1',['last_z_',['../classimagenn_1_1_conv_layer.html#a47567deb46e4f1ae705a0039892e2bf5',1,'imagenn::ConvLayer']]],
+  ['layer_2',['Layer',['../classimagenn_1_1_layer.html',1,'imagenn::Layer'],['../classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6',1,'imagenn::Layer::Layer()']]],
+  ['layer_2ehpp_3',['layer.hpp',['../layer_8hpp.html',1,'']]],
+  ['layer_5fcount_4',['layer_count',['../classimagenn_1_1_neural_network.html#a2d68cea9b0c0a1cc7ca9edc0e9475c9c',1,'imagenn::NeuralNetwork']]],
+  ['layerconfig_5',['LayerConfig',['../structimagenn_1_1_layer_config.html',1,'imagenn']]],
+  ['layers_6',['layers',['../structimagenn_1_1_network_config.html#ad8f40cf2253d5d8ed0668a2944e90ce3',1,'imagenn::NetworkConfig']]],
+  ['layers_5f_7',['layers_',['../classimagenn_1_1_neural_network.html#a3d6975aba9ce5429ad40f4be64eed787',1,'imagenn::NeuralNetwork']]],
+  ['layersoftmax_8',['LayerSoftmax',['../classimagenn_1_1_layer_softmax.html',1,'imagenn::LayerSoftmax'],['../classimagenn_1_1_layer_softmax.html#acaa29be89c6e4db680a74a260d609424',1,'imagenn::LayerSoftmax::LayerSoftmax()']]],
+  ['learning_5frate_9',['learning_rate',['../structimagenn_1_1_training_config.html#a0bf167e9fb69bf0a7c4e6a8bed7fcc6a',1,'imagenn::TrainingConfig']]],
+  ['link_10',['Link',['../classimagenn_1_1_link.html',1,'imagenn::Link'],['../classimagenn_1_1_link.html#a8c4499429c9b1639fa5eb9be4da4039f',1,'imagenn::Link::Link()']]],
+  ['link_2ehpp_11',['link.hpp',['../link_8hpp.html',1,'']]],
+  ['link_5finput_5f_12',['link_input_',['../classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec',1,'imagenn::Neuron']]],
+  ['link_5foutput_5f_13',['link_output_',['../classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4',1,'imagenn::Neuron']]],
+  ['links_5f_14',['links_',['../classimagenn_1_1_layer.html#a9be19360ac637b7a71bb1fa6096f99b8',1,'imagenn::Layer::links_'],['../classimagenn_1_1_neural_network.html#a6a19dee02947b19430e572e2fed28532',1,'imagenn::NeuralNetwork::links_']]],
+  ['links_5finput_15',['links_input',['../classimagenn_1_1_neuron.html#a61a66098fda214cdb9af366566ead1e2',1,'imagenn::Neuron']]],
+  ['links_5foutput_16',['links_output',['../classimagenn_1_1_neuron.html#ad4157b53050642f6ed8a395e1650ba11',1,'imagenn::Neuron']]],
+  ['load_17',['load',['../classimagenn_1_1_conv_layer.html#ac84469f84e28ef3a799676ce4611265b',1,'imagenn::ConvLayer']]],
+  ['load_5fimages_18',['load_images',['../namespaceimagenn.html#a39daeac9b81b723053af25629c649a19',1,'imagenn']]],
+  ['load_5flosses_19',['load_losses',['../namespaceimagenn.html#adedc18280a9f05a28bf020d3c1e147b7',1,'imagenn']]],
+  ['load_5fmodel_20',['load_model',['../namespaceimagenn.html#a74d846c34eb7ec66a38bc6596ac12d68',1,'imagenn::load_model(NeuralNetwork &amp;network, const std::string &amp;path)'],['../namespaceimagenn.html#ad1ac6e45b0d0db748868fd59b9ff8aed',1,'imagenn::load_model(Model &amp;model, const std::string &amp;path)']]],
+  ['load_5ftraining_5fexamples_21',['load_training_examples',['../namespaceimagenn.html#a0d5ece2727486d164f86d7e9f83ef361',1,'imagenn']]]
+];

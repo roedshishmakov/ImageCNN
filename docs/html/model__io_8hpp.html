@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Файл include/imagenn/model_io.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('model__io_8hpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл model_io.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Сохранение и загрузка моделей и истории потерь.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="model_8hpp_source.html">imagenn/model.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8hpp_source.html">imagenn/network.hpp</a>&quot;</code><br />
+</div>
+<p><a href="model__io_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:imagenn" id="r_imagenn"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html">imagenn</a></td></tr>
+<tr class="memdesc:namespaceimagenn"><td class="mdescLeft">&#160;</td><td class="mdescRight">Корневое пространство имён всех компонентов проекта. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ac3499cdba297ecf1969f955fd950e945" id="r_ac3499cdba297ecf1969f955fd950e945"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#ac3499cdba297ecf1969f955fd950e945">imagenn::save_model</a> (const <a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp;network, const std::string &amp;path)</td></tr>
+<tr class="memdesc:ac3499cdba297ecf1969f955fd950e945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет веса сети в текстовый файл.  <br /></td></tr>
+<tr class="memitem:a74d846c34eb7ec66a38bc6596ac12d68" id="r_a74d846c34eb7ec66a38bc6596ac12d68"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#a74d846c34eb7ec66a38bc6596ac12d68">imagenn::load_model</a> (<a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp;network, const std::string &amp;path)</td></tr>
+<tr class="memdesc:a74d846c34eb7ec66a38bc6596ac12d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает веса в сеть из текстового файла.  <br /></td></tr>
+<tr class="memitem:ade455ff2e842f3e1a3f3b0a381b5f634" id="r_ade455ff2e842f3e1a3f3b0a381b5f634"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#ade455ff2e842f3e1a3f3b0a381b5f634">imagenn::save_model</a> (const <a class="el" href="classimagenn_1_1_model.html">Model</a> &amp;model, const std::string &amp;path)</td></tr>
+<tr class="memdesc:ade455ff2e842f3e1a3f3b0a381b5f634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет модель (свёрточную и полносвязную части) в текстовый файл.  <br /></td></tr>
+<tr class="memitem:ad1ac6e45b0d0db748868fd59b9ff8aed" id="r_ad1ac6e45b0d0db748868fd59b9ff8aed"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#ad1ac6e45b0d0db748868fd59b9ff8aed">imagenn::load_model</a> (<a class="el" href="classimagenn_1_1_model.html">Model</a> &amp;model, const std::string &amp;path)</td></tr>
+<tr class="memdesc:ad1ac6e45b0d0db748868fd59b9ff8aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает веса в модель из текстового файла.  <br /></td></tr>
+<tr class="memitem:a8fac835b0191fdb3eeb343855e13bc29" id="r_a8fac835b0191fdb3eeb343855e13bc29"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#a8fac835b0191fdb3eeb343855e13bc29">imagenn::save_losses</a> (const std::vector&lt; double &gt; &amp;losses, const std::string &amp;path, bool append=false)</td></tr>
+<tr class="memdesc:a8fac835b0191fdb3eeb343855e13bc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет историю потерь в файл, по одному значению на строку.  <br /></td></tr>
+<tr class="memitem:adedc18280a9f05a28bf020d3c1e147b7" id="r_adedc18280a9f05a28bf020d3c1e147b7"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceimagenn.html#adedc18280a9f05a28bf020d3c1e147b7">imagenn::load_losses</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:adedc18280a9f05a28bf020d3c1e147b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает историю потерь из файла.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Сохранение и загрузка моделей и истории потерь. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="model__io_8hpp.html">model_io.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>
