@@ -2,12 +2,14 @@
 #include <doctest/doctest.h>
 
 #include <algorithm>
+#include <memory>
 #include <numeric>
 #include <stdexcept>
 #include <vector>
 
 #include "imagenn/activations.hpp"
 #include "imagenn/exceptions.hpp"
+#include "imagenn/model.hpp"
 #include "imagenn/network.hpp"
 #include "imagenn/rng.hpp"
 #include "imagenn/spatial.hpp"
@@ -278,4 +280,72 @@ TEST_CASE("flatten reshapes to a vector and back") {
     const Tensor back = flatten.backward(flat);
     CHECK(back.channels == 2);
     CHECK(back.data[5] == doctest::Approx(5.0));
+}
+
+namespace {
+Model make_conv_model() {
+    Model model;
+    model.add_spatial(std::make_unique<ConvLayer>(1, 6, 6, 2, 3, sigmoid_activation(), 0.2));
+    model.add_spatial(std::make_unique<MaxPoolLayer>(2, 4, 4, 2));
+    model.add_spatial(std::make_unique<FlattenLayer>(2, 2, 2));
+    model.dense().add_input_layer(8);
+    model.dense().add_layer(2, softmax_activation(), 0.5, false);
+    return model;
+}
+} // namespace
+
+TEST_CASE("model forward through convolution layers produces a distribution") {
+    set_random_seed(1);
+    Model model = make_conv_model();
+    Tensor image(1, 6, 6);
+    for (double& v : image.data) {
+        v = 0.5;
+    }
+    model.run(image);
+    const std::vector<double> out = model.get_output();
+    REQUIRE(out.size() == 2);
+    CHECK(std::accumulate(out.begin(), out.end(), 0.0) == doctest::Approx(1.0));
+}
+
+TEST_CASE("model training reduces the loss with convolution layers") {
+    set_random_seed(7);
+    Model model = make_conv_model();
+    Tensor a(1, 6, 6);
+    Tensor b(1, 6, 6);
+    for (double& v : a.data) {
+        v = 0.1;
+    }
+    for (double& v : b.data) {
+        v = 0.9;
+    }
+    const std::vector<SpatialExample> data = {{a, {1.0, 0.0}}, {b, {0.0, 1.0}}};
+    const double first = model.train(data, 0.1);
+    for (int i = 0; i < 150; ++i) {
+        model.train(data, 0.1);
+    }
+    const double last = model.train(data, 0.1);
+    CHECK(last < first);
+}
+
+TEST_CASE("model weights restore an identical convolution network") {
+    set_random_seed(3);
+    Model source = make_conv_model();
+    Tensor image(1, 6, 6);
+    for (int i = 0; i < image.size(); ++i) {
+        image.data[static_cast<std::size_t>(i)] = 0.01 * i;
+    }
+    source.run(image);
+    const std::vector<double> expected = source.get_output();
+
+    set_random_seed(999);
+    Model target = make_conv_model();
+    target.import_spatial(source.export_spatial());
+    target.dense().import_weights(source.dense().export_weights());
+    target.run(image);
+    const std::vector<double> restored = target.get_output();
+
+    REQUIRE(restored.size() == expected.size());
+    for (std::size_t i = 0; i < expected.size(); ++i) {
+        CHECK(restored[i] == doctest::Approx(expected[i]));
+    }
 }
