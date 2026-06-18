@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: ImageCNN</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">ImageCNN </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>Свёрточная нейросеть-классификатор изображений (рукописных цифр), реализованная <b>с нуля на C++</b> без использования ML-фреймворков.</p>
+<p>Сеть состоит из свёрточной части (Conv2D, MaxPooling, Flatten) и полносвязной сети после неё. Модель обучается на пользовательском датасете, сохраняется в файл и затем используется для классификации новых изображений.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Возможности</h1>
+<ul>
+<li>Свёрточные слои (Conv2D), подвыборка по максимуму (MaxPooling), выпрямление (Flatten).</li>
+<li>Полносвязные слои произвольной конфигурации.</li>
+<li>Функции активации: Transparent, ReLU, Sigmoid, Softmax.</li>
+<li>Выходной слой softmax с обучением по кросс-энтропии.</li>
+<li>Обучение с нуля, дообучение сохранённой модели.</li>
+<li>Сохранение и загрузка модели в собственном текстовом формате.</li>
+<li>График потерь в виде псевдографики в терминале.</li>
+<li>Классификация изображений из пользовательской папки.</li>
+<li>Настраиваемые пути ко всем рабочим папкам.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Требования</h1>
+<ul>
+<li>CMake 3.16 или новее.</li>
+<li>Компилятор с поддержкой C++17 (Apple Clang, GCC, MSVC).</li>
+<li>Доступ в интернет при первой конфигурации: CMake скачивает зависимости <span class="tt">doctest</span> и <span class="tt">stb</span> через FetchContent.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Сборка</h1>
+<p>Linux / macOS:</p>
+<div class="fragment"><div class="line">cmake -S . -B build</div>
+<div class="line">cmake --build build</div>
+</div><!-- fragment --><p>Windows (Visual Studio):</p>
+<div class="fragment"><div class="line">cmake -S . -B build</div>
+<div class="line">cmake --build build --config Release</div>
+</div><!-- fragment --><p>Исполняемый файл: <span class="tt">build/imagecnn</span> (на Windows — <span class="tt">build/Release/imagecnn.exe</span>).</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Запуск тестов</h1>
+<div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Документация кода</h1>
+<p>Документация API собрана Doxygen в папке <span class="tt">docs/html</span> (открыть <span class="tt">docs/html/index.html</span>). Пересобрать:</p>
+<div class="fragment"><div class="line">doxygen Doxyfile</div>
+<div class="line"># либо через CMake, если Doxygen найден при конфигурации:</div>
+<div class="line">cmake --build build --target docs</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Использование</h1>
+<p>Общий формат: <span class="tt">imagecnn &lt;команда&gt; [аргументы] [опции путей]</span>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Команда  </th><th class="markdownTableHeadNone">Назначение  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--train, -t &lt;model&gt; &lt;config&gt; &lt;dataset&gt;</span>  </td><td class="markdownTableBodyNone">обучить по файлу конфигурации  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--simple-train, -s &lt;model&gt; &lt;epochs&gt; &lt;dataset&gt;</span>  </td><td class="markdownTableBodyNone">обучить стандартную архитектуру  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--fine, -f &lt;model&gt; &lt;epochs&gt; &lt;dataset&gt;</span>  </td><td class="markdownTableBodyNone">дообучить сохранённую модель  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--load, -l &lt;model&gt; &lt;images&gt;</span>  </td><td class="markdownTableBodyNone">классифицировать изображения  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--show-loss, -sl &lt;model&gt;</span>  </td><td class="markdownTableBodyNone">вывести историю потерь  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--create-config, -c &lt;name&gt;</span>  </td><td class="markdownTableBodyNone">создать шаблон конфигурации  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--graph, -g</span>  </td><td class="markdownTableBodyNone">дополнительно вывести график потерь  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--help, -h</span>  </td><td class="markdownTableBodyNone">справка  </td></tr>
+</table>
+<p>Опции путей переопределяют рабочие папки (по умолчанию относительные): <span class="tt">--configs-dir</span> (<span class="tt">configs</span>), <span class="tt">--weights-dir</span> (<span class="tt">weight_saves</span>), <span class="tt">--loss-dir</span> (<span class="tt">loss_saves</span>).</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Готовая модель</h1>
+<p>В папке <span class="tt">models/</span> лежит предобученная свёрточная модель <span class="tt">cnn</span> (обучена на MNIST, точность около 97% на отложенной выборке):</p>
+<div class="fragment"><div class="line">imagecnn --load cnn &lt;папка_с_изображениями&gt; \</div>
+<div class="line">         --configs-dir models --weights-dir models --loss-dir models</div>
+</div><!-- fragment --><p>Изображения должны быть рукописными цифрами в стиле MNIST; на картинках другого стиля точность будет ниже.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Сценарии использования</h1>
+<p>Быстрое обучение и проверка:</p>
+<div class="fragment"><div class="line">imagecnn --simple-train demo 10 examples</div>
+<div class="line">imagecnn --show-loss demo</div>
+<div class="line">imagecnn --load demo examples</div>
+</div><!-- fragment --><p>Обучение по своей конфигурации:</p>
+<div class="fragment"><div class="line">imagecnn --create-config my_config</div>
+<div class="line"># отредактировать configs/my_config.config, затем:</div>
+<div class="line">imagecnn --train my_model my_config dataset/train</div>
+<div class="line">imagecnn --load my_model dataset/test</div>
+</div><!-- fragment --><p>Дообучение:</p>
+<div class="fragment"><div class="line">imagecnn --fine my_model 15 dataset/extra</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Формат конфигурации</h1>
+<p>Текстовый файл <span class="tt">&lt;name&gt;.config</span> задаёт слои по порядку, затем параметры обучения.</p>
+<p>Свёрточная сеть:</p>
+<div class="fragment"><div class="line">conv:8:3:relu:0.1</div>
+<div class="line">maxpool:2</div>
+<div class="line">flatten</div>
+<div class="line">dense:64:relu:true:0.1</div>
+<div class="line">dense:10:softmax:false:0.1</div>
+<div class="line"> </div>
+<div class="line">learning_rate=0.05</div>
+<div class="line">epochs=20</div>
+<div class="line">clip_value=5.0</div>
+<div class="line">use_cross_entropy=true</div>
+</div><!-- fragment --><p>Форматы строк слоёв:</p>
+<ul>
+<li><span class="tt">dense:[size]:[activation]:[use_bias]:[random_radius]</span> — полносвязный слой.</li>
+<li><span class="tt">conv:[filters]:[kernel]:[activation]:[random_radius]</span> — свёрточный слой (шаг 1, без дополнения краёв).</li>
+<li><span class="tt">maxpool:[size]</span> — подвыборка по максимуму с окном size×size.</li>
+<li><span class="tt">flatten</span> — выпрямление карт признаков в вектор.</li>
+</ul>
+<p><span class="tt">activation</span> — <span class="tt">relu</span>, <span class="tt">sigmoid</span>, <span class="tt">softmax</span> или <span class="tt">transparent</span> (для <span class="tt">conv</span> — кроме <span class="tt">softmax</span>). Вход — изображение 16×16 в оттенках серого, нормированное в [0, 1]. Свёрточные слои и подвыборка идут до выпрямления, полносвязные — после. Если строка <span class="tt">flatten</span> не указана, она добавляется автоматически перед первым <span class="tt">dense</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Формат датасета</h1>
+<ul>
+<li>Формат файлов: PNG или JPG, размер любой (приводится к 16×16).</li>
+<li>Имя файла: <span class="tt">&lt;метка&gt;_&lt;идентификатор&gt;.&lt;расширение&gt;</span>, где <span class="tt">&lt;метка&gt;</span> — цифра 0–9.</li>
+</ul>
+<div class="fragment"><div class="line">dataset/</div>
+<div class="line">├── 0_image1.png</div>
+<div class="line">├── 1_image1.png</div>
+<div class="line">└── ...</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Структура проекта</h1>
+<div class="fragment"><div class="line">ImageCNN/</div>
+<div class="line">├── CMakeLists.txt        сборка: библиотека + исполняемый файл + тесты</div>
+<div class="line">├── include/imagenn/      заголовки (публичный API, документация Doxygen)</div>
+<div class="line">├── src/                  реализации и точка входа (main.cpp)</div>
+<div class="line">├── tests/                тесты doctest, запускаются через ctest</div>
+<div class="line">├── examples/             примеры изображений</div>
+<div class="line">├── models/               предобученная модель</div>
+<div class="line">└── docs/                 документация Doxygen (HTML)</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Обработка ошибок</h1>
+<p>Все ошибки сообщаются через исключения и обрабатываются на верхнем уровне: при ошибке программа печатает сообщение в stderr и возвращает код 1, при успехе — 0. </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

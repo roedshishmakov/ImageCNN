@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Класс imagenn::Neuron</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neuron-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс imagenn::Neuron</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Нейрон сети.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:imagenn::Neuron:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classimagenn_1_1_neuron.png" usemap="#imagenn_3A_3ANeuron_map" alt=""/>
+  <map id="imagenn_3A_3ANeuron_map" name="imagenn_3A_3ANeuron_map">
+<area href="classimagenn_1_1_bias_neuron.html" title="Нейрон смещения: всегда выдаёт постоянный выход, равный 1." alt="imagenn::BiasNeuron" shape="rect" coords="0,56,175,80"/>
+<area href="classimagenn_1_1_neuron_softmax.html" title="Нейрон выходного слоя softmax." alt="imagenn::NeuronSoftmax" shape="rect" coords="185,56,360,80"/>
+<area href="classimagenn_1_1_transparent_neuron.html" title="Прозрачный нейрон: выход равен входу. Используется во входном слое." alt="imagenn::TransparentNeuron" shape="rect" coords="370,56,545,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae02b626c98497f90fda2e363e84b0c4d" id="r_ae02b626c98497f90fda2e363e84b0c4d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a> (const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;<a class="el" href="#aabb257782076d3ff3e06c22e3663be87">activation</a>)</td></tr>
+<tr class="memdesc:ae02b626c98497f90fda2e363e84b0c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт нейрон с заданной функцией активации.  <br /></td></tr>
+<tr class="memitem:afb2c842fe4898999306f3caf658b43e6" id="r_afb2c842fe4898999306f3caf658b43e6"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#afb2c842fe4898999306f3caf658b43e6">~Neuron</a> ()=default</td></tr>
+<tr class="memitem:af44e9653f3b043673bdc0bef12cb09eb" id="r_af44e9653f3b043673bdc0bef12cb09eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af44e9653f3b043673bdc0bef12cb09eb">add_link_input</a> (<a class="el" href="classimagenn_1_1_link.html">Link</a> *link)</td></tr>
+<tr class="memdesc:af44e9653f3b043673bdc0bef12cb09eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет входящую связь.  <br /></td></tr>
+<tr class="memitem:ac15e348dba1fe3503ea688bc9a669072" id="r_ac15e348dba1fe3503ea688bc9a669072"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac15e348dba1fe3503ea688bc9a669072">add_link_output</a> (<a class="el" href="classimagenn_1_1_link.html">Link</a> *link)</td></tr>
+<tr class="memdesc:ac15e348dba1fe3503ea688bc9a669072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет исходящую связь.  <br /></td></tr>
+<tr class="memitem:adfbe37d13f10375baa9afae0d7036169" id="r_adfbe37d13f10375baa9afae0d7036169"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adfbe37d13f10375baa9afae0d7036169">add</a> (double signal)</td></tr>
+<tr class="memdesc:adfbe37d13f10375baa9afae0d7036169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подаёт сигнал на вход нейрона (накапливается).  <br /></td></tr>
+<tr class="memitem:a6d30cdef2d2777b0b243c55da39648fc" id="r_a6d30cdef2d2777b0b243c55da39648fc"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6d30cdef2d2777b0b243c55da39648fc">reset</a> (double <a class="el" href="#a50c700dd74d9dd4ffb71126eda88c4a0">input</a>=0.0)</td></tr>
+<tr class="memdesc:a6d30cdef2d2777b0b243c55da39648fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает вход нейрона.  <br /></td></tr>
+<tr class="memitem:aabb257782076d3ff3e06c22e3663be87" id="r_aabb257782076d3ff3e06c22e3663be87"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aabb257782076d3ff3e06c22e3663be87">activation</a> ()</td></tr>
+<tr class="memdesc:aabb257782076d3ff3e06c22e3663be87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет выход нейрона по накопленному входу.  <br /></td></tr>
+<tr class="memitem:ab1c0b98b745c9a13965ba4b3d65ca1d8" id="r_ab1c0b98b745c9a13965ba4b3d65ca1d8"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#ab1c0b98b745c9a13965ba4b3d65ca1d8">get_activation</a> (double x) const</td></tr>
+<tr class="memdesc:ab1c0b98b745c9a13965ba4b3d65ca1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет функцию активации к значению.  <br /></td></tr>
+<tr class="memitem:a5eecaa4df3e5bc47bee1bdfa950aac4c" id="r_a5eecaa4df3e5bc47bee1bdfa950aac4c"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a5eecaa4df3e5bc47bee1bdfa950aac4c">get_activation_derivative</a> (double x) const</td></tr>
+<tr class="memdesc:a5eecaa4df3e5bc47bee1bdfa950aac4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет производную функции активации к значению.  <br /></td></tr>
+<tr class="memitem:af5d0fb73854e6a3ae1e238445f04ba4a" id="r_af5d0fb73854e6a3ae1e238445f04ba4a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af5d0fb73854e6a3ae1e238445f04ba4a">send</a> () const</td></tr>
+<tr class="memdesc:af5d0fb73854e6a3ae1e238445f04ba4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передаёт выход нейрона по всем исходящим связям.  <br /></td></tr>
+<tr class="memitem:a9596987267342fb7b9c5fd3cd9b0c2c2" id="r_a9596987267342fb7b9c5fd3cd9b0c2c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9596987267342fb7b9c5fd3cd9b0c2c2">back_propagation_output_l</a> (double ref, double speed)</td></tr>
+<tr class="memdesc:a9596987267342fb7b9c5fd3cd9b0c2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает дельты весов входящих связей для выходного слоя.  <br /></td></tr>
+<tr class="memitem:a8ccd716e7bbf041d9fa389a8ac7a8c43" id="r_a8ccd716e7bbf041d9fa389a8ac7a8c43"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8ccd716e7bbf041d9fa389a8ac7a8c43">back_propagation_hidden_l</a> (double speed)</td></tr>
+<tr class="memdesc:a8ccd716e7bbf041d9fa389a8ac7a8c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает дельты весов входящих связей для скрытого слоя.  <br /></td></tr>
+<tr class="memitem:a8f6803491cb964d4d386d1f9f50c2688" id="r_a8f6803491cb964d4d386d1f9f50c2688"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f6803491cb964d4d386d1f9f50c2688">back_propagation_apply</a> ()</td></tr>
+<tr class="memdesc:a8f6803491cb964d4d386d1f9f50c2688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет накопленные дельты к весам исходящих связей.  <br /></td></tr>
+<tr class="memitem:ab8bb5fed3992657f651b65ea5da8e2a0" id="r_ab8bb5fed3992657f651b65ea5da8e2a0"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab8bb5fed3992657f651b65ea5da8e2a0">export_weights</a> () const</td></tr>
+<tr class="memdesc:ab8bb5fed3992657f651b65ea5da8e2a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует веса входящих связей.  <br /></td></tr>
+<tr class="memitem:a414de8be5183f7ad868386a201595657" id="r_a414de8be5183f7ad868386a201595657"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a414de8be5183f7ad868386a201595657">import_weights</a> (const std::vector&lt; double &gt; &amp;data)</td></tr>
+<tr class="memdesc:a414de8be5183f7ad868386a201595657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Импортирует веса входящих связей.  <br /></td></tr>
+<tr class="memitem:a50c700dd74d9dd4ffb71126eda88c4a0" id="r_a50c700dd74d9dd4ffb71126eda88c4a0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a50c700dd74d9dd4ffb71126eda88c4a0">input</a> () const</td></tr>
+<tr class="memdesc:a50c700dd74d9dd4ffb71126eda88c4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает накопленный вход нейрона.  <br /></td></tr>
+<tr class="memitem:a22c1aeba6d97f06dfb6af53d578dc543" id="r_a22c1aeba6d97f06dfb6af53d578dc543"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a22c1aeba6d97f06dfb6af53d578dc543">output</a> () const</td></tr>
+<tr class="memdesc:a22c1aeba6d97f06dfb6af53d578dc543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает выход нейрона.  <br /></td></tr>
+<tr class="memitem:a3ad66fef644f715cbcd1934a6107a567" id="r_a3ad66fef644f715cbcd1934a6107a567"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ad66fef644f715cbcd1934a6107a567">set_output</a> (double value)</td></tr>
+<tr class="memdesc:a3ad66fef644f715cbcd1934a6107a567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает выход нейрона напрямую.  <br /></td></tr>
+<tr class="memitem:a61a66098fda214cdb9af366566ead1e2" id="r_a61a66098fda214cdb9af366566ead1e2"><td class="memItemLeft">const std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a61a66098fda214cdb9af366566ead1e2">links_input</a> () const</td></tr>
+<tr class="memdesc:a61a66098fda214cdb9af366566ead1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список входящих связей.  <br /></td></tr>
+<tr class="memitem:ad4157b53050642f6ed8a395e1650ba11" id="r_ad4157b53050642f6ed8a395e1650ba11"><td class="memItemLeft">const std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad4157b53050642f6ed8a395e1650ba11">links_output</a> () const</td></tr>
+<tr class="memdesc:ad4157b53050642f6ed8a395e1650ba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список исходящих связей.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:adb5438d49afac2079ef1d1953f472a37" id="r_adb5438d49afac2079ef1d1953f472a37"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#adb5438d49afac2079ef1d1953f472a37">get_loss</a> (double <a class="el" href="#a22c1aeba6d97f06dfb6af53d578dc543">output</a>, double ref)</td></tr>
+<tr class="memdesc:adb5438d49afac2079ef1d1953f472a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет квадратичную потерю.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:af1338bc87f28f465751b4ae0a5fcca07" id="r_af1338bc87f28f465751b4ae0a5fcca07"><td class="memItemLeft">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af1338bc87f28f465751b4ae0a5fcca07">activation_</a></td></tr>
+<tr class="memdesc:af1338bc87f28f465751b4ae0a5fcca07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция активации нейрона.  <br /></td></tr>
+<tr class="memitem:a2bb583bd97179702c5a365f17178426a" id="r_a2bb583bd97179702c5a365f17178426a"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a2bb583bd97179702c5a365f17178426a">input_</a> = 0.0</td></tr>
+<tr class="memdesc:a2bb583bd97179702c5a365f17178426a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Накопленный вход.  <br /></td></tr>
+<tr class="memitem:abc805455c6ba0648efeac234da0459ce" id="r_abc805455c6ba0648efeac234da0459ce"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#abc805455c6ba0648efeac234da0459ce">output_</a> = 0.0</td></tr>
+<tr class="memdesc:abc805455c6ba0648efeac234da0459ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущий выход.  <br /></td></tr>
+<tr class="memitem:a1ee0c664ad242b813d0d1e436e0ab7ec" id="r_a1ee0c664ad242b813d0d1e436e0ab7ec"><td class="memItemLeft">std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1ee0c664ad242b813d0d1e436e0ab7ec">link_input_</a></td></tr>
+<tr class="memdesc:a1ee0c664ad242b813d0d1e436e0ab7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Входящие связи (не-владеющие).  <br /></td></tr>
+<tr class="memitem:a401a4cb524106a63922c6a5578a6eeb4" id="r_a401a4cb524106a63922c6a5578a6eeb4"><td class="memItemLeft">std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a401a4cb524106a63922c6a5578a6eeb4">link_output_</a></td></tr>
+<tr class="memdesc:a401a4cb524106a63922c6a5578a6eeb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Исходящие связи (не-владеющие).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Нейрон сети. </p>
+<p>Накапливает входной сигнал, применяет функцию активации и хранит не-владеющие ссылки на входящие и исходящие связи. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ae02b626c98497f90fda2e363e84b0c4d" name="ae02b626c98497f90fda2e363e84b0c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02b626c98497f90fda2e363e84b0c4d">&#9670;&#160;</a></span>Neuron()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::Neuron::Neuron </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>activation</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт нейрон с заданной функцией активации. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#aabb257782076d3ff3e06c22e3663be87" title="Вычисляет выход нейрона по накопленному входу.">activation</a></td><td>функция активации (хранится по ссылке, не копируется) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb2c842fe4898999306f3caf658b43e6" name="afb2c842fe4898999306f3caf658b43e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2c842fe4898999306f3caf658b43e6">&#9670;&#160;</a></span>~Neuron()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual imagenn::Neuron::~Neuron </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aabb257782076d3ff3e06c22e3663be87" name="aabb257782076d3ff3e06c22e3663be87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb257782076d3ff3e06c22e3663be87">&#9670;&#160;</a></span>activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void imagenn::Neuron::activation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет выход нейрона по накопленному входу. </p>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">imagenn::NeuronSoftmax</a> и <a class="el" href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">imagenn::TransparentNeuron</a>.</p>
+
+</div>
+</div>
+<a id="adfbe37d13f10375baa9afae0d7036169" name="adfbe37d13f10375baa9afae0d7036169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbe37d13f10375baa9afae0d7036169">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::add </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>signal</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Подаёт сигнал на вход нейрона (накапливается). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signal</td><td>входной сигнал </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af44e9653f3b043673bdc0bef12cb09eb" name="af44e9653f3b043673bdc0bef12cb09eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44e9653f3b043673bdc0bef12cb09eb">&#9670;&#160;</a></span>add_link_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::add_link_input </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classimagenn_1_1_link.html">Link</a> *</td>          <td class="paramname"><span class="paramname"><em>link</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет входящую связь. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">link</td><td>указатель на связь </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac15e348dba1fe3503ea688bc9a669072" name="ac15e348dba1fe3503ea688bc9a669072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15e348dba1fe3503ea688bc9a669072">&#9670;&#160;</a></span>add_link_output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::add_link_output </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classimagenn_1_1_link.html">Link</a> *</td>          <td class="paramname"><span class="paramname"><em>link</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет исходящую связь. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">link</td><td>указатель на связь </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8f6803491cb964d4d386d1f9f50c2688" name="a8f6803491cb964d4d386d1f9f50c2688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f6803491cb964d4d386d1f9f50c2688">&#9670;&#160;</a></span>back_propagation_apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::back_propagation_apply </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Применяет накопленные дельты к весам исходящих связей. </p>
+
+</div>
+</div>
+<a id="a8ccd716e7bbf041d9fa389a8ac7a8c43" name="a8ccd716e7bbf041d9fa389a8ac7a8c43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ccd716e7bbf041d9fa389a8ac7a8c43">&#9670;&#160;</a></span>back_propagation_hidden_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::back_propagation_hidden_l </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает дельты весов входящих связей для скрытого слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9596987267342fb7b9c5fd3cd9b0c2c2" name="a9596987267342fb7b9c5fd3cd9b0c2c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9596987267342fb7b9c5fd3cd9b0c2c2">&#9670;&#160;</a></span>back_propagation_output_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::back_propagation_output_l </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ref</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает дельты весов входящих связей для выходного слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>эталонное значение </td></tr>
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8bb5fed3992657f651b65ea5da8e2a0" name="ab8bb5fed3992657f651b65ea5da8e2a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bb5fed3992657f651b65ea5da8e2a0">&#9670;&#160;</a></span>export_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; imagenn::Neuron::export_weights </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Экспортирует веса входящих связей. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>веса в порядке входящих связей </dd></dl>
+
+</div>
+</div>
+<a id="ab1c0b98b745c9a13965ba4b3d65ca1d8" name="ab1c0b98b745c9a13965ba4b3d65ca1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c0b98b745c9a13965ba4b3d65ca1d8">&#9670;&#160;</a></span>get_activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double imagenn::Neuron::get_activation </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Применяет функцию активации к значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>входное значение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>значение функции активации </dd></dl>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_neuron_softmax.html#aa61c6c1e0bc1638c5e06a3d730195a2e">imagenn::NeuronSoftmax</a>.</p>
+
+</div>
+</div>
+<a id="a5eecaa4df3e5bc47bee1bdfa950aac4c" name="a5eecaa4df3e5bc47bee1bdfa950aac4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eecaa4df3e5bc47bee1bdfa950aac4c">&#9670;&#160;</a></span>get_activation_derivative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double imagenn::Neuron::get_activation_derivative </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Применяет производную функции активации к значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>входное значение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>значение производной </dd></dl>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_neuron_softmax.html#a44e7f4d1ea391705e2ac505d7d591215">imagenn::NeuronSoftmax</a>.</p>
+
+</div>
+</div>
+<a id="adb5438d49afac2079ef1d1953f472a37" name="adb5438d49afac2079ef1d1953f472a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5438d49afac2079ef1d1953f472a37">&#9670;&#160;</a></span>get_loss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Neuron::get_loss </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ref</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет квадратичную потерю. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a22c1aeba6d97f06dfb6af53d578dc543" title="Возвращает выход нейрона.">output</a></td><td>выход нейрона </td></tr>
+    <tr><td class="paramname">ref</td><td>эталонное значение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>значение потери 0.5 * (output - ref)^2 </dd></dl>
+
+</div>
+</div>
+<a id="a414de8be5183f7ad868386a201595657" name="a414de8be5183f7ad868386a201595657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a414de8be5183f7ad868386a201595657">&#9670;&#160;</a></span>import_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::import_weights </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Импортирует веса входящих связей. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>веса в порядке входящих связей </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a50c700dd74d9dd4ffb71126eda88c4a0" name="a50c700dd74d9dd4ffb71126eda88c4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c700dd74d9dd4ffb71126eda88c4a0">&#9670;&#160;</a></span>input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Neuron::input </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает накопленный вход нейрона. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>значение входа </dd></dl>
+
+</div>
+</div>
+<a id="a61a66098fda214cdb9af366566ead1e2" name="a61a66098fda214cdb9af366566ead1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a66098fda214cdb9af366566ead1e2">&#9670;&#160;</a></span>links_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt; &amp; imagenn::Neuron::links_input </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает список входящих связей. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ссылки на входящие связи </dd></dl>
+
+</div>
+</div>
+<a id="ad4157b53050642f6ed8a395e1650ba11" name="ad4157b53050642f6ed8a395e1650ba11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4157b53050642f6ed8a395e1650ba11">&#9670;&#160;</a></span>links_output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> * &gt; &amp; imagenn::Neuron::links_output </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает список исходящих связей. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ссылки на исходящие связи </dd></dl>
+
+</div>
+</div>
+<a id="a22c1aeba6d97f06dfb6af53d578dc543" name="a22c1aeba6d97f06dfb6af53d578dc543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c1aeba6d97f06dfb6af53d578dc543">&#9670;&#160;</a></span>output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Neuron::output </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает выход нейрона. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>значение выхода </dd></dl>
+
+</div>
+</div>
+<a id="a6d30cdef2d2777b0b243c55da39648fc" name="a6d30cdef2d2777b0b243c55da39648fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d30cdef2d2777b0b243c55da39648fc">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void imagenn::Neuron::reset </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>input</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сбрасывает вход нейрона. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a50c700dd74d9dd4ffb71126eda88c4a0" title="Возвращает накопленный вход нейрона.">input</a></td><td>новое значение входа </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_bias_neuron.html#a8c3f213b57a7a28e5ec4618f7255e61d">imagenn::BiasNeuron</a>.</p>
+
+</div>
+</div>
+<a id="af5d0fb73854e6a3ae1e238445f04ba4a" name="af5d0fb73854e6a3ae1e238445f04ba4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d0fb73854e6a3ae1e238445f04ba4a">&#9670;&#160;</a></span>send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::send </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Передаёт выход нейрона по всем исходящим связям. </p>
+
+</div>
+</div>
+<a id="a3ad66fef644f715cbcd1934a6107a567" name="a3ad66fef644f715cbcd1934a6107a567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad66fef644f715cbcd1934a6107a567">&#9670;&#160;</a></span>set_output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Neuron::set_output </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает выход нейрона напрямую. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>новое значение выхода </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="af1338bc87f28f465751b4ae0a5fcca07" name="af1338bc87f28f465751b4ae0a5fcca07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1338bc87f28f465751b4ae0a5fcca07">&#9670;&#160;</a></span>activation_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a>* imagenn::Neuron::activation_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Функция активации нейрона. </p>
+
+</div>
+</div>
+<a id="a2bb583bd97179702c5a365f17178426a" name="a2bb583bd97179702c5a365f17178426a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb583bd97179702c5a365f17178426a">&#9670;&#160;</a></span>input_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Neuron::input_ = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Накопленный вход. </p>
+
+</div>
+</div>
+<a id="a1ee0c664ad242b813d0d1e436e0ab7ec" name="a1ee0c664ad242b813d0d1e436e0ab7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee0c664ad242b813d0d1e436e0ab7ec">&#9670;&#160;</a></span>link_input_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classimagenn_1_1_link.html">Link</a>*&gt; imagenn::Neuron::link_input_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Входящие связи (не-владеющие). </p>
+
+</div>
+</div>
+<a id="a401a4cb524106a63922c6a5578a6eeb4" name="a401a4cb524106a63922c6a5578a6eeb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401a4cb524106a63922c6a5578a6eeb4">&#9670;&#160;</a></span>link_output_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classimagenn_1_1_link.html">Link</a>*&gt; imagenn::Neuron::link_output_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Исходящие связи (не-владеющие). </p>
+
+</div>
+</div>
+<a id="abc805455c6ba0648efeac234da0459ce" name="abc805455c6ba0648efeac234da0459ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc805455c6ba0648efeac234da0459ce">&#9670;&#160;</a></span>output_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Neuron::output_ = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Текущий выход. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="neuron_8hpp_source.html">neuron.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="classimagenn_1_1_neuron.html">Neuron</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

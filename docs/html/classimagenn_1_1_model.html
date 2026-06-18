@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Класс imagenn::Model</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_model-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс imagenn::Model</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Модель из спатиальных слоёв (свёртка/подвыборка/выпрямление) и полносвязной сети после них.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="model_8hpp_source.html">model.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ade5d13c12e2904af0f970bd6fdcaad79" id="r_ade5d13c12e2904af0f970bd6fdcaad79"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ade5d13c12e2904af0f970bd6fdcaad79">add_spatial</a> (std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> &gt; layer)</td></tr>
+<tr class="memdesc:ade5d13c12e2904af0f970bd6fdcaad79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет спатиальный слой в экстрактор признаков.  <br /></td></tr>
+<tr class="memitem:aa7fe9becf249d38b1474b49489c2580b" id="r_aa7fe9becf249d38b1474b49489c2580b"><td class="memItemLeft"><a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa7fe9becf249d38b1474b49489c2580b">dense</a> ()</td></tr>
+<tr class="memdesc:aa7fe9becf249d38b1474b49489c2580b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к полносвязной части для построения и сохранения.  <br /></td></tr>
+<tr class="memitem:a12637b5cbd49fa6b3d837b5be9731811" id="r_a12637b5cbd49fa6b3d837b5be9731811"><td class="memItemLeft">const <a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a12637b5cbd49fa6b3d837b5be9731811">dense</a> () const</td></tr>
+<tr class="memdesc:a12637b5cbd49fa6b3d837b5be9731811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к полносвязной части (только чтение).  <br /></td></tr>
+<tr class="memitem:a9fc2d2a9b50fabf544f725758e2a4518" id="r_a9fc2d2a9b50fabf544f725758e2a4518"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9fc2d2a9b50fabf544f725758e2a4518">run</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;input)</td></tr>
+<tr class="memdesc:a9fc2d2a9b50fabf544f725758e2a4518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прогоняет изображение через всю модель.  <br /></td></tr>
+<tr class="memitem:a8f7ff6af8489166024dcab7d5252b054" id="r_a8f7ff6af8489166024dcab7d5252b054"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a8f7ff6af8489166024dcab7d5252b054">train</a> (const std::vector&lt; <a class="el" href="namespaceimagenn.html#a2bbb880d3db6d68a0ae15b24b4e8dc3a">SpatialExample</a> &gt; &amp;data, double speed, bool verbose=false, double clip_value=5.0, bool use_clip=true)</td></tr>
+<tr class="memdesc:a8f7ff6af8489166024dcab7d5252b054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обучает модель на наборе примеров за один проход.  <br /></td></tr>
+<tr class="memitem:abf1b3f90c4953420bf30e1d38ea14f55" id="r_abf1b3f90c4953420bf30e1d38ea14f55"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abf1b3f90c4953420bf30e1d38ea14f55">get_output</a> () const</td></tr>
+<tr class="memdesc:abf1b3f90c4953420bf30e1d38ea14f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает выходы модели.  <br /></td></tr>
+<tr class="memitem:a063713673adbad6559a1d462589c6970" id="r_a063713673adbad6559a1d462589c6970"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a063713673adbad6559a1d462589c6970">get_best_index</a> () const</td></tr>
+<tr class="memdesc:a063713673adbad6559a1d462589c6970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает индекс наибольшего выхода.  <br /></td></tr>
+<tr class="memitem:a8a16a8f7b9bffa15e1c318a71ef04a30" id="r_a8a16a8f7b9bffa15e1c318a71ef04a30"><td class="memItemLeft">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8a16a8f7b9bffa15e1c318a71ef04a30">export_spatial</a> () const</td></tr>
+<tr class="memdesc:a8a16a8f7b9bffa15e1c318a71ef04a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует параметры спатиальных слоёв.  <br /></td></tr>
+<tr class="memitem:ab55afc863bb54a2bf5810ae69842f286" id="r_ab55afc863bb54a2bf5810ae69842f286"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab55afc863bb54a2bf5810ae69842f286">import_spatial</a> (const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;data)</td></tr>
+<tr class="memdesc:ab55afc863bb54a2bf5810ae69842f286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает параметры спатиальных слоёв.  <br /></td></tr>
+<tr class="memitem:ac0b938bcf566743e6ef66935c2744a45" id="r_ac0b938bcf566743e6ef66935c2744a45"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#ac0b938bcf566743e6ef66935c2744a45">spatial_count</a> () const</td></tr>
+<tr class="memdesc:ac0b938bcf566743e6ef66935c2744a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число спатиальных слоёв.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a18d6389a897551efe9b2774156a1c43e" id="r_a18d6389a897551efe9b2774156a1c43e"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18d6389a897551efe9b2774156a1c43e">forward_features</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;input)</td></tr>
+<tr class="memdesc:a18d6389a897551efe9b2774156a1c43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прогоняет вход через спатиальные слои.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a9fad34d722f20cc8960eec3928d27113" id="r_a9fad34d722f20cc8960eec3928d27113"><td class="memItemLeft">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9fad34d722f20cc8960eec3928d27113">feature_layers_</a></td></tr>
+<tr class="memdesc:a9fad34d722f20cc8960eec3928d27113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Свёрточная часть.  <br /></td></tr>
+<tr class="memitem:a6b302c459c0557b0918fff5e3e6047c2" id="r_a6b302c459c0557b0918fff5e3e6047c2"><td class="memItemLeft"><a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6b302c459c0557b0918fff5e3e6047c2">dense_</a></td></tr>
+<tr class="memdesc:a6b302c459c0557b0918fff5e3e6047c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Полносвязная часть.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Модель из спатиальных слоёв (свёртка/подвыборка/выпрямление) и полносвязной сети после них. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ade5d13c12e2904af0f970bd6fdcaad79" name="ade5d13c12e2904af0f970bd6fdcaad79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5d13c12e2904af0f970bd6fdcaad79">&#9670;&#160;</a></span>add_spatial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Model::add_spatial </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>layer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет спатиальный слой в экстрактор признаков. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>слой свёртки, подвыборки или выпрямления </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa7fe9becf249d38b1474b49489c2580b" name="aa7fe9becf249d38b1474b49489c2580b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fe9becf249d38b1474b49489c2580b">&#9670;&#160;</a></span>dense() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp; imagenn::Model::dense </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Доступ к полносвязной части для построения и сохранения. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ссылка на полносвязную сеть </dd></dl>
+
+</div>
+</div>
+<a id="a12637b5cbd49fa6b3d837b5be9731811" name="a12637b5cbd49fa6b3d837b5be9731811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12637b5cbd49fa6b3d837b5be9731811">&#9670;&#160;</a></span>dense() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> &amp; imagenn::Model::dense </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Доступ к полносвязной части (только чтение). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ссылка на полносвязную сеть </dd></dl>
+
+</div>
+</div>
+<a id="a8a16a8f7b9bffa15e1c318a71ef04a30" name="a8a16a8f7b9bffa15e1c318a71ef04a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a16a8f7b9bffa15e1c318a71ef04a30">&#9670;&#160;</a></span>export_spatial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; imagenn::Model::export_spatial </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Экспортирует параметры спатиальных слоёв. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>параметры по слоям (пустые для слоёв без весов) </dd></dl>
+
+</div>
+</div>
+<a id="a18d6389a897551efe9b2774156a1c43e" name="a18d6389a897551efe9b2774156a1c43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d6389a897551efe9b2774156a1c43e">&#9670;&#160;</a></span>forward_features()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::Model::forward_features </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Прогоняет вход через спатиальные слои. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>выход последнего спатиального слоя </dd></dl>
+
+</div>
+</div>
+<a id="a063713673adbad6559a1d462589c6970" name="a063713673adbad6559a1d462589c6970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a063713673adbad6559a1d462589c6970">&#9670;&#160;</a></span>get_best_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::Model::get_best_index </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает индекс наибольшего выхода. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>индекс предсказанного класса </dd></dl>
+
+</div>
+</div>
+<a id="abf1b3f90c4953420bf30e1d38ea14f55" name="abf1b3f90c4953420bf30e1d38ea14f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1b3f90c4953420bf30e1d38ea14f55">&#9670;&#160;</a></span>get_output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; imagenn::Model::get_output </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает выходы модели. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>вектор выходов последнего слоя </dd></dl>
+
+</div>
+</div>
+<a id="ab55afc863bb54a2bf5810ae69842f286" name="ab55afc863bb54a2bf5810ae69842f286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55afc863bb54a2bf5810ae69842f286">&#9670;&#160;</a></span>import_spatial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Model::import_spatial </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает параметры спатиальных слоёв. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>параметры по слоям в порядке слоёв </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если число слоёв не совпадает </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9fc2d2a9b50fabf544f725758e2a4518" name="a9fc2d2a9b50fabf544f725758e2a4518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc2d2a9b50fabf544f725758e2a4518">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Model::run </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Прогоняет изображение через всю модель. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac0b938bcf566743e6ef66935c2744a45" name="ac0b938bcf566743e6ef66935c2744a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b938bcf566743e6ef66935c2744a45">&#9670;&#160;</a></span>spatial_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t imagenn::Model::spatial_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Число спатиальных слоёв. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>количество слоёв экстрактора признаков </dd></dl>
+
+</div>
+</div>
+<a id="a8f7ff6af8489166024dcab7d5252b054" name="a8f7ff6af8489166024dcab7d5252b054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7ff6af8489166024dcab7d5252b054">&#9670;&#160;</a></span>train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Model::train </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceimagenn.html#a2bbb880d3db6d68a0ae15b24b4e8dc3a">SpatialExample</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>verbose</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>clip_value</em></span><span class="paramdefsep"> = </span><span class="paramdefval">5.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_clip</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обучает модель на наборе примеров за один проход. </p>
+<p>Порядок примеров перемешивается на каждом проходе: иначе данные, отсортированные по классам, приводят к катастрофическому забыванию и предсказанию одного класса. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>обучающие примеры </td></tr>
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramname">verbose</td><td>выводить ли потерю по каждому примеру </td></tr>
+    <tr><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
+    <tr><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>суммарная потеря по всем примерам </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a6b302c459c0557b0918fff5e3e6047c2" name="a6b302c459c0557b0918fff5e3e6047c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b302c459c0557b0918fff5e3e6047c2">&#9670;&#160;</a></span>dense_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classimagenn_1_1_neural_network.html">NeuralNetwork</a> imagenn::Model::dense_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Полносвязная часть. </p>
+
+</div>
+</div>
+<a id="a9fad34d722f20cc8960eec3928d27113" name="a9fad34d722f20cc8960eec3928d27113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fad34d722f20cc8960eec3928d27113">&#9670;&#160;</a></span>feature_layers_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a>&gt; &gt; imagenn::Model::feature_layers_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Свёрточная часть. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="model_8hpp_source.html">model.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="classimagenn_1_1_model.html">Model</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

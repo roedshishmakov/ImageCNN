@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Исходный файл include/imagenn/neuron.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('neuron_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">neuron.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="neuron_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGENN_NEURON_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGENN_NEURON_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="activations_8hpp.html">imagenn/activations.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceimagenn.html">imagenn</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_link.html">Link</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html">   19</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">   23</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a>(<span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; <a class="code hl_function" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">activation</a>) : <a class="code hl_variable" href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">activation_</a>(&amp;<a class="code hl_function" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">activation</a>) {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#afb2c842fe4898999306f3caf658b43e6">   25</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#afb2c842fe4898999306f3caf658b43e6">~Neuron</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#af44e9653f3b043673bdc0bef12cb09eb">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#af44e9653f3b043673bdc0bef12cb09eb">add_link_input</a>(<a class="code hl_class" href="classimagenn_1_1_link.html">Link</a>* link) { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec">link_input_</a>.push_back(link); }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#ac15e348dba1fe3503ea688bc9a669072">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ac15e348dba1fe3503ea688bc9a669072">add_link_output</a>(<a class="code hl_class" href="classimagenn_1_1_link.html">Link</a>* link) { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4">link_output_</a>.push_back(link); }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#adfbe37d13f10375baa9afae0d7036169">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#adfbe37d13f10375baa9afae0d7036169">add</a>(<span class="keywordtype">double</span> signal) { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a> += signal; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a6d30cdef2d2777b0b243c55da39648fc">   41</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a6d30cdef2d2777b0b243c55da39648fc">reset</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">input</a> = 0.0) { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a> = <a class="code hl_function" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">input</a>; }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">   44</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">activation</a>() { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = <a class="code hl_function" href="classimagenn_1_1_neuron.html#ab1c0b98b745c9a13965ba4b3d65ca1d8">get_activation</a>(<a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a>); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#ab1c0b98b745c9a13965ba4b3d65ca1d8">   49</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ab1c0b98b745c9a13965ba4b3d65ca1d8">get_activation</a>(<span class="keywordtype">double</span> x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">activation_</a>-&gt;calc(x); }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a5eecaa4df3e5bc47bee1bdfa950aac4c">   54</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a5eecaa4df3e5bc47bee1bdfa950aac4c">get_activation_derivative</a>(<span class="keywordtype">double</span> x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">activation_</a>-&gt;derivative(x); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#af5d0fb73854e6a3ae1e238445f04ba4a">   57</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#af5d0fb73854e6a3ae1e238445f04ba4a">send</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a9596987267342fb7b9c5fd3cd9b0c2c2">   62</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a9596987267342fb7b9c5fd3cd9b0c2c2">back_propagation_output_l</a>(<span class="keywordtype">double</span> ref, <span class="keywordtype">double</span> speed);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a8ccd716e7bbf041d9fa389a8ac7a8c43">   66</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a8ccd716e7bbf041d9fa389a8ac7a8c43">back_propagation_hidden_l</a>(<span class="keywordtype">double</span> speed);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a8f6803491cb964d4d386d1f9f50c2688">   69</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a8f6803491cb964d4d386d1f9f50c2688">back_propagation_apply</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#ab8bb5fed3992657f651b65ea5da8e2a0">   73</a></span>    std::vector&lt;double&gt; <a class="code hl_function" href="classimagenn_1_1_neuron.html#ab8bb5fed3992657f651b65ea5da8e2a0">export_weights</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a414de8be5183f7ad868386a201595657">   77</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a414de8be5183f7ad868386a201595657">import_weights</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; data);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#adb5438d49afac2079ef1d1953f472a37">   83</a></span>    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#adb5438d49afac2079ef1d1953f472a37">get_loss</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">output</a>, <span class="keywordtype">double</span> ref) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> 0.5 * (<a class="code hl_function" href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">output</a> - ref) * (<a class="code hl_function" href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">output</a> - ref);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">   89</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">input</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a>; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">   93</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">output</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a>; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a3ad66fef644f715cbcd1934a6107a567">   97</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a3ad66fef644f715cbcd1934a6107a567">set_output</a>(<span class="keywordtype">double</span> value) { <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = value; }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a61a66098fda214cdb9af366566ead1e2">  101</a></span>    <span class="keyword">const</span> std::vector&lt;Link*&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_neuron.html#a61a66098fda214cdb9af366566ead1e2">links_input</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec">link_input_</a>; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#ad4157b53050642f6ed8a395e1650ba11">  105</a></span>    <span class="keyword">const</span> std::vector&lt;Link*&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_neuron.html#ad4157b53050642f6ed8a395e1650ba11">links_output</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4">link_output_</a>; }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">  108</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>* <a class="code hl_variable" href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">activation_</a>; </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">  109</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a> = 0.0;               </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">  110</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = 0.0;              </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec">  111</a></span>    std::vector&lt;Link*&gt; <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec">link_input_</a>;    </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4">  112</a></span>    std::vector&lt;Link*&gt; <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4">link_output_</a>;   </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="};">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classimagenn_1_1_transparent_neuron.html">  116</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_transparent_neuron.html#a122eda836621a34652802cebbf1dcf1b">TransparentNeuron</a> : <span class="keyword">public</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classimagenn_1_1_transparent_neuron.html#a122eda836621a34652802cebbf1dcf1b">  120</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classimagenn_1_1_transparent_neuron.html#a122eda836621a34652802cebbf1dcf1b">TransparentNeuron</a>(<span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; <a class="code hl_function" href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">activation</a>) : <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a>(<a class="code hl_function" href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">activation</a>) {}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">  123</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">activation</a>()<span class="keyword"> override </span>{ <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a>; }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="};">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classimagenn_1_1_bias_neuron.html">  127</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_bias_neuron.html#abc844546f28cd7fc87c2b6d1e10a1b1c">BiasNeuron</a> : <span class="keyword">public</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a> {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classimagenn_1_1_bias_neuron.html#abc844546f28cd7fc87c2b6d1e10a1b1c">  131</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classimagenn_1_1_bias_neuron.html#abc844546f28cd7fc87c2b6d1e10a1b1c">BiasNeuron</a>(<span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; <a class="code hl_function" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">activation</a>) : <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a>(<a class="code hl_function" href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">activation</a>) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a> = 1.0;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = 1.0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classimagenn_1_1_bias_neuron.html#a8c3f213b57a7a28e5ec4618f7255e61d">  138</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_bias_neuron.html#a8c3f213b57a7a28e5ec4618f7255e61d">reset</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">input</a> = 0.0)<span class="keyword"> override </span>{ (void) <a class="code hl_function" href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">input</a>; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="};">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron_softmax.html">  145</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#ac218ea1e4c71acc4608fa92c63a8b6dd">NeuronSoftmax</a> : <span class="keyword">public</span> <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a> {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron_softmax.html#ac218ea1e4c71acc4608fa92c63a8b6dd">  149</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#ac218ea1e4c71acc4608fa92c63a8b6dd">NeuronSoftmax</a>(<span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; <a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">activation</a>) : <a class="code hl_function" href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">Neuron</a>(<a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">activation</a>) {}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">  152</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">activation</a>()<span class="keyword"> override </span>{ <a class="code hl_variable" href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">output_</a> = <a class="code hl_variable" href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">input_</a>; }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron_softmax.html#aa61c6c1e0bc1638c5e06a3d730195a2e">  157</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#aa61c6c1e0bc1638c5e06a3d730195a2e">get_activation</a>(<span class="keywordtype">double</span> x)<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> x; }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classimagenn_1_1_neuron_softmax.html#a44e7f4d1ea391705e2ac505d7d591215">  162</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_neuron_softmax.html#a44e7f4d1ea391705e2ac505d7d591215">get_activation_derivative</a>(<span class="keywordtype">double</span> x)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        (void) x;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> 1.0;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>};</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>} <span class="comment">// namespace imagenn</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#endif </span><span class="comment">// IMAGENN_NEURON_HPP</span></div>
+<div class="ttc" id="aactivations_8hpp_html"><div class="ttname"><a href="activations_8hpp.html">activations.hpp</a></div><div class="ttdoc">Функции активации нейронов.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html"><div class="ttname"><a href="classimagenn_1_1_activation_base.html">imagenn::ActivationBase</a></div><div class="ttdoc">Родительский класс функции активации.</div><div class="ttdef"><b>Определения</b> activations.hpp:14</div></div>
+<div class="ttc" id="aclassimagenn_1_1_bias_neuron_html_a8c3f213b57a7a28e5ec4618f7255e61d"><div class="ttname"><a href="classimagenn_1_1_bias_neuron.html#a8c3f213b57a7a28e5ec4618f7255e61d">imagenn::BiasNeuron::reset</a></div><div class="ttdeci">void reset(double input=0.0) override</div><div class="ttdoc">Игнорирует сброс: выход смещения остаётся постоянным.</div><div class="ttdef"><b>Определения</b> neuron.hpp:138</div></div>
+<div class="ttc" id="aclassimagenn_1_1_bias_neuron_html_abc844546f28cd7fc87c2b6d1e10a1b1c"><div class="ttname"><a href="classimagenn_1_1_bias_neuron.html#abc844546f28cd7fc87c2b6d1e10a1b1c">imagenn::BiasNeuron::BiasNeuron</a></div><div class="ttdeci">BiasNeuron(const ActivationBase &amp;activation)</div><div class="ttdoc">Создаёт нейрон смещения.</div><div class="ttdef"><b>Определения</b> neuron.hpp:131</div></div>
+<div class="ttc" id="aclassimagenn_1_1_link_html"><div class="ttname"><a href="classimagenn_1_1_link.html">imagenn::Link</a></div><div class="ttdoc">Взвешенная связь, передающая сигнал от одного нейрона к другому.</div><div class="ttdef"><b>Определения</b> link.hpp:12</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a1ee0c664ad242b813d0d1e436e0ab7ec"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a1ee0c664ad242b813d0d1e436e0ab7ec">imagenn::Neuron::link_input_</a></div><div class="ttdeci">std::vector&lt; Link * &gt; link_input_</div><div class="ttdoc">Входящие связи (не-владеющие).</div><div class="ttdef"><b>Определения</b> neuron.hpp:111</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a22c1aeba6d97f06dfb6af53d578dc543"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a22c1aeba6d97f06dfb6af53d578dc543">imagenn::Neuron::output</a></div><div class="ttdeci">double output() const</div><div class="ttdoc">Возвращает выход нейрона.</div><div class="ttdef"><b>Определения</b> neuron.hpp:93</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a2bb583bd97179702c5a365f17178426a"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a2bb583bd97179702c5a365f17178426a">imagenn::Neuron::input_</a></div><div class="ttdeci">double input_</div><div class="ttdoc">Накопленный вход.</div><div class="ttdef"><b>Определения</b> neuron.hpp:109</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a3ad66fef644f715cbcd1934a6107a567"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a3ad66fef644f715cbcd1934a6107a567">imagenn::Neuron::set_output</a></div><div class="ttdeci">void set_output(double value)</div><div class="ttdoc">Устанавливает выход нейрона напрямую.</div><div class="ttdef"><b>Определения</b> neuron.hpp:97</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a401a4cb524106a63922c6a5578a6eeb4"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a401a4cb524106a63922c6a5578a6eeb4">imagenn::Neuron::link_output_</a></div><div class="ttdeci">std::vector&lt; Link * &gt; link_output_</div><div class="ttdoc">Исходящие связи (не-владеющие).</div><div class="ttdef"><b>Определения</b> neuron.hpp:112</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a414de8be5183f7ad868386a201595657"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a414de8be5183f7ad868386a201595657">imagenn::Neuron::import_weights</a></div><div class="ttdeci">void import_weights(const std::vector&lt; double &gt; &amp;data)</div><div class="ttdoc">Импортирует веса входящих связей.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a50c700dd74d9dd4ffb71126eda88c4a0"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a50c700dd74d9dd4ffb71126eda88c4a0">imagenn::Neuron::input</a></div><div class="ttdeci">double input() const</div><div class="ttdoc">Возвращает накопленный вход нейрона.</div><div class="ttdef"><b>Определения</b> neuron.hpp:89</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a5eecaa4df3e5bc47bee1bdfa950aac4c"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a5eecaa4df3e5bc47bee1bdfa950aac4c">imagenn::Neuron::get_activation_derivative</a></div><div class="ttdeci">virtual double get_activation_derivative(double x) const</div><div class="ttdoc">Применяет производную функции активации к значению.</div><div class="ttdef"><b>Определения</b> neuron.hpp:54</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a61a66098fda214cdb9af366566ead1e2"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a61a66098fda214cdb9af366566ead1e2">imagenn::Neuron::links_input</a></div><div class="ttdeci">const std::vector&lt; Link * &gt; &amp; links_input() const</div><div class="ttdoc">Возвращает список входящих связей.</div><div class="ttdef"><b>Определения</b> neuron.hpp:101</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a6d30cdef2d2777b0b243c55da39648fc"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a6d30cdef2d2777b0b243c55da39648fc">imagenn::Neuron::reset</a></div><div class="ttdeci">virtual void reset(double input=0.0)</div><div class="ttdoc">Сбрасывает вход нейрона.</div><div class="ttdef"><b>Определения</b> neuron.hpp:41</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a8ccd716e7bbf041d9fa389a8ac7a8c43"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a8ccd716e7bbf041d9fa389a8ac7a8c43">imagenn::Neuron::back_propagation_hidden_l</a></div><div class="ttdeci">void back_propagation_hidden_l(double speed)</div><div class="ttdoc">Считает дельты весов входящих связей для скрытого слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a8f6803491cb964d4d386d1f9f50c2688"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a8f6803491cb964d4d386d1f9f50c2688">imagenn::Neuron::back_propagation_apply</a></div><div class="ttdeci">void back_propagation_apply()</div><div class="ttdoc">Применяет накопленные дельты к весам исходящих связей.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_a9596987267342fb7b9c5fd3cd9b0c2c2"><div class="ttname"><a href="classimagenn_1_1_neuron.html#a9596987267342fb7b9c5fd3cd9b0c2c2">imagenn::Neuron::back_propagation_output_l</a></div><div class="ttdeci">void back_propagation_output_l(double ref, double speed)</div><div class="ttdoc">Считает дельты весов входящих связей для выходного слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_aabb257782076d3ff3e06c22e3663be87"><div class="ttname"><a href="classimagenn_1_1_neuron.html#aabb257782076d3ff3e06c22e3663be87">imagenn::Neuron::activation</a></div><div class="ttdeci">virtual void activation()</div><div class="ttdoc">Вычисляет выход нейрона по накопленному входу.</div><div class="ttdef"><b>Определения</b> neuron.hpp:44</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_ab1c0b98b745c9a13965ba4b3d65ca1d8"><div class="ttname"><a href="classimagenn_1_1_neuron.html#ab1c0b98b745c9a13965ba4b3d65ca1d8">imagenn::Neuron::get_activation</a></div><div class="ttdeci">virtual double get_activation(double x) const</div><div class="ttdoc">Применяет функцию активации к значению.</div><div class="ttdef"><b>Определения</b> neuron.hpp:49</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_ab8bb5fed3992657f651b65ea5da8e2a0"><div class="ttname"><a href="classimagenn_1_1_neuron.html#ab8bb5fed3992657f651b65ea5da8e2a0">imagenn::Neuron::export_weights</a></div><div class="ttdeci">std::vector&lt; double &gt; export_weights() const</div><div class="ttdoc">Экспортирует веса входящих связей.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_abc805455c6ba0648efeac234da0459ce"><div class="ttname"><a href="classimagenn_1_1_neuron.html#abc805455c6ba0648efeac234da0459ce">imagenn::Neuron::output_</a></div><div class="ttdeci">double output_</div><div class="ttdoc">Текущий выход.</div><div class="ttdef"><b>Определения</b> neuron.hpp:110</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_ac15e348dba1fe3503ea688bc9a669072"><div class="ttname"><a href="classimagenn_1_1_neuron.html#ac15e348dba1fe3503ea688bc9a669072">imagenn::Neuron::add_link_output</a></div><div class="ttdeci">void add_link_output(Link *link)</div><div class="ttdoc">Добавляет исходящую связь.</div><div class="ttdef"><b>Определения</b> neuron.hpp:33</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_ad4157b53050642f6ed8a395e1650ba11"><div class="ttname"><a href="classimagenn_1_1_neuron.html#ad4157b53050642f6ed8a395e1650ba11">imagenn::Neuron::links_output</a></div><div class="ttdeci">const std::vector&lt; Link * &gt; &amp; links_output() const</div><div class="ttdoc">Возвращает список исходящих связей.</div><div class="ttdef"><b>Определения</b> neuron.hpp:105</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_adb5438d49afac2079ef1d1953f472a37"><div class="ttname"><a href="classimagenn_1_1_neuron.html#adb5438d49afac2079ef1d1953f472a37">imagenn::Neuron::get_loss</a></div><div class="ttdeci">static double get_loss(double output, double ref)</div><div class="ttdoc">Вычисляет квадратичную потерю.</div><div class="ttdef"><b>Определения</b> neuron.hpp:83</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_adfbe37d13f10375baa9afae0d7036169"><div class="ttname"><a href="classimagenn_1_1_neuron.html#adfbe37d13f10375baa9afae0d7036169">imagenn::Neuron::add</a></div><div class="ttdeci">void add(double signal)</div><div class="ttdoc">Подаёт сигнал на вход нейрона (накапливается).</div><div class="ttdef"><b>Определения</b> neuron.hpp:37</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_ae02b626c98497f90fda2e363e84b0c4d"><div class="ttname"><a href="classimagenn_1_1_neuron.html#ae02b626c98497f90fda2e363e84b0c4d">imagenn::Neuron::Neuron</a></div><div class="ttdeci">Neuron(const ActivationBase &amp;activation)</div><div class="ttdoc">Создаёт нейрон с заданной функцией активации.</div><div class="ttdef"><b>Определения</b> neuron.hpp:23</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_af1338bc87f28f465751b4ae0a5fcca07"><div class="ttname"><a href="classimagenn_1_1_neuron.html#af1338bc87f28f465751b4ae0a5fcca07">imagenn::Neuron::activation_</a></div><div class="ttdeci">const ActivationBase * activation_</div><div class="ttdoc">Функция активации нейрона.</div><div class="ttdef"><b>Определения</b> neuron.hpp:108</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_af44e9653f3b043673bdc0bef12cb09eb"><div class="ttname"><a href="classimagenn_1_1_neuron.html#af44e9653f3b043673bdc0bef12cb09eb">imagenn::Neuron::add_link_input</a></div><div class="ttdeci">void add_link_input(Link *link)</div><div class="ttdoc">Добавляет входящую связь.</div><div class="ttdef"><b>Определения</b> neuron.hpp:29</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_af5d0fb73854e6a3ae1e238445f04ba4a"><div class="ttname"><a href="classimagenn_1_1_neuron.html#af5d0fb73854e6a3ae1e238445f04ba4a">imagenn::Neuron::send</a></div><div class="ttdeci">void send() const</div><div class="ttdoc">Передаёт выход нейрона по всем исходящим связям.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_html_afb2c842fe4898999306f3caf658b43e6"><div class="ttname"><a href="classimagenn_1_1_neuron.html#afb2c842fe4898999306f3caf658b43e6">imagenn::Neuron::~Neuron</a></div><div class="ttdeci">virtual ~Neuron()=default</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_softmax_html_a44e7f4d1ea391705e2ac505d7d591215"><div class="ttname"><a href="classimagenn_1_1_neuron_softmax.html#a44e7f4d1ea391705e2ac505d7d591215">imagenn::NeuronSoftmax::get_activation_derivative</a></div><div class="ttdeci">double get_activation_derivative(double x) const override</div><div class="ttdoc">Возвращает производную, равную 1.</div><div class="ttdef"><b>Определения</b> neuron.hpp:162</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_softmax_html_a87a94c7f25affeda457e7ea2d8bcb122"><div class="ttname"><a href="classimagenn_1_1_neuron_softmax.html#a87a94c7f25affeda457e7ea2d8bcb122">imagenn::NeuronSoftmax::activation</a></div><div class="ttdeci">void activation() override</div><div class="ttdoc">Копирует вход (логит) в выход.</div><div class="ttdef"><b>Определения</b> neuron.hpp:152</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_softmax_html_aa61c6c1e0bc1638c5e06a3d730195a2e"><div class="ttname"><a href="classimagenn_1_1_neuron_softmax.html#aa61c6c1e0bc1638c5e06a3d730195a2e">imagenn::NeuronSoftmax::get_activation</a></div><div class="ttdeci">double get_activation(double x) const override</div><div class="ttdoc">Возвращает значение без изменений.</div><div class="ttdef"><b>Определения</b> neuron.hpp:157</div></div>
+<div class="ttc" id="aclassimagenn_1_1_neuron_softmax_html_ac218ea1e4c71acc4608fa92c63a8b6dd"><div class="ttname"><a href="classimagenn_1_1_neuron_softmax.html#ac218ea1e4c71acc4608fa92c63a8b6dd">imagenn::NeuronSoftmax::NeuronSoftmax</a></div><div class="ttdeci">NeuronSoftmax(const ActivationBase &amp;activation)</div><div class="ttdoc">Создаёт softmax-нейрон.</div><div class="ttdef"><b>Определения</b> neuron.hpp:149</div></div>
+<div class="ttc" id="aclassimagenn_1_1_transparent_neuron_html_a03c053480c866a3b1adc36b6a44943de"><div class="ttname"><a href="classimagenn_1_1_transparent_neuron.html#a03c053480c866a3b1adc36b6a44943de">imagenn::TransparentNeuron::activation</a></div><div class="ttdeci">void activation() override</div><div class="ttdoc">Копирует вход в выход без изменений.</div><div class="ttdef"><b>Определения</b> neuron.hpp:123</div></div>
+<div class="ttc" id="aclassimagenn_1_1_transparent_neuron_html_a122eda836621a34652802cebbf1dcf1b"><div class="ttname"><a href="classimagenn_1_1_transparent_neuron.html#a122eda836621a34652802cebbf1dcf1b">imagenn::TransparentNeuron::TransparentNeuron</a></div><div class="ttdeci">TransparentNeuron(const ActivationBase &amp;activation)</div><div class="ttdoc">Создаёт прозрачный нейрон.</div><div class="ttdef"><b>Определения</b> neuron.hpp:120</div></div>
+<div class="ttc" id="anamespaceimagenn_html"><div class="ttname"><a href="namespaceimagenn.html">imagenn</a></div><div class="ttdoc">Корневое пространство имён всех компонентов проекта.</div><div class="ttdef"><b>Определения</b> activations.hpp:9</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="neuron_8hpp.html">neuron.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

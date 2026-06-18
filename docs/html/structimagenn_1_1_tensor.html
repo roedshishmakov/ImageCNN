@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Структура imagenn::Tensor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('structimagenn_1_1_tensor.html','','structimagenn_1_1_tensor-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Структура imagenn::Tensor</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Трёхмерный тензор (каналы, высота, ширина) с плоским хранением.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae667265c59f0eab65f812eb324825529" id="r_ae667265c59f0eab65f812eb324825529"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae667265c59f0eab65f812eb324825529">Tensor</a> ()=default</td></tr>
+<tr class="memdesc:ae667265c59f0eab65f812eb324825529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт пустой тензор.  <br /></td></tr>
+<tr class="memitem:abe535d001b014f62de30677af34073ad" id="r_abe535d001b014f62de30677af34073ad"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abe535d001b014f62de30677af34073ad">Tensor</a> (int c, int h, int w)</td></tr>
+<tr class="memdesc:abe535d001b014f62de30677af34073ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт тензор заданной формы, заполненный нулями.  <br /></td></tr>
+<tr class="memitem:ae7395fa09b48e78f8f24619e9c9c1bb6" id="r_ae7395fa09b48e78f8f24619e9c9c1bb6"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#ae7395fa09b48e78f8f24619e9c9c1bb6">index</a> (int c, int y, int x) const</td></tr>
+<tr class="memdesc:ae7395fa09b48e78f8f24619e9c9c1bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает плоский индекс элемента (c, y, x).  <br /></td></tr>
+<tr class="memitem:aa3364a4c6020fa2a4fa0c02bd7d274ab" id="r_aa3364a4c6020fa2a4fa0c02bd7d274ab"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aa3364a4c6020fa2a4fa0c02bd7d274ab">at</a> (int c, int y, int x) const</td></tr>
+<tr class="memdesc:aa3364a4c6020fa2a4fa0c02bd7d274ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает элемент (c, y, x).  <br /></td></tr>
+<tr class="memitem:ac87807ec9b3bf9a034be20f3b9ee35a2" id="r_ac87807ec9b3bf9a034be20f3b9ee35a2"><td class="memItemLeft">double &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac87807ec9b3bf9a034be20f3b9ee35a2">at</a> (int c, int y, int x)</td></tr>
+<tr class="memdesc:ac87807ec9b3bf9a034be20f3b9ee35a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к элементу (c, y, x) для записи.  <br /></td></tr>
+<tr class="memitem:abad408533067e5f6028c009ab23a321d" id="r_abad408533067e5f6028c009ab23a321d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#abad408533067e5f6028c009ab23a321d">size</a> () const</td></tr>
+<tr class="memdesc:abad408533067e5f6028c009ab23a321d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общее число элементов.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:ac6ba8ece1e95deb90ef8ceb9a03ebd3e" id="r_ac6ba8ece1e95deb90ef8ceb9a03ebd3e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac6ba8ece1e95deb90ef8ceb9a03ebd3e">channels</a> = 0</td></tr>
+<tr class="memdesc:ac6ba8ece1e95deb90ef8ceb9a03ebd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число каналов.  <br /></td></tr>
+<tr class="memitem:a2324c30130d68e64762fd8e4dce8e11a" id="r_a2324c30130d68e64762fd8e4dce8e11a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2324c30130d68e64762fd8e4dce8e11a">height</a> = 0</td></tr>
+<tr class="memdesc:a2324c30130d68e64762fd8e4dce8e11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота.  <br /></td></tr>
+<tr class="memitem:a1079c2976835ea2bbd4d3a5afb7926f7" id="r_a1079c2976835ea2bbd4d3a5afb7926f7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a1079c2976835ea2bbd4d3a5afb7926f7">width</a> = 0</td></tr>
+<tr class="memdesc:a1079c2976835ea2bbd4d3a5afb7926f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина.  <br /></td></tr>
+<tr class="memitem:aa17b0343505ad65802e24b4b330f7b9d" id="r_aa17b0343505ad65802e24b4b330f7b9d"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa17b0343505ad65802e24b4b330f7b9d">data</a></td></tr>
+<tr class="memdesc:aa17b0343505ad65802e24b4b330f7b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значения, размер channels*height*width.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Трёхмерный тензор (каналы, высота, ширина) с плоским хранением. </p>
+<p>Данные лежат построчно: элемент (c, y, x) находится по индексу ((c * height + y) * width + x). </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ae667265c59f0eab65f812eb324825529" name="ae667265c59f0eab65f812eb324825529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae667265c59f0eab65f812eb324825529">&#9670;&#160;</a></span>Tensor() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::Tensor::Tensor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт пустой тензор. </p>
+
+</div>
+</div>
+<a id="abe535d001b014f62de30677af34073ad" name="abe535d001b014f62de30677af34073ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe535d001b014f62de30677af34073ad">&#9670;&#160;</a></span>Tensor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::Tensor::Tensor </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт тензор заданной формы, заполненный нулями. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>число каналов </td></tr>
+    <tr><td class="paramname">h</td><td>высота </td></tr>
+    <tr><td class="paramname">w</td><td>ширина </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ac87807ec9b3bf9a034be20f3b9ee35a2" name="ac87807ec9b3bf9a034be20f3b9ee35a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87807ec9b3bf9a034be20f3b9ee35a2">&#9670;&#160;</a></span>at() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; imagenn::Tensor::at </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Доступ к элементу (c, y, x) для записи. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>канал </td></tr>
+    <tr><td class="paramname">y</td><td>строка </td></tr>
+    <tr><td class="paramname">x</td><td>столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>ссылка на элемент </dd></dl>
+
+</div>
+</div>
+<a id="aa3364a4c6020fa2a4fa0c02bd7d274ab" name="aa3364a4c6020fa2a4fa0c02bd7d274ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3364a4c6020fa2a4fa0c02bd7d274ab">&#9670;&#160;</a></span>at() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double imagenn::Tensor::at </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Читает элемент (c, y, x). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>канал </td></tr>
+    <tr><td class="paramname">y</td><td>строка </td></tr>
+    <tr><td class="paramname">x</td><td>столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>значение элемента </dd></dl>
+
+</div>
+</div>
+<a id="ae7395fa09b48e78f8f24619e9c9c1bb6" name="ae7395fa09b48e78f8f24619e9c9c1bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7395fa09b48e78f8f24619e9c9c1bb6">&#9670;&#160;</a></span>index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t imagenn::Tensor::index </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает плоский индекс элемента (c, y, x). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>канал </td></tr>
+    <tr><td class="paramname">y</td><td>строка </td></tr>
+    <tr><td class="paramname">x</td><td>столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>индекс в массиве data </dd></dl>
+
+</div>
+</div>
+<a id="abad408533067e5f6028c009ab23a321d" name="abad408533067e5f6028c009ab23a321d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad408533067e5f6028c009ab23a321d">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::Tensor::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает общее число элементов. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>channels*height*width </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="ac6ba8ece1e95deb90ef8ceb9a03ebd3e" name="ac6ba8ece1e95deb90ef8ceb9a03ebd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ba8ece1e95deb90ef8ceb9a03ebd3e">&#9670;&#160;</a></span>channels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::Tensor::channels = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Число каналов. </p>
+
+</div>
+</div>
+<a id="aa17b0343505ad65802e24b4b330f7b9d" name="aa17b0343505ad65802e24b4b330f7b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa17b0343505ad65802e24b4b330f7b9d">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::Tensor::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Значения, размер channels*height*width. </p>
+
+</div>
+</div>
+<a id="a2324c30130d68e64762fd8e4dce8e11a" name="a2324c30130d68e64762fd8e4dce8e11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2324c30130d68e64762fd8e4dce8e11a">&#9670;&#160;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::Tensor::height = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Высота. </p>
+
+</div>
+</div>
+<a id="a1079c2976835ea2bbd4d3a5afb7926f7" name="a1079c2976835ea2bbd4d3a5afb7926f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1079c2976835ea2bbd4d3a5afb7926f7">&#9670;&#160;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::Tensor::width = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ширина. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="tensor_8hpp_source.html">tensor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="structimagenn_1_1_tensor.html">Tensor</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>
