@@ -555,3 +555,39 @@ TEST_CASE("a saved convolution model reloads identically") {
     }
     std::filesystem::remove(path);
 }
+
+TEST_CASE("convolution constructor rejects non-positive parameters") {
+    CHECK_THROWS_AS(ConvLayer(1, 4, 4, 0, 2, relu_activation(), 0.1), ValidationError);
+    CHECK_THROWS_AS(ConvLayer(0, 4, 4, 2, 2, relu_activation(), 0.1), ValidationError);
+}
+
+TEST_CASE("convolution load and import reject mismatched sizes") {
+    ConvLayer conv(1, 4, 4, 2, 3, relu_activation(), 0.1);
+    CHECK_THROWS_AS(conv.load({1.0, 2.0}, {0.0, 0.0}), ValidationError);
+    CHECK_THROWS_AS(conv.import_weights({1.0, 2.0}), ValidationError);
+}
+
+TEST_CASE("max pooling constructor rejects invalid windows") {
+    CHECK_THROWS_AS(MaxPoolLayer(1, 4, 4, 0), ValidationError);
+    CHECK_THROWS_AS(MaxPoolLayer(1, 2, 2, 3), ValidationError);
+}
+
+TEST_CASE("max pooling forward rejects a wrong input shape") {
+    MaxPoolLayer pool(1, 4, 4, 2);
+    Tensor wrong(1, 3, 3);
+    CHECK_THROWS_AS(pool.forward(wrong), ValidationError);
+}
+
+TEST_CASE("flatten forward rejects a wrong input shape") {
+    FlattenLayer flatten(2, 2, 2);
+    Tensor wrong(1, 2, 2);
+    CHECK_THROWS_AS(flatten.forward(wrong), ValidationError);
+}
+
+TEST_CASE("model rejects a wrong spatial import and a wrong image shape") {
+    set_random_seed(2);
+    Model model = make_conv_model();
+    CHECK_THROWS_AS(model.import_spatial({}), ValidationError);
+    Tensor wrong(1, 4, 4);
+    CHECK_THROWS_AS(model.run(wrong), ValidationError);
+}
