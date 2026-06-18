@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Класс imagenn::Layer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_layer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс imagenn::Layer</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Слой нейронов.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="layer_8hpp_source.html">layer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:imagenn::Layer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classimagenn_1_1_layer.png" usemap="#imagenn_3A_3ALayer_map" alt=""/>
+  <map id="imagenn_3A_3ALayer_map" name="imagenn_3A_3ALayer_map">
+<area href="classimagenn_1_1_layer_softmax.html" title="Выходной слой с функцией активации softmax и кросс-энтропийной потерей." alt="imagenn::LayerSoftmax" shape="rect" coords="0,56,142,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab629f5c7e429f8820850ad3e8b5415c6" id="r_ab629f5c7e429f8820850ad3e8b5415c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab629f5c7e429f8820850ad3e8b5415c6">Layer</a> (<a class="el" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">NeuronType</a> type, std::size_t <a class="el" href="#a2c4fcce9fc8b482fba034cf823d6b4f2">size</a>, const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;activation, bool use_bias)</td></tr>
+<tr class="memdesc:ab629f5c7e429f8820850ad3e8b5415c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт слой заданного размера.  <br /></td></tr>
+<tr class="memitem:a9572f2cf6fd1c21d5265cf693129f422" id="r_a9572f2cf6fd1c21d5265cf693129f422"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a9572f2cf6fd1c21d5265cf693129f422">~Layer</a> ()=default</td></tr>
+<tr class="memitem:a90de8a2c1611955734428edcccc59b98" id="r_a90de8a2c1611955734428edcccc59b98"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90de8a2c1611955734428edcccc59b98">reset</a> ()</td></tr>
+<tr class="memdesc:a90de8a2c1611955734428edcccc59b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает входы всех нейронов в ноль.  <br /></td></tr>
+<tr class="memitem:a2c80c445732bddb6fb2e4ee6e319e947" id="r_a2c80c445732bddb6fb2e4ee6e319e947"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2c80c445732bddb6fb2e4ee6e319e947">reset</a> (const std::vector&lt; double &gt; &amp;input)</td></tr>
+<tr class="memdesc:a2c80c445732bddb6fb2e4ee6e319e947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает входы нейронов заданными значениями.  <br /></td></tr>
+<tr class="memitem:aa9891a50361fab7c108a027ac0bad882" id="r_aa9891a50361fab7c108a027ac0bad882"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aa9891a50361fab7c108a027ac0bad882">calc</a> ()</td></tr>
+<tr class="memdesc:aa9891a50361fab7c108a027ac0bad882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет выходы всех нейронов слоя.  <br /></td></tr>
+<tr class="memitem:a62985ddc18bd8cd06bd5cbe109341e73" id="r_a62985ddc18bd8cd06bd5cbe109341e73"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a62985ddc18bd8cd06bd5cbe109341e73">get_loss</a> (const std::vector&lt; double &gt; &amp;refs) const</td></tr>
+<tr class="memdesc:a62985ddc18bd8cd06bd5cbe109341e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает суммарную потерю слоя.  <br /></td></tr>
+<tr class="memitem:a133a8c4e8eaa228d054dc2b4079d803d" id="r_a133a8c4e8eaa228d054dc2b4079d803d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a133a8c4e8eaa228d054dc2b4079d803d">send</a> () const</td></tr>
+<tr class="memdesc:a133a8c4e8eaa228d054dc2b4079d803d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передаёт выходы всех нейронов по их связям.  <br /></td></tr>
+<tr class="memitem:a07bbd4c0a1898e7f04e1990cc335cb58" id="r_a07bbd4c0a1898e7f04e1990cc335cb58"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a07bbd4c0a1898e7f04e1990cc335cb58">back_propagation_output_l</a> (const std::vector&lt; double &gt; &amp;refs, double speed)</td></tr>
+<tr class="memdesc:a07bbd4c0a1898e7f04e1990cc335cb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает дельты весов для выходного слоя.  <br /></td></tr>
+<tr class="memitem:ad31faa4b30a3f7b717b89ea08863608b" id="r_ad31faa4b30a3f7b717b89ea08863608b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad31faa4b30a3f7b717b89ea08863608b">back_propagation_hidden_l</a> (double speed)</td></tr>
+<tr class="memdesc:ad31faa4b30a3f7b717b89ea08863608b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает дельты весов для скрытого слоя.  <br /></td></tr>
+<tr class="memitem:ad06ff8908ca43db05ad123e96ef4f1b3" id="r_ad06ff8908ca43db05ad123e96ef4f1b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad06ff8908ca43db05ad123e96ef4f1b3">back_propagation_apply</a> ()</td></tr>
+<tr class="memdesc:ad06ff8908ca43db05ad123e96ef4f1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет накопленные дельты весов слоя.  <br /></td></tr>
+<tr class="memitem:ad82bd8f4768128ab8999d47f67cf587c" id="r_ad82bd8f4768128ab8999d47f67cf587c"><td class="memItemLeft">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad82bd8f4768128ab8999d47f67cf587c">export_weights</a> () const</td></tr>
+<tr class="memdesc:ad82bd8f4768128ab8999d47f67cf587c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует веса слоя.  <br /></td></tr>
+<tr class="memitem:a5df3002dede1baf0fbc14185874313b7" id="r_a5df3002dede1baf0fbc14185874313b7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5df3002dede1baf0fbc14185874313b7">import_weights</a> (const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;data)</td></tr>
+<tr class="memdesc:a5df3002dede1baf0fbc14185874313b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Импортирует веса слоя.  <br /></td></tr>
+<tr class="memitem:a2c4fcce9fc8b482fba034cf823d6b4f2" id="r_a2c4fcce9fc8b482fba034cf823d6b4f2"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a2c4fcce9fc8b482fba034cf823d6b4f2">size</a> () const</td></tr>
+<tr class="memdesc:a2c4fcce9fc8b482fba034cf823d6b4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает число нейронов в слое.  <br /></td></tr>
+<tr class="memitem:a1410b4b31c0a5e345a1537dc745f1eed" id="r_a1410b4b31c0a5e345a1537dc745f1eed"><td class="memItemLeft">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1410b4b31c0a5e345a1537dc745f1eed">neurons</a> ()</td></tr>
+<tr class="memdesc:a1410b4b31c0a5e345a1537dc745f1eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает нейроны слоя.  <br /></td></tr>
+<tr class="memitem:a65d64581021374599b4162700cf70724" id="r_a65d64581021374599b4162700cf70724"><td class="memItemLeft">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a65d64581021374599b4162700cf70724">neurons</a> () const</td></tr>
+<tr class="memdesc:a65d64581021374599b4162700cf70724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает нейроны слоя (только чтение).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a7fe9e79b8ab4ce359ad846cfc665475b" id="r_a7fe9e79b8ab4ce359ad846cfc665475b"><td class="memItemLeft">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7fe9e79b8ab4ce359ad846cfc665475b">neurons_</a></td></tr>
+<tr class="memdesc:a7fe9e79b8ab4ce359ad846cfc665475b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Нейроны слоя.  <br /></td></tr>
+<tr class="memitem:a94a25ed26619648f957ff1da8f090431" id="r_a94a25ed26619648f957ff1da8f090431"><td class="memItemLeft">std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a94a25ed26619648f957ff1da8f090431">bias_</a></td></tr>
+<tr class="memdesc:a94a25ed26619648f957ff1da8f090431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Нейрон смещения (может отсутствовать).  <br /></td></tr>
+<tr class="memitem:a9be19360ac637b7a71bb1fa6096f99b8" id="r_a9be19360ac637b7a71bb1fa6096f99b8"><td class="memItemLeft">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_link.html">Link</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9be19360ac637b7a71bb1fa6096f99b8">links_</a></td></tr>
+<tr class="memdesc:a9be19360ac637b7a71bb1fa6096f99b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Связи смещения, принадлежащие слою.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Слой нейронов. </p>
+<p>Владеет своими нейронами, нейроном смещения и связями смещения. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ab629f5c7e429f8820850ad3e8b5415c6" name="ab629f5c7e429f8820850ad3e8b5415c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab629f5c7e429f8820850ad3e8b5415c6">&#9670;&#160;</a></span>Layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::Layer::Layer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">NeuronType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>activation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_bias</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт слой заданного размера. </p>
+<p>Веса смещения инициализируются нулём: случайные смещения при активном bias заталкивают часть ReLU-нейронов в отрицательную зону и выключают их. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>тип нейронов слоя </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a2c4fcce9fc8b482fba034cf823d6b4f2" title="Возвращает число нейронов в слое.">size</a></td><td>количество нейронов </td></tr>
+    <tr><td class="paramname">activation</td><td>функция активации нейронов </td></tr>
+    <tr><td class="paramname">use_bias</td><td>добавлять ли нейрон смещения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9572f2cf6fd1c21d5265cf693129f422" name="a9572f2cf6fd1c21d5265cf693129f422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9572f2cf6fd1c21d5265cf693129f422">&#9670;&#160;</a></span>~Layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual imagenn::Layer::~Layer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ad06ff8908ca43db05ad123e96ef4f1b3" name="ad06ff8908ca43db05ad123e96ef4f1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad06ff8908ca43db05ad123e96ef4f1b3">&#9670;&#160;</a></span>back_propagation_apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::back_propagation_apply </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Применяет накопленные дельты весов слоя. </p>
+
+</div>
+</div>
+<a id="ad31faa4b30a3f7b717b89ea08863608b" name="ad31faa4b30a3f7b717b89ea08863608b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31faa4b30a3f7b717b89ea08863608b">&#9670;&#160;</a></span>back_propagation_hidden_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::back_propagation_hidden_l </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает дельты весов для скрытого слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07bbd4c0a1898e7f04e1990cc335cb58" name="a07bbd4c0a1898e7f04e1990cc335cb58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07bbd4c0a1898e7f04e1990cc335cb58">&#9670;&#160;</a></span>back_propagation_output_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void imagenn::Layer::back_propagation_output_l </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>refs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Считает дельты весов для выходного слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">refs</td><td>эталонные значения </td></tr>
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_layer_softmax.html#a3ce886cec5cb4b510fe5ebf48166cca9">imagenn::LayerSoftmax</a>.</p>
+
+</div>
+</div>
+<a id="aa9891a50361fab7c108a027ac0bad882" name="aa9891a50361fab7c108a027ac0bad882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9891a50361fab7c108a027ac0bad882">&#9670;&#160;</a></span>calc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void imagenn::Layer::calc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет выходы всех нейронов слоя. </p>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_layer_softmax.html#afca8fc63ce5d9e5045a803d62ff26309">imagenn::LayerSoftmax</a>.</p>
+
+</div>
+</div>
+<a id="ad82bd8f4768128ab8999d47f67cf587c" name="ad82bd8f4768128ab8999d47f67cf587c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82bd8f4768128ab8999d47f67cf587c">&#9670;&#160;</a></span>export_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; imagenn::Layer::export_weights </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Экспортирует веса слоя. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>веса каждого нейрона </dd></dl>
+
+</div>
+</div>
+<a id="a62985ddc18bd8cd06bd5cbe109341e73" name="a62985ddc18bd8cd06bd5cbe109341e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62985ddc18bd8cd06bd5cbe109341e73">&#9670;&#160;</a></span>get_loss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double imagenn::Layer::get_loss </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>refs</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Считает суммарную потерю слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">refs</td><td>эталонные значения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>значение потери (квадратичная ошибка) </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если длина refs не равна размеру слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="classimagenn_1_1_layer_softmax.html#a3f1e098c1f3c1743f76a3bed018c41a8">imagenn::LayerSoftmax</a>.</p>
+
+</div>
+</div>
+<a id="a5df3002dede1baf0fbc14185874313b7" name="a5df3002dede1baf0fbc14185874313b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df3002dede1baf0fbc14185874313b7">&#9670;&#160;</a></span>import_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::import_weights </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Импортирует веса слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>веса каждого нейрона </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если число нейронов не совпадает </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1410b4b31c0a5e345a1537dc745f1eed" name="a1410b4b31c0a5e345a1537dc745f1eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1410b4b31c0a5e345a1537dc745f1eed">&#9670;&#160;</a></span>neurons() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt; &gt; &amp; imagenn::Layer::neurons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает нейроны слоя. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>вектор нейронов </dd></dl>
+
+</div>
+</div>
+<a id="a65d64581021374599b4162700cf70724" name="a65d64581021374599b4162700cf70724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d64581021374599b4162700cf70724">&#9670;&#160;</a></span>neurons() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classimagenn_1_1_neuron.html">Neuron</a> &gt; &gt; &amp; imagenn::Layer::neurons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает нейроны слоя (только чтение). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>вектор нейронов </dd></dl>
+
+</div>
+</div>
+<a id="a90de8a2c1611955734428edcccc59b98" name="a90de8a2c1611955734428edcccc59b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90de8a2c1611955734428edcccc59b98">&#9670;&#160;</a></span>reset() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сбрасывает входы всех нейронов в ноль. </p>
+
+</div>
+</div>
+<a id="a2c80c445732bddb6fb2e4ee6e319e947" name="a2c80c445732bddb6fb2e4ee6e319e947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c80c445732bddb6fb2e4ee6e319e947">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::reset </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает входы нейронов заданными значениями. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>значения входов; длина должна совпадать с размером слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если длина input не равна размеру слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a133a8c4e8eaa228d054dc2b4079d803d" name="a133a8c4e8eaa228d054dc2b4079d803d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133a8c4e8eaa228d054dc2b4079d803d">&#9670;&#160;</a></span>send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::Layer::send </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Передаёт выходы всех нейронов по их связям. </p>
+
+</div>
+</div>
+<a id="a2c4fcce9fc8b482fba034cf823d6b4f2" name="a2c4fcce9fc8b482fba034cf823d6b4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c4fcce9fc8b482fba034cf823d6b4f2">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t imagenn::Layer::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает число нейронов в слое. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>размер слоя </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a94a25ed26619648f957ff1da8f090431" name="a94a25ed26619648f957ff1da8f090431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a25ed26619648f957ff1da8f090431">&#9670;&#160;</a></span>bias_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classimagenn_1_1_neuron.html">Neuron</a>&gt; imagenn::Layer::bias_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Нейрон смещения (может отсутствовать). </p>
+
+</div>
+</div>
+<a id="a9be19360ac637b7a71bb1fa6096f99b8" name="a9be19360ac637b7a71bb1fa6096f99b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be19360ac637b7a71bb1fa6096f99b8">&#9670;&#160;</a></span>links_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="classimagenn_1_1_link.html">Link</a>&gt; &gt; imagenn::Layer::links_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Связи смещения, принадлежащие слою. </p>
+
+</div>
+</div>
+<a id="a7fe9e79b8ab4ce359ad846cfc665475b" name="a7fe9e79b8ab4ce359ad846cfc665475b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe9e79b8ab4ce359ad846cfc665475b">&#9670;&#160;</a></span>neurons_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="classimagenn_1_1_neuron.html">Neuron</a>&gt; &gt; imagenn::Layer::neurons_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Нейроны слоя. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="layer_8hpp_source.html">layer.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="classimagenn_1_1_layer.html">Layer</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

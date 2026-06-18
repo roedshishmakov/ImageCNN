@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Класс imagenn::MaxPoolLayer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classimagenn_1_1_max_pool_layer.html','','classimagenn_1_1_max_pool_layer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс imagenn::MaxPoolLayer</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Слой подвыборки по максимуму (аналог MaxPooling2D).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spatial_8hpp_source.html">spatial.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:imagenn::MaxPoolLayer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classimagenn_1_1_max_pool_layer.png" usemap="#imagenn_3A_3AMaxPoolLayer_map" alt=""/>
+  <map id="imagenn_3A_3AMaxPoolLayer_map" name="imagenn_3A_3AMaxPoolLayer_map">
+<area href="classimagenn_1_1_spatial_layer.html" title="Базовый класс спатиального слоя, работающего с тензорами." alt="imagenn::SpatialLayer" shape="rect" coords="0,0,147,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac70517dad64aaf75b35de6671348df77" id="r_ac70517dad64aaf75b35de6671348df77"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac70517dad64aaf75b35de6671348df77">MaxPoolLayer</a> (int in_channels, int in_height, int in_width, int pool)</td></tr>
+<tr class="memdesc:ac70517dad64aaf75b35de6671348df77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт слой подвыборки.  <br /></td></tr>
+<tr class="memitem:af9e091a1adf58f569af7803a7d0dfa62" id="r_af9e091a1adf58f569af7803a7d0dfa62"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#af9e091a1adf58f569af7803a7d0dfa62">forward</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;input) override</td></tr>
+<tr class="memdesc:af9e091a1adf58f569af7803a7d0dfa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прямой проход.  <br /></td></tr>
+<tr class="memitem:a2a0de236ebe003f6b2268ad68faa8429" id="r_a2a0de236ebe003f6b2268ad68faa8429"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2a0de236ebe003f6b2268ad68faa8429">backward</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;grad_output) override</td></tr>
+<tr class="memdesc:a2a0de236ebe003f6b2268ad68faa8429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обратный проход.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classimagenn_1_1_spatial_layer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classimagenn_1_1_spatial_layer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classimagenn_1_1_spatial_layer.html">imagenn::SpatialLayer</a></td></tr>
+<tr class="memitem:a141dcbef5dd4c3c4fc4d642b75b1a6fd inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a141dcbef5dd4c3c4fc4d642b75b1a6fd"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a141dcbef5dd4c3c4fc4d642b75b1a6fd">~SpatialLayer</a> ()=default</td></tr>
+<tr class="memitem:a3431c8563a478d83d58ca92f04145b30 inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a3431c8563a478d83d58ca92f04145b30"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a3431c8563a478d83d58ca92f04145b30">apply</a> (double speed, double clip_value, bool use_clip)</td></tr>
+<tr class="memdesc:a3431c8563a478d83d58ca92f04145b30 inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет накопленные градиенты весов.  <br /></td></tr>
+<tr class="memitem:ac8b9b7d8d52d97c2c6a85f5d17fc1da2 inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_ac8b9b7d8d52d97c2c6a85f5d17fc1da2"><td class="memItemLeft">virtual std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#ac8b9b7d8d52d97c2c6a85f5d17fc1da2">export_weights</a> () const</td></tr>
+<tr class="memdesc:ac8b9b7d8d52d97c2c6a85f5d17fc1da2 inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует обучаемые параметры слоя.  <br /></td></tr>
+<tr class="memitem:a323f5fc6114b0ff574e70e83b8296f1c inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a323f5fc6114b0ff574e70e83b8296f1c"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a323f5fc6114b0ff574e70e83b8296f1c">import_weights</a> (const std::vector&lt; double &gt; &amp;weights)</td></tr>
+<tr class="memdesc:a323f5fc6114b0ff574e70e83b8296f1c inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает обучаемые параметры слоя.  <br /></td></tr>
+<tr class="memitem:a93e95f3beef699f652a7c8fde97ce292 inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a93e95f3beef699f652a7c8fde97ce292"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a93e95f3beef699f652a7c8fde97ce292">out_channels</a> () const</td></tr>
+<tr class="memdesc:a93e95f3beef699f652a7c8fde97ce292 inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число каналов выхода.  <br /></td></tr>
+<tr class="memitem:a89a7014af945ddbc3a6871acb6b845bd inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a89a7014af945ddbc3a6871acb6b845bd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a89a7014af945ddbc3a6871acb6b845bd">out_height</a> () const</td></tr>
+<tr class="memdesc:a89a7014af945ddbc3a6871acb6b845bd inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота выхода.  <br /></td></tr>
+<tr class="memitem:a6e4e62b55e83c43efbadb113e8f86c5f inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a6e4e62b55e83c43efbadb113e8f86c5f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a6e4e62b55e83c43efbadb113e8f86c5f">out_width</a> () const</td></tr>
+<tr class="memdesc:a6e4e62b55e83c43efbadb113e8f86c5f inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина выхода.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a6b207025a3439d4b0ea33e80b7113e70" id="r_a6b207025a3439d4b0ea33e80b7113e70"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6b207025a3439d4b0ea33e80b7113e70">pool_</a> = 0</td></tr>
+<tr class="memdesc:a6b207025a3439d4b0ea33e80b7113e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сторона окна.  <br /></td></tr>
+<tr class="memitem:a0897e00bc52074970a73f867d720c847" id="r_a0897e00bc52074970a73f867d720c847"><td class="memItemLeft">std::vector&lt; std::size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0897e00bc52074970a73f867d720c847">argmax_</a></td></tr>
+<tr class="memdesc:a0897e00bc52074970a73f867d720c847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Индексы максимумов во входе (для backward).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_classimagenn_1_1_spatial_layer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classimagenn_1_1_spatial_layer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="classimagenn_1_1_spatial_layer.html">imagenn::SpatialLayer</a></td></tr>
+<tr class="memitem:a517ee1a3fad585f48d9c15fbecf2f8d7 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a517ee1a3fad585f48d9c15fbecf2f8d7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a517ee1a3fad585f48d9c15fbecf2f8d7">in_c_</a> = 0</td></tr>
+<tr class="memdesc:a517ee1a3fad585f48d9c15fbecf2f8d7 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Каналы входа.  <br /></td></tr>
+<tr class="memitem:ad4d874560442552346f09e8fc36fc447 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_ad4d874560442552346f09e8fc36fc447"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#ad4d874560442552346f09e8fc36fc447">in_h_</a> = 0</td></tr>
+<tr class="memdesc:ad4d874560442552346f09e8fc36fc447 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота входа.  <br /></td></tr>
+<tr class="memitem:a6cae7f17ea180d257d33cd249e92cb2f inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a6cae7f17ea180d257d33cd249e92cb2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a6cae7f17ea180d257d33cd249e92cb2f">in_w_</a> = 0</td></tr>
+<tr class="memdesc:a6cae7f17ea180d257d33cd249e92cb2f inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина входа.  <br /></td></tr>
+<tr class="memitem:a78d9f62664721a2826315146cd6222c7 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a78d9f62664721a2826315146cd6222c7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">out_c_</a> = 0</td></tr>
+<tr class="memdesc:a78d9f62664721a2826315146cd6222c7 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Каналы выхода.  <br /></td></tr>
+<tr class="memitem:a480711332721cb8d589574430480c40f inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a480711332721cb8d589574430480c40f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">out_h_</a> = 0</td></tr>
+<tr class="memdesc:a480711332721cb8d589574430480c40f inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота выхода.  <br /></td></tr>
+<tr class="memitem:ae190caab317bac58b40a10957b21add6 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_ae190caab317bac58b40a10957b21add6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">out_w_</a> = 0</td></tr>
+<tr class="memdesc:ae190caab317bac58b40a10957b21add6 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина выхода.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Слой подвыборки по максимуму (аналог MaxPooling2D). </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ac70517dad64aaf75b35de6671348df77" name="ac70517dad64aaf75b35de6671348df77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70517dad64aaf75b35de6671348df77">&#9670;&#160;</a></span>MaxPoolLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::MaxPoolLayer::MaxPoolLayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_channels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт слой подвыборки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_channels</td><td>число каналов </td></tr>
+    <tr><td class="paramname">in_height</td><td>высота входа </td></tr>
+    <tr><td class="paramname">in_width</td><td>ширина входа </td></tr>
+    <tr><td class="paramname">pool</td><td>сторона окна (и шаг) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если параметры некорректны </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a2a0de236ebe003f6b2268ad68faa8429" name="a2a0de236ebe003f6b2268ad68faa8429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0de236ebe003f6b2268ad68faa8429">&#9670;&#160;</a></span>backward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::MaxPoolLayer::backward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>grad_output</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обратный проход. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grad_output</td><td>градиент по выходу слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>градиент по входу слоя </dd></dl>
+
+<p>Замещает <a class="el" href="classimagenn_1_1_spatial_layer.html#a553a5dc8a84603e68ad6d813bbf2139f">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="af9e091a1adf58f569af7803a7d0dfa62" name="af9e091a1adf58f569af7803a7d0dfa62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e091a1adf58f569af7803a7d0dfa62">&#9670;&#160;</a></span>forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::MaxPoolLayer::forward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Прямой проход. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>выходной тензор </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если форма входа не совпадает с ожидаемой </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещает <a class="el" href="classimagenn_1_1_spatial_layer.html#a66b4fd84567771052a96fcfb00cb265c">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a0897e00bc52074970a73f867d720c847" name="a0897e00bc52074970a73f867d720c847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0897e00bc52074970a73f867d720c847">&#9670;&#160;</a></span>argmax_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::size_t&gt; imagenn::MaxPoolLayer::argmax_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Индексы максимумов во входе (для backward). </p>
+
+</div>
+</div>
+<a id="a6b207025a3439d4b0ea33e80b7113e70" name="a6b207025a3439d4b0ea33e80b7113e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b207025a3439d4b0ea33e80b7113e70">&#9670;&#160;</a></span>pool_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::MaxPoolLayer::pool_ = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сторона окна. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="spatial_8hpp_source.html">spatial.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="classimagenn_1_1_max_pool_layer.html">MaxPoolLayer</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

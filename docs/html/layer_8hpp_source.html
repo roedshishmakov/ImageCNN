@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Исходный файл include/imagenn/layer.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('layer_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">layer.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="layer_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGENN_LAYER_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGENN_LAYER_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="activations_8hpp.html">imagenn/activations.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="link_8hpp.html">imagenn/link.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_8hpp.html">imagenn/neuron.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceimagenn.html">imagenn</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">   18</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">NeuronType</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24ad2203cb1237cb6460cbad94564e39345">   19</a></span>    <a class="code hl_enumvalue" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24ad2203cb1237cb6460cbad94564e39345">Regular</a>,     </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a3d971943089a3388c01fb297a32d9ba7">   20</a></span>    <a class="code hl_enumvalue" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a3d971943089a3388c01fb297a32d9ba7">Transparent</a>, </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a31d953b9d49a6b4378f45097047976d0">   21</a></span>    <a class="code hl_enumvalue" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a31d953b9d49a6b4378f45097047976d0">Softmax</a>      </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html">   27</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6">Layer</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6">   37</a></span>    <a class="code hl_function" href="classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6">Layer</a>(<a class="code hl_enumeration" href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">NeuronType</a> type, std::size_t <a class="code hl_function" href="classimagenn_1_1_layer.html#a2c4fcce9fc8b482fba034cf823d6b4f2">size</a>, <span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; activation, <span class="keywordtype">bool</span> use_bias);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a9572f2cf6fd1c21d5265cf693129f422">   39</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a9572f2cf6fd1c21d5265cf693129f422">~Layer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a90de8a2c1611955734428edcccc59b98">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a90de8a2c1611955734428edcccc59b98">reset</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a2c80c445732bddb6fb2e4ee6e319e947">   47</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a2c80c445732bddb6fb2e4ee6e319e947">reset</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; input);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#aa9891a50361fab7c108a027ac0bad882">   50</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#aa9891a50361fab7c108a027ac0bad882">calc</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a62985ddc18bd8cd06bd5cbe109341e73">   56</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a62985ddc18bd8cd06bd5cbe109341e73">get_loss</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; refs) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a133a8c4e8eaa228d054dc2b4079d803d">   59</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a133a8c4e8eaa228d054dc2b4079d803d">send</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a07bbd4c0a1898e7f04e1990cc335cb58">   64</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a07bbd4c0a1898e7f04e1990cc335cb58">back_propagation_output_l</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; refs, <span class="keywordtype">double</span> speed);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#ad31faa4b30a3f7b717b89ea08863608b">   68</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#ad31faa4b30a3f7b717b89ea08863608b">back_propagation_hidden_l</a>(<span class="keywordtype">double</span> speed);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#ad06ff8908ca43db05ad123e96ef4f1b3">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#ad06ff8908ca43db05ad123e96ef4f1b3">back_propagation_apply</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#ad82bd8f4768128ab8999d47f67cf587c">   75</a></span>    std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code hl_function" href="classimagenn_1_1_layer.html#ad82bd8f4768128ab8999d47f67cf587c">export_weights</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a5df3002dede1baf0fbc14185874313b7">   80</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#a5df3002dede1baf0fbc14185874313b7">import_weights</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt;&amp; data);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a2c4fcce9fc8b482fba034cf823d6b4f2">   84</a></span>    std::size_t <a class="code hl_function" href="classimagenn_1_1_layer.html#a2c4fcce9fc8b482fba034cf823d6b4f2">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">neurons_</a>.size(); }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a1410b4b31c0a5e345a1537dc745f1eed">   88</a></span>    std::vector&lt;std::unique_ptr&lt;Neuron&gt;&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_layer.html#a1410b4b31c0a5e345a1537dc745f1eed">neurons</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">neurons_</a>; }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a65d64581021374599b4162700cf70724">   92</a></span>    <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;Neuron&gt;&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_layer.html#a65d64581021374599b4162700cf70724">neurons</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">neurons_</a>; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">   95</a></span>    std::vector&lt;std::unique_ptr&lt;Neuron&gt;&gt; <a class="code hl_variable" href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">neurons_</a>; </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a94a25ed26619648f957ff1da8f090431">   96</a></span>    std::unique_ptr&lt;Neuron&gt; <a class="code hl_variable" href="classimagenn_1_1_layer.html#a94a25ed26619648f957ff1da8f090431">bias_</a>;                 </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer.html#a9be19360ac637b7a71bb1fa6096f99b8">   97</a></span>    std::vector&lt;std::unique_ptr&lt;Link&gt;&gt; <a class="code hl_variable" href="classimagenn_1_1_layer.html#a9be19360ac637b7a71bb1fa6096f99b8">links_</a>;     </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer_softmax.html">  101</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_layer_softmax.html#acaa29be89c6e4db680a74a260d609424">LayerSoftmax</a> : <span class="keyword">public</span> <a class="code hl_function" href="classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6">Layer</a> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer_softmax.html#acaa29be89c6e4db680a74a260d609424">  105</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classimagenn_1_1_layer_softmax.html#acaa29be89c6e4db680a74a260d609424">LayerSoftmax</a>(std::size_t <a class="code hl_function" href="classimagenn_1_1_layer.html#a2c4fcce9fc8b482fba034cf823d6b4f2">size</a>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer_softmax.html#afca8fc63ce5d9e5045a803d62ff26309">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer_softmax.html#afca8fc63ce5d9e5045a803d62ff26309">calc</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer_softmax.html#a3f1e098c1f3c1743f76a3bed018c41a8">  114</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_layer_softmax.html#a3f1e098c1f3c1743f76a3bed018c41a8">get_loss</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; refs) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classimagenn_1_1_layer_softmax.html#a3ce886cec5cb4b510fe5ebf48166cca9">  119</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_layer_softmax.html#a3ce886cec5cb4b510fe5ebf48166cca9">back_propagation_output_l</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; refs, <span class="keywordtype">double</span> speed) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>} <span class="comment">// namespace imagenn</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif </span><span class="comment">// IMAGENN_LAYER_HPP</span></div>
+<div class="ttc" id="aactivations_8hpp_html"><div class="ttname"><a href="activations_8hpp.html">activations.hpp</a></div><div class="ttdoc">Функции активации нейронов.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html"><div class="ttname"><a href="classimagenn_1_1_activation_base.html">imagenn::ActivationBase</a></div><div class="ttdoc">Родительский класс функции активации.</div><div class="ttdef"><b>Определения</b> activations.hpp:14</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a07bbd4c0a1898e7f04e1990cc335cb58"><div class="ttname"><a href="classimagenn_1_1_layer.html#a07bbd4c0a1898e7f04e1990cc335cb58">imagenn::Layer::back_propagation_output_l</a></div><div class="ttdeci">virtual void back_propagation_output_l(const std::vector&lt; double &gt; &amp;refs, double speed)</div><div class="ttdoc">Считает дельты весов для выходного слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a133a8c4e8eaa228d054dc2b4079d803d"><div class="ttname"><a href="classimagenn_1_1_layer.html#a133a8c4e8eaa228d054dc2b4079d803d">imagenn::Layer::send</a></div><div class="ttdeci">void send() const</div><div class="ttdoc">Передаёт выходы всех нейронов по их связям.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a1410b4b31c0a5e345a1537dc745f1eed"><div class="ttname"><a href="classimagenn_1_1_layer.html#a1410b4b31c0a5e345a1537dc745f1eed">imagenn::Layer::neurons</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; Neuron &gt; &gt; &amp; neurons()</div><div class="ttdoc">Возвращает нейроны слоя.</div><div class="ttdef"><b>Определения</b> layer.hpp:88</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a2c4fcce9fc8b482fba034cf823d6b4f2"><div class="ttname"><a href="classimagenn_1_1_layer.html#a2c4fcce9fc8b482fba034cf823d6b4f2">imagenn::Layer::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Возвращает число нейронов в слое.</div><div class="ttdef"><b>Определения</b> layer.hpp:84</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a2c80c445732bddb6fb2e4ee6e319e947"><div class="ttname"><a href="classimagenn_1_1_layer.html#a2c80c445732bddb6fb2e4ee6e319e947">imagenn::Layer::reset</a></div><div class="ttdeci">void reset(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdoc">Устанавливает входы нейронов заданными значениями.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a5df3002dede1baf0fbc14185874313b7"><div class="ttname"><a href="classimagenn_1_1_layer.html#a5df3002dede1baf0fbc14185874313b7">imagenn::Layer::import_weights</a></div><div class="ttdeci">void import_weights(const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;data)</div><div class="ttdoc">Импортирует веса слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a62985ddc18bd8cd06bd5cbe109341e73"><div class="ttname"><a href="classimagenn_1_1_layer.html#a62985ddc18bd8cd06bd5cbe109341e73">imagenn::Layer::get_loss</a></div><div class="ttdeci">virtual double get_loss(const std::vector&lt; double &gt; &amp;refs) const</div><div class="ttdoc">Считает суммарную потерю слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a65d64581021374599b4162700cf70724"><div class="ttname"><a href="classimagenn_1_1_layer.html#a65d64581021374599b4162700cf70724">imagenn::Layer::neurons</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; Neuron &gt; &gt; &amp; neurons() const</div><div class="ttdoc">Возвращает нейроны слоя (только чтение).</div><div class="ttdef"><b>Определения</b> layer.hpp:92</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a7fe9e79b8ab4ce359ad846cfc665475b"><div class="ttname"><a href="classimagenn_1_1_layer.html#a7fe9e79b8ab4ce359ad846cfc665475b">imagenn::Layer::neurons_</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; Neuron &gt; &gt; neurons_</div><div class="ttdoc">Нейроны слоя.</div><div class="ttdef"><b>Определения</b> layer.hpp:95</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a90de8a2c1611955734428edcccc59b98"><div class="ttname"><a href="classimagenn_1_1_layer.html#a90de8a2c1611955734428edcccc59b98">imagenn::Layer::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Сбрасывает входы всех нейронов в ноль.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a94a25ed26619648f957ff1da8f090431"><div class="ttname"><a href="classimagenn_1_1_layer.html#a94a25ed26619648f957ff1da8f090431">imagenn::Layer::bias_</a></div><div class="ttdeci">std::unique_ptr&lt; Neuron &gt; bias_</div><div class="ttdoc">Нейрон смещения (может отсутствовать).</div><div class="ttdef"><b>Определения</b> layer.hpp:96</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a9572f2cf6fd1c21d5265cf693129f422"><div class="ttname"><a href="classimagenn_1_1_layer.html#a9572f2cf6fd1c21d5265cf693129f422">imagenn::Layer::~Layer</a></div><div class="ttdeci">virtual ~Layer()=default</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_a9be19360ac637b7a71bb1fa6096f99b8"><div class="ttname"><a href="classimagenn_1_1_layer.html#a9be19360ac637b7a71bb1fa6096f99b8">imagenn::Layer::links_</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; Link &gt; &gt; links_</div><div class="ttdoc">Связи смещения, принадлежащие слою.</div><div class="ttdef"><b>Определения</b> layer.hpp:97</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_aa9891a50361fab7c108a027ac0bad882"><div class="ttname"><a href="classimagenn_1_1_layer.html#aa9891a50361fab7c108a027ac0bad882">imagenn::Layer::calc</a></div><div class="ttdeci">virtual void calc()</div><div class="ttdoc">Вычисляет выходы всех нейронов слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_ab629f5c7e429f8820850ad3e8b5415c6"><div class="ttname"><a href="classimagenn_1_1_layer.html#ab629f5c7e429f8820850ad3e8b5415c6">imagenn::Layer::Layer</a></div><div class="ttdeci">Layer(NeuronType type, std::size_t size, const ActivationBase &amp;activation, bool use_bias)</div><div class="ttdoc">Создаёт слой заданного размера.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_ad06ff8908ca43db05ad123e96ef4f1b3"><div class="ttname"><a href="classimagenn_1_1_layer.html#ad06ff8908ca43db05ad123e96ef4f1b3">imagenn::Layer::back_propagation_apply</a></div><div class="ttdeci">void back_propagation_apply()</div><div class="ttdoc">Применяет накопленные дельты весов слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_ad31faa4b30a3f7b717b89ea08863608b"><div class="ttname"><a href="classimagenn_1_1_layer.html#ad31faa4b30a3f7b717b89ea08863608b">imagenn::Layer::back_propagation_hidden_l</a></div><div class="ttdeci">void back_propagation_hidden_l(double speed)</div><div class="ttdoc">Считает дельты весов для скрытого слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_html_ad82bd8f4768128ab8999d47f67cf587c"><div class="ttname"><a href="classimagenn_1_1_layer.html#ad82bd8f4768128ab8999d47f67cf587c">imagenn::Layer::export_weights</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; export_weights() const</div><div class="ttdoc">Экспортирует веса слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_softmax_html_a3ce886cec5cb4b510fe5ebf48166cca9"><div class="ttname"><a href="classimagenn_1_1_layer_softmax.html#a3ce886cec5cb4b510fe5ebf48166cca9">imagenn::LayerSoftmax::back_propagation_output_l</a></div><div class="ttdeci">void back_propagation_output_l(const std::vector&lt; double &gt; &amp;refs, double speed) override</div><div class="ttdoc">Считает дельты весов выходного softmax-слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_softmax_html_a3f1e098c1f3c1743f76a3bed018c41a8"><div class="ttname"><a href="classimagenn_1_1_layer_softmax.html#a3f1e098c1f3c1743f76a3bed018c41a8">imagenn::LayerSoftmax::get_loss</a></div><div class="ttdeci">double get_loss(const std::vector&lt; double &gt; &amp;refs) const override</div><div class="ttdoc">Считает кросс-энтропийную потерю.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_softmax_html_acaa29be89c6e4db680a74a260d609424"><div class="ttname"><a href="classimagenn_1_1_layer_softmax.html#acaa29be89c6e4db680a74a260d609424">imagenn::LayerSoftmax::LayerSoftmax</a></div><div class="ttdeci">LayerSoftmax(std::size_t size)</div><div class="ttdoc">Создаёт softmax-слой заданного размера.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_layer_softmax_html_afca8fc63ce5d9e5045a803d62ff26309"><div class="ttname"><a href="classimagenn_1_1_layer_softmax.html#afca8fc63ce5d9e5045a803d62ff26309">imagenn::LayerSoftmax::calc</a></div><div class="ttdeci">void calc() override</div><div class="ttdoc">Вычисляет softmax по всем выходам слоя.</div></div>
+<div class="ttc" id="alink_8hpp_html"><div class="ttname"><a href="link_8hpp.html">link.hpp</a></div><div class="ttdoc">Связь между двумя нейронами.</div></div>
+<div class="ttc" id="anamespaceimagenn_html"><div class="ttname"><a href="namespaceimagenn.html">imagenn</a></div><div class="ttdoc">Корневое пространство имён всех компонентов проекта.</div><div class="ttdef"><b>Определения</b> activations.hpp:9</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a4af68ccc452cbf4a2f0202a105d2bc24"><div class="ttname"><a href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24">imagenn::NeuronType</a></div><div class="ttdeci">NeuronType</div><div class="ttdoc">Тип нейронов в слое.</div><div class="ttdef"><b>Определения</b> layer.hpp:18</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a4af68ccc452cbf4a2f0202a105d2bc24a31d953b9d49a6b4378f45097047976d0"><div class="ttname"><a href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a31d953b9d49a6b4378f45097047976d0">imagenn::NeuronType::Softmax</a></div><div class="ttdeci">@ Softmax</div><div class="ttdoc">Нейрон выходного слоя softmax.</div><div class="ttdef"><b>Определения</b> layer.hpp:21</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a4af68ccc452cbf4a2f0202a105d2bc24a3d971943089a3388c01fb297a32d9ba7"><div class="ttname"><a href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24a3d971943089a3388c01fb297a32d9ba7">imagenn::NeuronType::Transparent</a></div><div class="ttdeci">@ Transparent</div><div class="ttdoc">Прозрачный нейрон (входной слой).</div><div class="ttdef"><b>Определения</b> layer.hpp:20</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a4af68ccc452cbf4a2f0202a105d2bc24ad2203cb1237cb6460cbad94564e39345"><div class="ttname"><a href="namespaceimagenn.html#a4af68ccc452cbf4a2f0202a105d2bc24ad2203cb1237cb6460cbad94564e39345">imagenn::NeuronType::Regular</a></div><div class="ttdeci">@ Regular</div><div class="ttdoc">Обычный нейрон.</div><div class="ttdef"><b>Определения</b> layer.hpp:19</div></div>
+<div class="ttc" id="aneuron_8hpp_html"><div class="ttname"><a href="neuron_8hpp.html">neuron.hpp</a></div><div class="ttdoc">Нейрон и его специализированные варианты.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="layer_8hpp.html">layer.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

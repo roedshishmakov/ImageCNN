@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Исходный файл include/imagenn/spatial.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('spatial_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">spatial.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="spatial_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGENN_SPATIAL_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGENN_SPATIAL_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="activations_8hpp.html">imagenn/activations.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="tensor_8hpp.html">imagenn/tensor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceimagenn.html">imagenn</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a141dcbef5dd4c3c4fc4d642b75b1a6fd">   20</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a141dcbef5dd4c3c4fc4d642b75b1a6fd">~SpatialLayer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a66b4fd84567771052a96fcfb00cb265c">   26</a></span>    <span class="keyword">virtual</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a66b4fd84567771052a96fcfb00cb265c">forward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; input) = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a553a5dc8a84603e68ad6d813bbf2139f">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a553a5dc8a84603e68ad6d813bbf2139f">backward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; grad_output) = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a3431c8563a478d83d58ca92f04145b30">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a3431c8563a478d83d58ca92f04145b30">apply</a>(<span class="keywordtype">double</span> speed, <span class="keywordtype">double</span> clip_value, <span class="keywordtype">bool</span> use_clip);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#ac8b9b7d8d52d97c2c6a85f5d17fc1da2">   41</a></span>    <span class="keyword">virtual</span> std::vector&lt;double&gt; <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#ac8b9b7d8d52d97c2c6a85f5d17fc1da2">export_weights</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a323f5fc6114b0ff574e70e83b8296f1c">   45</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a323f5fc6114b0ff574e70e83b8296f1c">import_weights</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; weights);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a93e95f3beef699f652a7c8fde97ce292">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a93e95f3beef699f652a7c8fde97ce292">out_channels</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">out_c_</a>; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a89a7014af945ddbc3a6871acb6b845bd">   53</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a89a7014af945ddbc3a6871acb6b845bd">out_height</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">out_h_</a>; }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a6e4e62b55e83c43efbadb113e8f86c5f">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classimagenn_1_1_spatial_layer.html#a6e4e62b55e83c43efbadb113e8f86c5f">out_width</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">out_w_</a>; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a517ee1a3fad585f48d9c15fbecf2f8d7">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a517ee1a3fad585f48d9c15fbecf2f8d7">in_c_</a> = 0;  </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#ad4d874560442552346f09e8fc36fc447">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#ad4d874560442552346f09e8fc36fc447">in_h_</a> = 0;  </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a6cae7f17ea180d257d33cd249e92cb2f">   62</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a6cae7f17ea180d257d33cd249e92cb2f">in_w_</a> = 0;  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">   63</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">out_c_</a> = 0; </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">   64</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">out_h_</a> = 0; </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">   65</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">out_w_</a> = 0; </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html">   69</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_conv_layer.html#af1ad8dd6fd1bc8054e5b8656d406860e">ConvLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#af1ad8dd6fd1bc8054e5b8656d406860e">   80</a></span>    <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#af1ad8dd6fd1bc8054e5b8656d406860e">ConvLayer</a>(<span class="keywordtype">int</span> in_channels, <span class="keywordtype">int</span> in_height, <span class="keywordtype">int</span> in_width, <span class="keywordtype">int</span> filters, <span class="keywordtype">int</span> kernel,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>              <span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>&amp; activation, <span class="keywordtype">double</span> random_radius);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#ad56ab16266a1f51b56e565c51af6fc24">   83</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#ad56ab16266a1f51b56e565c51af6fc24">forward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; input) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a63939c72048a8ec688d748809798bc17">   84</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a63939c72048a8ec688d748809798bc17">backward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; grad_output) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a68be358d4a8b5396946512a133bc1487">   85</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a68be358d4a8b5396946512a133bc1487">apply</a>(<span class="keywordtype">double</span> speed, <span class="keywordtype">double</span> clip_value, <span class="keywordtype">bool</span> use_clip) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#ab52752ddd30b250cfe3d82c501759695">   86</a></span>    std::vector&lt;double&gt; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#ab52752ddd30b250cfe3d82c501759695">export_weights</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#aef2c03209010d7f90e57221a4c6c4b27">   87</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#aef2c03209010d7f90e57221a4c6c4b27">import_weights</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a26d991cbcf137624a420df5df5af9ee2">weights</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a26d991cbcf137624a420df5df5af9ee2">   91</a></span>    <span class="keyword">const</span> std::vector&lt;double&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a26d991cbcf137624a420df5df5af9ee2">weights</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#aae395103e36295bc4119753994c3b22c">weights_</a>; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a49f8414d7a0c11436cfbb3859d00b203">   95</a></span>    <span class="keyword">const</span> std::vector&lt;double&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a49f8414d7a0c11436cfbb3859d00b203">biases</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#ad0ab909c414e5ddb9144d77a5a7be853">biases_</a>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#ac84469f84e28ef3a799676ce4611265b">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#ac84469f84e28ef3a799676ce4611265b">load</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a26d991cbcf137624a420df5df5af9ee2">weights</a>, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#a49f8414d7a0c11436cfbb3859d00b203">biases</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#ad4209e6986e4d49d59346ddb31c5b67a">  110</a></span>    std::size_t <a class="code hl_function" href="classimagenn_1_1_conv_layer.html#ad4209e6986e4d49d59346ddb31c5b67a">weight_index</a>(<span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c, <span class="keywordtype">int</span> ky, <span class="keywordtype">int</span> kx) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a2ebb959f8c2cb228e66f478d3dcd0b68">  112</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a2ebb959f8c2cb228e66f478d3dcd0b68">kernel_</a> = 0;                   </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a0f96def7ffe6dd106847345e56a9aaed">  113</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a>* <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a0f96def7ffe6dd106847345e56a9aaed">act_</a>;        </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#aae395103e36295bc4119753994c3b22c">  114</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#aae395103e36295bc4119753994c3b22c">weights_</a>;      </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#ad0ab909c414e5ddb9144d77a5a7be853">  115</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#ad0ab909c414e5ddb9144d77a5a7be853">biases_</a>;       </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a75b7975d7fea8fdb1bc3c678a1c80696">  116</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a75b7975d7fea8fdb1bc3c678a1c80696">last_input_</a>;                </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a47567deb46e4f1ae705a0039892e2bf5">  117</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a47567deb46e4f1ae705a0039892e2bf5">last_z_</a>;       </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a8e332689fef2e8448ac196e80e74223d">  118</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a8e332689fef2e8448ac196e80e74223d">weight_grads_</a>; </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classimagenn_1_1_conv_layer.html#a9662f229fa9ab00d42035d9fcc354d59">  119</a></span>    std::vector&lt;double&gt; <a class="code hl_variable" href="classimagenn_1_1_conv_layer.html#a9662f229fa9ab00d42035d9fcc354d59">bias_grads_</a>;   </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html">  123</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_max_pool_layer.html#ac70517dad64aaf75b35de6671348df77">MaxPoolLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html#ac70517dad64aaf75b35de6671348df77">  131</a></span>    <a class="code hl_function" href="classimagenn_1_1_max_pool_layer.html#ac70517dad64aaf75b35de6671348df77">MaxPoolLayer</a>(<span class="keywordtype">int</span> in_channels, <span class="keywordtype">int</span> in_height, <span class="keywordtype">int</span> in_width, <span class="keywordtype">int</span> pool);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html#af9e091a1adf58f569af7803a7d0dfa62">  133</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_max_pool_layer.html#af9e091a1adf58f569af7803a7d0dfa62">forward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; input) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html#a2a0de236ebe003f6b2268ad68faa8429">  134</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_max_pool_layer.html#a2a0de236ebe003f6b2268ad68faa8429">backward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; grad_output) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html#a6b207025a3439d4b0ea33e80b7113e70">  137</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classimagenn_1_1_max_pool_layer.html#a6b207025a3439d4b0ea33e80b7113e70">pool_</a> = 0;                    </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classimagenn_1_1_max_pool_layer.html#a0897e00bc52074970a73f867d720c847">  138</a></span>    std::vector&lt;std::size_t&gt; <a class="code hl_variable" href="classimagenn_1_1_max_pool_layer.html#a0897e00bc52074970a73f867d720c847">argmax_</a>; </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classimagenn_1_1_flatten_layer.html">  142</a></span><span class="keyword">class </span><a class="code hl_function" href="classimagenn_1_1_flatten_layer.html#a7e598e18db91cd26cf2d10ad953f3b22">FlattenLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_spatial_layer.html">SpatialLayer</a> {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classimagenn_1_1_flatten_layer.html#a7e598e18db91cd26cf2d10ad953f3b22">  148</a></span>    <a class="code hl_function" href="classimagenn_1_1_flatten_layer.html#a7e598e18db91cd26cf2d10ad953f3b22">FlattenLayer</a>(<span class="keywordtype">int</span> in_channels, <span class="keywordtype">int</span> in_height, <span class="keywordtype">int</span> in_width);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classimagenn_1_1_flatten_layer.html#a35339929c9a3fd8ad991cba3f25c1495">  150</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_flatten_layer.html#a35339929c9a3fd8ad991cba3f25c1495">forward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; input) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classimagenn_1_1_flatten_layer.html#a84fed8d5cefa78302c8fd884db02cca4">  151</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="classimagenn_1_1_flatten_layer.html#a84fed8d5cefa78302c8fd884db02cca4">backward</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a>&amp; grad_output) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>} <span class="comment">// namespace imagenn</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#endif </span><span class="comment">// IMAGENN_SPATIAL_HPP</span></div>
+<div class="ttc" id="aactivations_8hpp_html"><div class="ttname"><a href="activations_8hpp.html">activations.hpp</a></div><div class="ttdoc">Функции активации нейронов.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html"><div class="ttname"><a href="classimagenn_1_1_activation_base.html">imagenn::ActivationBase</a></div><div class="ttdoc">Родительский класс функции активации.</div><div class="ttdef"><b>Определения</b> activations.hpp:14</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a0f96def7ffe6dd106847345e56a9aaed"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a0f96def7ffe6dd106847345e56a9aaed">imagenn::ConvLayer::act_</a></div><div class="ttdeci">const ActivationBase * act_</div><div class="ttdoc">Функция активации.</div><div class="ttdef"><b>Определения</b> spatial.hpp:113</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a26d991cbcf137624a420df5df5af9ee2"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a26d991cbcf137624a420df5df5af9ee2">imagenn::ConvLayer::weights</a></div><div class="ttdeci">const std::vector&lt; double &gt; &amp; weights() const</div><div class="ttdoc">Возвращает веса всех фильтров (для сохранения модели).</div><div class="ttdef"><b>Определения</b> spatial.hpp:91</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a2ebb959f8c2cb228e66f478d3dcd0b68"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a2ebb959f8c2cb228e66f478d3dcd0b68">imagenn::ConvLayer::kernel_</a></div><div class="ttdeci">int kernel_</div><div class="ttdoc">Сторона ядра.</div><div class="ttdef"><b>Определения</b> spatial.hpp:112</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a47567deb46e4f1ae705a0039892e2bf5"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a47567deb46e4f1ae705a0039892e2bf5">imagenn::ConvLayer::last_z_</a></div><div class="ttdeci">std::vector&lt; double &gt; last_z_</div><div class="ttdoc">Значения до активации (для backward).</div><div class="ttdef"><b>Определения</b> spatial.hpp:117</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a49f8414d7a0c11436cfbb3859d00b203"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a49f8414d7a0c11436cfbb3859d00b203">imagenn::ConvLayer::biases</a></div><div class="ttdeci">const std::vector&lt; double &gt; &amp; biases() const</div><div class="ttdoc">Возвращает смещения фильтров (для сохранения модели).</div><div class="ttdef"><b>Определения</b> spatial.hpp:95</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a63939c72048a8ec688d748809798bc17"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a63939c72048a8ec688d748809798bc17">imagenn::ConvLayer::backward</a></div><div class="ttdeci">Tensor backward(const Tensor &amp;grad_output) override</div><div class="ttdoc">Обратный проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a68be358d4a8b5396946512a133bc1487"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a68be358d4a8b5396946512a133bc1487">imagenn::ConvLayer::apply</a></div><div class="ttdeci">void apply(double speed, double clip_value, bool use_clip) override</div><div class="ttdoc">Применяет накопленные градиенты весов.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a75b7975d7fea8fdb1bc3c678a1c80696"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a75b7975d7fea8fdb1bc3c678a1c80696">imagenn::ConvLayer::last_input_</a></div><div class="ttdeci">Tensor last_input_</div><div class="ttdoc">Вход прямого прохода (для backward).</div><div class="ttdef"><b>Определения</b> spatial.hpp:116</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a8e332689fef2e8448ac196e80e74223d"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a8e332689fef2e8448ac196e80e74223d">imagenn::ConvLayer::weight_grads_</a></div><div class="ttdeci">std::vector&lt; double &gt; weight_grads_</div><div class="ttdoc">Градиенты весов.</div><div class="ttdef"><b>Определения</b> spatial.hpp:118</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_a9662f229fa9ab00d42035d9fcc354d59"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#a9662f229fa9ab00d42035d9fcc354d59">imagenn::ConvLayer::bias_grads_</a></div><div class="ttdeci">std::vector&lt; double &gt; bias_grads_</div><div class="ttdoc">Градиенты смещений.</div><div class="ttdef"><b>Определения</b> spatial.hpp:119</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_aae395103e36295bc4119753994c3b22c"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#aae395103e36295bc4119753994c3b22c">imagenn::ConvLayer::weights_</a></div><div class="ttdeci">std::vector&lt; double &gt; weights_</div><div class="ttdoc">Веса ядер.</div><div class="ttdef"><b>Определения</b> spatial.hpp:114</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_ab52752ddd30b250cfe3d82c501759695"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#ab52752ddd30b250cfe3d82c501759695">imagenn::ConvLayer::export_weights</a></div><div class="ttdeci">std::vector&lt; double &gt; export_weights() const override</div><div class="ttdoc">Экспортирует обучаемые параметры слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_ac84469f84e28ef3a799676ce4611265b"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#ac84469f84e28ef3a799676ce4611265b">imagenn::ConvLayer::load</a></div><div class="ttdeci">void load(const std::vector&lt; double &gt; &amp;weights, const std::vector&lt; double &gt; &amp;biases)</div><div class="ttdoc">Загружает веса и смещения.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_ad0ab909c414e5ddb9144d77a5a7be853"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#ad0ab909c414e5ddb9144d77a5a7be853">imagenn::ConvLayer::biases_</a></div><div class="ttdeci">std::vector&lt; double &gt; biases_</div><div class="ttdoc">Смещения фильтров.</div><div class="ttdef"><b>Определения</b> spatial.hpp:115</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_ad4209e6986e4d49d59346ddb31c5b67a"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#ad4209e6986e4d49d59346ddb31c5b67a">imagenn::ConvLayer::weight_index</a></div><div class="ttdeci">std::size_t weight_index(int f, int c, int ky, int kx) const</div><div class="ttdoc">Индекс веса в плоском массиве.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_ad56ab16266a1f51b56e565c51af6fc24"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#ad56ab16266a1f51b56e565c51af6fc24">imagenn::ConvLayer::forward</a></div><div class="ttdeci">Tensor forward(const Tensor &amp;input) override</div><div class="ttdoc">Прямой проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_aef2c03209010d7f90e57221a4c6c4b27"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#aef2c03209010d7f90e57221a4c6c4b27">imagenn::ConvLayer::import_weights</a></div><div class="ttdeci">void import_weights(const std::vector&lt; double &gt; &amp;weights) override</div><div class="ttdoc">Загружает обучаемые параметры слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_conv_layer_html_af1ad8dd6fd1bc8054e5b8656d406860e"><div class="ttname"><a href="classimagenn_1_1_conv_layer.html#af1ad8dd6fd1bc8054e5b8656d406860e">imagenn::ConvLayer::ConvLayer</a></div><div class="ttdeci">ConvLayer(int in_channels, int in_height, int in_width, int filters, int kernel, const ActivationBase &amp;activation, double random_radius)</div><div class="ttdoc">Создаёт свёрточный слой.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_flatten_layer_html_a35339929c9a3fd8ad991cba3f25c1495"><div class="ttname"><a href="classimagenn_1_1_flatten_layer.html#a35339929c9a3fd8ad991cba3f25c1495">imagenn::FlattenLayer::forward</a></div><div class="ttdeci">Tensor forward(const Tensor &amp;input) override</div><div class="ttdoc">Прямой проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_flatten_layer_html_a7e598e18db91cd26cf2d10ad953f3b22"><div class="ttname"><a href="classimagenn_1_1_flatten_layer.html#a7e598e18db91cd26cf2d10ad953f3b22">imagenn::FlattenLayer::FlattenLayer</a></div><div class="ttdeci">FlattenLayer(int in_channels, int in_height, int in_width)</div><div class="ttdoc">Создаёт слой выпрямления.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_flatten_layer_html_a84fed8d5cefa78302c8fd884db02cca4"><div class="ttname"><a href="classimagenn_1_1_flatten_layer.html#a84fed8d5cefa78302c8fd884db02cca4">imagenn::FlattenLayer::backward</a></div><div class="ttdeci">Tensor backward(const Tensor &amp;grad_output) override</div><div class="ttdoc">Обратный проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_max_pool_layer_html_a0897e00bc52074970a73f867d720c847"><div class="ttname"><a href="classimagenn_1_1_max_pool_layer.html#a0897e00bc52074970a73f867d720c847">imagenn::MaxPoolLayer::argmax_</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; argmax_</div><div class="ttdoc">Индексы максимумов во входе (для backward).</div><div class="ttdef"><b>Определения</b> spatial.hpp:138</div></div>
+<div class="ttc" id="aclassimagenn_1_1_max_pool_layer_html_a2a0de236ebe003f6b2268ad68faa8429"><div class="ttname"><a href="classimagenn_1_1_max_pool_layer.html#a2a0de236ebe003f6b2268ad68faa8429">imagenn::MaxPoolLayer::backward</a></div><div class="ttdeci">Tensor backward(const Tensor &amp;grad_output) override</div><div class="ttdoc">Обратный проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_max_pool_layer_html_a6b207025a3439d4b0ea33e80b7113e70"><div class="ttname"><a href="classimagenn_1_1_max_pool_layer.html#a6b207025a3439d4b0ea33e80b7113e70">imagenn::MaxPoolLayer::pool_</a></div><div class="ttdeci">int pool_</div><div class="ttdoc">Сторона окна.</div><div class="ttdef"><b>Определения</b> spatial.hpp:137</div></div>
+<div class="ttc" id="aclassimagenn_1_1_max_pool_layer_html_ac70517dad64aaf75b35de6671348df77"><div class="ttname"><a href="classimagenn_1_1_max_pool_layer.html#ac70517dad64aaf75b35de6671348df77">imagenn::MaxPoolLayer::MaxPoolLayer</a></div><div class="ttdeci">MaxPoolLayer(int in_channels, int in_height, int in_width, int pool)</div><div class="ttdoc">Создаёт слой подвыборки.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_max_pool_layer_html_af9e091a1adf58f569af7803a7d0dfa62"><div class="ttname"><a href="classimagenn_1_1_max_pool_layer.html#af9e091a1adf58f569af7803a7d0dfa62">imagenn::MaxPoolLayer::forward</a></div><div class="ttdeci">Tensor forward(const Tensor &amp;input) override</div><div class="ttdoc">Прямой проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html">imagenn::SpatialLayer</a></div><div class="ttdoc">Базовый класс спатиального слоя, работающего с тензорами.</div><div class="ttdef"><b>Определения</b> spatial.hpp:18</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a141dcbef5dd4c3c4fc4d642b75b1a6fd"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a141dcbef5dd4c3c4fc4d642b75b1a6fd">imagenn::SpatialLayer::~SpatialLayer</a></div><div class="ttdeci">virtual ~SpatialLayer()=default</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a323f5fc6114b0ff574e70e83b8296f1c"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a323f5fc6114b0ff574e70e83b8296f1c">imagenn::SpatialLayer::import_weights</a></div><div class="ttdeci">virtual void import_weights(const std::vector&lt; double &gt; &amp;weights)</div><div class="ttdoc">Загружает обучаемые параметры слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a3431c8563a478d83d58ca92f04145b30"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a3431c8563a478d83d58ca92f04145b30">imagenn::SpatialLayer::apply</a></div><div class="ttdeci">virtual void apply(double speed, double clip_value, bool use_clip)</div><div class="ttdoc">Применяет накопленные градиенты весов.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a480711332721cb8d589574430480c40f"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">imagenn::SpatialLayer::out_h_</a></div><div class="ttdeci">int out_h_</div><div class="ttdoc">Высота выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:64</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a517ee1a3fad585f48d9c15fbecf2f8d7"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a517ee1a3fad585f48d9c15fbecf2f8d7">imagenn::SpatialLayer::in_c_</a></div><div class="ttdeci">int in_c_</div><div class="ttdoc">Каналы входа.</div><div class="ttdef"><b>Определения</b> spatial.hpp:60</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a553a5dc8a84603e68ad6d813bbf2139f"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a553a5dc8a84603e68ad6d813bbf2139f">imagenn::SpatialLayer::backward</a></div><div class="ttdeci">virtual Tensor backward(const Tensor &amp;grad_output)=0</div><div class="ttdoc">Обратный проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a66b4fd84567771052a96fcfb00cb265c"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a66b4fd84567771052a96fcfb00cb265c">imagenn::SpatialLayer::forward</a></div><div class="ttdeci">virtual Tensor forward(const Tensor &amp;input)=0</div><div class="ttdoc">Прямой проход.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a6cae7f17ea180d257d33cd249e92cb2f"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a6cae7f17ea180d257d33cd249e92cb2f">imagenn::SpatialLayer::in_w_</a></div><div class="ttdeci">int in_w_</div><div class="ttdoc">Ширина входа.</div><div class="ttdef"><b>Определения</b> spatial.hpp:62</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a6e4e62b55e83c43efbadb113e8f86c5f"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a6e4e62b55e83c43efbadb113e8f86c5f">imagenn::SpatialLayer::out_width</a></div><div class="ttdeci">int out_width() const</div><div class="ttdoc">Ширина выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:57</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a78d9f62664721a2826315146cd6222c7"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">imagenn::SpatialLayer::out_c_</a></div><div class="ttdeci">int out_c_</div><div class="ttdoc">Каналы выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:63</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a89a7014af945ddbc3a6871acb6b845bd"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a89a7014af945ddbc3a6871acb6b845bd">imagenn::SpatialLayer::out_height</a></div><div class="ttdeci">int out_height() const</div><div class="ttdoc">Высота выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:53</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_a93e95f3beef699f652a7c8fde97ce292"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#a93e95f3beef699f652a7c8fde97ce292">imagenn::SpatialLayer::out_channels</a></div><div class="ttdeci">int out_channels() const</div><div class="ttdoc">Число каналов выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:49</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_ac8b9b7d8d52d97c2c6a85f5d17fc1da2"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#ac8b9b7d8d52d97c2c6a85f5d17fc1da2">imagenn::SpatialLayer::export_weights</a></div><div class="ttdeci">virtual std::vector&lt; double &gt; export_weights() const</div><div class="ttdoc">Экспортирует обучаемые параметры слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_ad4d874560442552346f09e8fc36fc447"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#ad4d874560442552346f09e8fc36fc447">imagenn::SpatialLayer::in_h_</a></div><div class="ttdeci">int in_h_</div><div class="ttdoc">Высота входа.</div><div class="ttdef"><b>Определения</b> spatial.hpp:61</div></div>
+<div class="ttc" id="aclassimagenn_1_1_spatial_layer_html_ae190caab317bac58b40a10957b21add6"><div class="ttname"><a href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">imagenn::SpatialLayer::out_w_</a></div><div class="ttdeci">int out_w_</div><div class="ttdoc">Ширина выхода.</div><div class="ttdef"><b>Определения</b> spatial.hpp:65</div></div>
+<div class="ttc" id="anamespaceimagenn_html"><div class="ttname"><a href="namespaceimagenn.html">imagenn</a></div><div class="ttdoc">Корневое пространство имён всех компонентов проекта.</div><div class="ttdef"><b>Определения</b> activations.hpp:9</div></div>
+<div class="ttc" id="astructimagenn_1_1_tensor_html"><div class="ttname"><a href="structimagenn_1_1_tensor.html">imagenn::Tensor</a></div><div class="ttdoc">Трёхмерный тензор (каналы, высота, ширина) с плоским хранением.</div><div class="ttdef"><b>Определения</b> tensor.hpp:16</div></div>
+<div class="ttc" id="atensor_8hpp_html"><div class="ttname"><a href="tensor_8hpp.html">tensor.hpp</a></div><div class="ttdoc">Трёхмерный тензор для спатиальных (свёрточных) слоёв.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="spatial_8hpp.html">spatial.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

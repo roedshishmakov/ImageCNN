@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Исходный файл include/imagenn/activations.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('activations_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">activations.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="activations_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGENN_ACTIVATIONS_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGENN_ACTIVATIONS_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespaceimagenn.html">    9</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceimagenn.html">imagenn</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_base.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_base.html#ac477d9d9a9361190c4eca40f8d42f135">   16</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classimagenn_1_1_activation_base.html#ac477d9d9a9361190c4eca40f8d42f135">~ActivationBase</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_base.html#a8ae323bc7bd053921cd5b089bdca628a">   21</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_base.html#a8ae323bc7bd053921cd5b089bdca628a">calc</a>(<span class="keywordtype">double</span> x) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_base.html#addda70d67b542371bbc01bcad79d5598">   26</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_base.html#addda70d67b542371bbc01bcad79d5598">derivative</a>(<span class="keywordtype">double</span> x) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_base.html#a3ea4aaaae806ea7ec401e52985c635ce">   30</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classimagenn_1_1_activation_base.html#a3ea4aaaae806ea7ec401e52985c635ce">is_softmax</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_transparent.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_activation_transparent.html">ActivationTransparent</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_transparent.html#aa8e4a8632b19589322f2b415c11138f4">   39</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_transparent.html#aa8e4a8632b19589322f2b415c11138f4">calc</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_transparent.html#abcce2e36c23c8e5b075162159d317d1d">   44</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_transparent.html#abcce2e36c23c8e5b075162159d317d1d">derivative</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_relu.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_activation_relu.html">ActivationRelu</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_relu.html#a8b21773e1634f8ebcbf00b73a622a4cd">   53</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_relu.html#a8b21773e1634f8ebcbf00b73a622a4cd">calc</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_relu.html#a57a77cd7de317abd1e0ad8d47aa01bd4">   58</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_relu.html#a57a77cd7de317abd1e0ad8d47aa01bd4">derivative</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_sigmoid.html">   62</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_activation_sigmoid.html">ActivationSigmoid</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_sigmoid.html#a18736083192548f72a160bf2f772f876">   67</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_sigmoid.html#a18736083192548f72a160bf2f772f876">calc</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_sigmoid.html#a873dcc06f83613db3235a70581aadf57">   72</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_sigmoid.html#a873dcc06f83613db3235a70581aadf57">derivative</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_softmax.html">   79</a></span><span class="keyword">class </span><a class="code hl_class" href="classimagenn_1_1_activation_softmax.html">ActivationSoftmax</a> : <span class="keyword">public</span> <a class="code hl_class" href="classimagenn_1_1_activation_base.html">ActivationBase</a> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_softmax.html#a67f12573d3388e4b98b6ae3dd7660ea4">   85</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_softmax.html#a67f12573d3388e4b98b6ae3dd7660ea4">calc</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_softmax.html#a87e5b4f9f2e874721875ae650c2aaaa5">   91</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classimagenn_1_1_activation_softmax.html#a87e5b4f9f2e874721875ae650c2aaaa5">derivative</a>(<span class="keywordtype">double</span> x) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_softmax.html#af253a9906c81d40f5fd1b83e7a323885">   95</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classimagenn_1_1_activation_softmax.html#af253a9906c81d40f5fd1b83e7a323885">is_softmax</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classimagenn_1_1_activation_softmax.html#a1c2442b5aa3b7b5e083cdaf8f98bab2b">  104</a></span>    <span class="keyword">static</span> std::vector&lt;double&gt; <a class="code hl_function" href="classimagenn_1_1_activation_softmax.html#a1c2442b5aa3b7b5e083cdaf8f98bab2b">calc_layer</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; layer_outputs);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#aa73394890441142a246e7a127511425e">  109</a></span><span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_transparent.html">ActivationTransparent</a>&amp; <a class="code hl_function" href="namespaceimagenn.html#aa73394890441142a246e7a127511425e">transparent_activation</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a726f580bcfa9f3e22b58733e35a6f0dd">  113</a></span><span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_relu.html">ActivationRelu</a>&amp; <a class="code hl_function" href="namespaceimagenn.html#a726f580bcfa9f3e22b58733e35a6f0dd">relu_activation</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a44574509ecfb3e3a93c350f013427e65">  117</a></span><span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_sigmoid.html">ActivationSigmoid</a>&amp; <a class="code hl_function" href="namespaceimagenn.html#a44574509ecfb3e3a93c350f013427e65">sigmoid_activation</a>();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a1b4d367f8c3d072551df0ba1fe397fbd">  121</a></span><span class="keyword">const</span> <a class="code hl_class" href="classimagenn_1_1_activation_softmax.html">ActivationSoftmax</a>&amp; <a class="code hl_function" href="namespaceimagenn.html#a1b4d367f8c3d072551df0ba1fe397fbd">softmax_activation</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>} <span class="comment">// namespace imagenn</span></div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif </span><span class="comment">// IMAGENN_ACTIVATIONS_HPP</span></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html"><div class="ttname"><a href="classimagenn_1_1_activation_base.html">imagenn::ActivationBase</a></div><div class="ttdoc">Родительский класс функции активации.</div><div class="ttdef"><b>Определения</b> activations.hpp:14</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html_a3ea4aaaae806ea7ec401e52985c635ce"><div class="ttname"><a href="classimagenn_1_1_activation_base.html#a3ea4aaaae806ea7ec401e52985c635ce">imagenn::ActivationBase::is_softmax</a></div><div class="ttdeci">virtual bool is_softmax() const</div><div class="ttdoc">Сообщает, является ли функция softmax.</div><div class="ttdef"><b>Определения</b> activations.hpp:30</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html_a8ae323bc7bd053921cd5b089bdca628a"><div class="ttname"><a href="classimagenn_1_1_activation_base.html#a8ae323bc7bd053921cd5b089bdca628a">imagenn::ActivationBase::calc</a></div><div class="ttdeci">virtual double calc(double x) const =0</div><div class="ttdoc">Вычисляет значение функции активации.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html_ac477d9d9a9361190c4eca40f8d42f135"><div class="ttname"><a href="classimagenn_1_1_activation_base.html#ac477d9d9a9361190c4eca40f8d42f135">imagenn::ActivationBase::~ActivationBase</a></div><div class="ttdeci">virtual ~ActivationBase()=default</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_base_html_addda70d67b542371bbc01bcad79d5598"><div class="ttname"><a href="classimagenn_1_1_activation_base.html#addda70d67b542371bbc01bcad79d5598">imagenn::ActivationBase::derivative</a></div><div class="ttdeci">virtual double derivative(double x) const =0</div><div class="ttdoc">Вычисляет значение производной функции активации.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_relu_html"><div class="ttname"><a href="classimagenn_1_1_activation_relu.html">imagenn::ActivationRelu</a></div><div class="ttdoc">Функция ReLU: y = max(0, x).</div><div class="ttdef"><b>Определения</b> activations.hpp:48</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_relu_html_a57a77cd7de317abd1e0ad8d47aa01bd4"><div class="ttname"><a href="classimagenn_1_1_activation_relu.html#a57a77cd7de317abd1e0ad8d47aa01bd4">imagenn::ActivationRelu::derivative</a></div><div class="ttdeci">double derivative(double x) const override</div><div class="ttdoc">Вычисляет производную ReLU.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_relu_html_a8b21773e1634f8ebcbf00b73a622a4cd"><div class="ttname"><a href="classimagenn_1_1_activation_relu.html#a8b21773e1634f8ebcbf00b73a622a4cd">imagenn::ActivationRelu::calc</a></div><div class="ttdeci">double calc(double x) const override</div><div class="ttdoc">Вычисляет ReLU.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_sigmoid_html"><div class="ttname"><a href="classimagenn_1_1_activation_sigmoid.html">imagenn::ActivationSigmoid</a></div><div class="ttdoc">Сигмоидальная функция активации.</div><div class="ttdef"><b>Определения</b> activations.hpp:62</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_sigmoid_html_a18736083192548f72a160bf2f772f876"><div class="ttname"><a href="classimagenn_1_1_activation_sigmoid.html#a18736083192548f72a160bf2f772f876">imagenn::ActivationSigmoid::calc</a></div><div class="ttdeci">double calc(double x) const override</div><div class="ttdoc">Вычисляет сигмоиду: 1 / (1 + e^(-x)).</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_sigmoid_html_a873dcc06f83613db3235a70581aadf57"><div class="ttname"><a href="classimagenn_1_1_activation_sigmoid.html#a873dcc06f83613db3235a70581aadf57">imagenn::ActivationSigmoid::derivative</a></div><div class="ttdeci">double derivative(double x) const override</div><div class="ttdoc">Вычисляет производную сигмоиды.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_softmax_html"><div class="ttname"><a href="classimagenn_1_1_activation_softmax.html">imagenn::ActivationSoftmax</a></div><div class="ttdoc">Функция Softmax.</div><div class="ttdef"><b>Определения</b> activations.hpp:79</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_softmax_html_a1c2442b5aa3b7b5e083cdaf8f98bab2b"><div class="ttname"><a href="classimagenn_1_1_activation_softmax.html#a1c2442b5aa3b7b5e083cdaf8f98bab2b">imagenn::ActivationSoftmax::calc_layer</a></div><div class="ttdeci">static std::vector&lt; double &gt; calc_layer(const std::vector&lt; double &gt; &amp;layer_outputs)</div><div class="ttdoc">Вычисляет softmax для всех выходов слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_softmax_html_a67f12573d3388e4b98b6ae3dd7660ea4"><div class="ttname"><a href="classimagenn_1_1_activation_softmax.html#a67f12573d3388e4b98b6ae3dd7660ea4">imagenn::ActivationSoftmax::calc</a></div><div class="ttdeci">double calc(double x) const override</div><div class="ttdoc">Не поддерживается: softmax вычисляется для всего слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_softmax_html_a87e5b4f9f2e874721875ae650c2aaaa5"><div class="ttname"><a href="classimagenn_1_1_activation_softmax.html#a87e5b4f9f2e874721875ae650c2aaaa5">imagenn::ActivationSoftmax::derivative</a></div><div class="ttdeci">double derivative(double x) const override</div><div class="ttdoc">Не поддерживается: производная softmax обрабатывается на уровне слоя.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_softmax_html_af253a9906c81d40f5fd1b83e7a323885"><div class="ttname"><a href="classimagenn_1_1_activation_softmax.html#af253a9906c81d40f5fd1b83e7a323885">imagenn::ActivationSoftmax::is_softmax</a></div><div class="ttdeci">bool is_softmax() const override</div><div class="ttdoc">Сообщает, что это функция softmax.</div><div class="ttdef"><b>Определения</b> activations.hpp:95</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_transparent_html"><div class="ttname"><a href="classimagenn_1_1_activation_transparent.html">imagenn::ActivationTransparent</a></div><div class="ttdoc">Прозрачная функция активации. На выходе то же значение, что и на входе.</div><div class="ttdef"><b>Определения</b> activations.hpp:34</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_transparent_html_aa8e4a8632b19589322f2b415c11138f4"><div class="ttname"><a href="classimagenn_1_1_activation_transparent.html#aa8e4a8632b19589322f2b415c11138f4">imagenn::ActivationTransparent::calc</a></div><div class="ttdeci">double calc(double x) const override</div><div class="ttdoc">Возвращает входное значение без изменений.</div></div>
+<div class="ttc" id="aclassimagenn_1_1_activation_transparent_html_abcce2e36c23c8e5b075162159d317d1d"><div class="ttname"><a href="classimagenn_1_1_activation_transparent.html#abcce2e36c23c8e5b075162159d317d1d">imagenn::ActivationTransparent::derivative</a></div><div class="ttdeci">double derivative(double x) const override</div><div class="ttdoc">Возвращает производную прозрачной функции.</div></div>
+<div class="ttc" id="anamespaceimagenn_html"><div class="ttname"><a href="namespaceimagenn.html">imagenn</a></div><div class="ttdoc">Корневое пространство имён всех компонентов проекта.</div><div class="ttdef"><b>Определения</b> activations.hpp:9</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a1b4d367f8c3d072551df0ba1fe397fbd"><div class="ttname"><a href="namespaceimagenn.html#a1b4d367f8c3d072551df0ba1fe397fbd">imagenn::softmax_activation</a></div><div class="ttdeci">const ActivationSoftmax &amp; softmax_activation()</div><div class="ttdoc">Возвращает разделяемый экземпляр функции softmax.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a44574509ecfb3e3a93c350f013427e65"><div class="ttname"><a href="namespaceimagenn.html#a44574509ecfb3e3a93c350f013427e65">imagenn::sigmoid_activation</a></div><div class="ttdeci">const ActivationSigmoid &amp; sigmoid_activation()</div><div class="ttdoc">Возвращает разделяемый экземпляр сигмоидальной функции.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a726f580bcfa9f3e22b58733e35a6f0dd"><div class="ttname"><a href="namespaceimagenn.html#a726f580bcfa9f3e22b58733e35a6f0dd">imagenn::relu_activation</a></div><div class="ttdeci">const ActivationRelu &amp; relu_activation()</div><div class="ttdoc">Возвращает разделяемый экземпляр функции ReLU.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_aa73394890441142a246e7a127511425e"><div class="ttname"><a href="namespaceimagenn.html#aa73394890441142a246e7a127511425e">imagenn::transparent_activation</a></div><div class="ttdeci">const ActivationTransparent &amp; transparent_activation()</div><div class="ttdoc">Возвращает разделяемый экземпляр прозрачной функции активации.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="activations_8hpp.html">activations.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

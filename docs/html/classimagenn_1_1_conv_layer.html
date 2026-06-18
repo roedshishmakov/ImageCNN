@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Класс imagenn::ConvLayer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1_conv_layer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс imagenn::ConvLayer</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Свёрточный слой (аналог Conv2D), шаг 1, без дополнения краёв.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spatial_8hpp_source.html">spatial.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:imagenn::ConvLayer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classimagenn_1_1_conv_layer.png" usemap="#imagenn_3A_3AConvLayer_map" alt=""/>
+  <map id="imagenn_3A_3AConvLayer_map" name="imagenn_3A_3AConvLayer_map">
+<area href="classimagenn_1_1_spatial_layer.html" title="Базовый класс спатиального слоя, работающего с тензорами." alt="imagenn::SpatialLayer" shape="rect" coords="0,0,136,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af1ad8dd6fd1bc8054e5b8656d406860e" id="r_af1ad8dd6fd1bc8054e5b8656d406860e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af1ad8dd6fd1bc8054e5b8656d406860e">ConvLayer</a> (int in_channels, int in_height, int in_width, int filters, int kernel, const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;activation, double random_radius)</td></tr>
+<tr class="memdesc:af1ad8dd6fd1bc8054e5b8656d406860e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт свёрточный слой.  <br /></td></tr>
+<tr class="memitem:ad56ab16266a1f51b56e565c51af6fc24" id="r_ad56ab16266a1f51b56e565c51af6fc24"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad56ab16266a1f51b56e565c51af6fc24">forward</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;input) override</td></tr>
+<tr class="memdesc:ad56ab16266a1f51b56e565c51af6fc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прямой проход.  <br /></td></tr>
+<tr class="memitem:a63939c72048a8ec688d748809798bc17" id="r_a63939c72048a8ec688d748809798bc17"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a63939c72048a8ec688d748809798bc17">backward</a> (const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;grad_output) override</td></tr>
+<tr class="memdesc:a63939c72048a8ec688d748809798bc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обратный проход.  <br /></td></tr>
+<tr class="memitem:a68be358d4a8b5396946512a133bc1487" id="r_a68be358d4a8b5396946512a133bc1487"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a68be358d4a8b5396946512a133bc1487">apply</a> (double speed, double clip_value, bool use_clip) override</td></tr>
+<tr class="memdesc:a68be358d4a8b5396946512a133bc1487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет накопленные градиенты весов.  <br /></td></tr>
+<tr class="memitem:ab52752ddd30b250cfe3d82c501759695" id="r_ab52752ddd30b250cfe3d82c501759695"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab52752ddd30b250cfe3d82c501759695">export_weights</a> () const override</td></tr>
+<tr class="memdesc:ab52752ddd30b250cfe3d82c501759695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует обучаемые параметры слоя.  <br /></td></tr>
+<tr class="memitem:aef2c03209010d7f90e57221a4c6c4b27" id="r_aef2c03209010d7f90e57221a4c6c4b27"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef2c03209010d7f90e57221a4c6c4b27">import_weights</a> (const std::vector&lt; double &gt; &amp;<a class="el" href="#a26d991cbcf137624a420df5df5af9ee2">weights</a>) override</td></tr>
+<tr class="memdesc:aef2c03209010d7f90e57221a4c6c4b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает обучаемые параметры слоя.  <br /></td></tr>
+<tr class="memitem:a26d991cbcf137624a420df5df5af9ee2" id="r_a26d991cbcf137624a420df5df5af9ee2"><td class="memItemLeft">const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2">weights</a> () const</td></tr>
+<tr class="memdesc:a26d991cbcf137624a420df5df5af9ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает веса всех фильтров (для сохранения модели).  <br /></td></tr>
+<tr class="memitem:a49f8414d7a0c11436cfbb3859d00b203" id="r_a49f8414d7a0c11436cfbb3859d00b203"><td class="memItemLeft">const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a49f8414d7a0c11436cfbb3859d00b203">biases</a> () const</td></tr>
+<tr class="memdesc:a49f8414d7a0c11436cfbb3859d00b203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает смещения фильтров (для сохранения модели).  <br /></td></tr>
+<tr class="memitem:ac84469f84e28ef3a799676ce4611265b" id="r_ac84469f84e28ef3a799676ce4611265b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac84469f84e28ef3a799676ce4611265b">load</a> (const std::vector&lt; double &gt; &amp;<a class="el" href="#a26d991cbcf137624a420df5df5af9ee2">weights</a>, const std::vector&lt; double &gt; &amp;<a class="el" href="#a49f8414d7a0c11436cfbb3859d00b203">biases</a>)</td></tr>
+<tr class="memdesc:ac84469f84e28ef3a799676ce4611265b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает веса и смещения.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classimagenn_1_1_spatial_layer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classimagenn_1_1_spatial_layer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="classimagenn_1_1_spatial_layer.html">imagenn::SpatialLayer</a></td></tr>
+<tr class="memitem:a141dcbef5dd4c3c4fc4d642b75b1a6fd inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a141dcbef5dd4c3c4fc4d642b75b1a6fd"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a141dcbef5dd4c3c4fc4d642b75b1a6fd">~SpatialLayer</a> ()=default</td></tr>
+<tr class="memitem:a93e95f3beef699f652a7c8fde97ce292 inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a93e95f3beef699f652a7c8fde97ce292"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a93e95f3beef699f652a7c8fde97ce292">out_channels</a> () const</td></tr>
+<tr class="memdesc:a93e95f3beef699f652a7c8fde97ce292 inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число каналов выхода.  <br /></td></tr>
+<tr class="memitem:a89a7014af945ddbc3a6871acb6b845bd inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a89a7014af945ddbc3a6871acb6b845bd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a89a7014af945ddbc3a6871acb6b845bd">out_height</a> () const</td></tr>
+<tr class="memdesc:a89a7014af945ddbc3a6871acb6b845bd inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота выхода.  <br /></td></tr>
+<tr class="memitem:a6e4e62b55e83c43efbadb113e8f86c5f inherit pub_methods_classimagenn_1_1_spatial_layer" id="r_a6e4e62b55e83c43efbadb113e8f86c5f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a6e4e62b55e83c43efbadb113e8f86c5f">out_width</a> () const</td></tr>
+<tr class="memdesc:a6e4e62b55e83c43efbadb113e8f86c5f inherit pub_methods_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина выхода.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ad4209e6986e4d49d59346ddb31c5b67a" id="r_ad4209e6986e4d49d59346ddb31c5b67a"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#ad4209e6986e4d49d59346ddb31c5b67a">weight_index</a> (int f, int c, int ky, int kx) const</td></tr>
+<tr class="memdesc:ad4209e6986e4d49d59346ddb31c5b67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Индекс веса в плоском массиве.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a2ebb959f8c2cb228e66f478d3dcd0b68" id="r_a2ebb959f8c2cb228e66f478d3dcd0b68"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2ebb959f8c2cb228e66f478d3dcd0b68">kernel_</a> = 0</td></tr>
+<tr class="memdesc:a2ebb959f8c2cb228e66f478d3dcd0b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сторона ядра.  <br /></td></tr>
+<tr class="memitem:a0f96def7ffe6dd106847345e56a9aaed" id="r_a0f96def7ffe6dd106847345e56a9aaed"><td class="memItemLeft">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a0f96def7ffe6dd106847345e56a9aaed">act_</a></td></tr>
+<tr class="memdesc:a0f96def7ffe6dd106847345e56a9aaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция активации.  <br /></td></tr>
+<tr class="memitem:aae395103e36295bc4119753994c3b22c" id="r_aae395103e36295bc4119753994c3b22c"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aae395103e36295bc4119753994c3b22c">weights_</a></td></tr>
+<tr class="memdesc:aae395103e36295bc4119753994c3b22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Веса ядер.  <br /></td></tr>
+<tr class="memitem:ad0ab909c414e5ddb9144d77a5a7be853" id="r_ad0ab909c414e5ddb9144d77a5a7be853"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad0ab909c414e5ddb9144d77a5a7be853">biases_</a></td></tr>
+<tr class="memdesc:ad0ab909c414e5ddb9144d77a5a7be853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещения фильтров.  <br /></td></tr>
+<tr class="memitem:a75b7975d7fea8fdb1bc3c678a1c80696" id="r_a75b7975d7fea8fdb1bc3c678a1c80696"><td class="memItemLeft"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a75b7975d7fea8fdb1bc3c678a1c80696">last_input_</a></td></tr>
+<tr class="memdesc:a75b7975d7fea8fdb1bc3c678a1c80696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вход прямого прохода (для backward).  <br /></td></tr>
+<tr class="memitem:a47567deb46e4f1ae705a0039892e2bf5" id="r_a47567deb46e4f1ae705a0039892e2bf5"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a47567deb46e4f1ae705a0039892e2bf5">last_z_</a></td></tr>
+<tr class="memdesc:a47567deb46e4f1ae705a0039892e2bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значения до активации (для backward).  <br /></td></tr>
+<tr class="memitem:a8e332689fef2e8448ac196e80e74223d" id="r_a8e332689fef2e8448ac196e80e74223d"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8e332689fef2e8448ac196e80e74223d">weight_grads_</a></td></tr>
+<tr class="memdesc:a8e332689fef2e8448ac196e80e74223d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Градиенты весов.  <br /></td></tr>
+<tr class="memitem:a9662f229fa9ab00d42035d9fcc354d59" id="r_a9662f229fa9ab00d42035d9fcc354d59"><td class="memItemLeft">std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9662f229fa9ab00d42035d9fcc354d59">bias_grads_</a></td></tr>
+<tr class="memdesc:a9662f229fa9ab00d42035d9fcc354d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Градиенты смещений.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_classimagenn_1_1_spatial_layer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classimagenn_1_1_spatial_layer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="classimagenn_1_1_spatial_layer.html">imagenn::SpatialLayer</a></td></tr>
+<tr class="memitem:a517ee1a3fad585f48d9c15fbecf2f8d7 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a517ee1a3fad585f48d9c15fbecf2f8d7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a517ee1a3fad585f48d9c15fbecf2f8d7">in_c_</a> = 0</td></tr>
+<tr class="memdesc:a517ee1a3fad585f48d9c15fbecf2f8d7 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Каналы входа.  <br /></td></tr>
+<tr class="memitem:ad4d874560442552346f09e8fc36fc447 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_ad4d874560442552346f09e8fc36fc447"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#ad4d874560442552346f09e8fc36fc447">in_h_</a> = 0</td></tr>
+<tr class="memdesc:ad4d874560442552346f09e8fc36fc447 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота входа.  <br /></td></tr>
+<tr class="memitem:a6cae7f17ea180d257d33cd249e92cb2f inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a6cae7f17ea180d257d33cd249e92cb2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a6cae7f17ea180d257d33cd249e92cb2f">in_w_</a> = 0</td></tr>
+<tr class="memdesc:a6cae7f17ea180d257d33cd249e92cb2f inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина входа.  <br /></td></tr>
+<tr class="memitem:a78d9f62664721a2826315146cd6222c7 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a78d9f62664721a2826315146cd6222c7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a78d9f62664721a2826315146cd6222c7">out_c_</a> = 0</td></tr>
+<tr class="memdesc:a78d9f62664721a2826315146cd6222c7 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Каналы выхода.  <br /></td></tr>
+<tr class="memitem:a480711332721cb8d589574430480c40f inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_a480711332721cb8d589574430480c40f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#a480711332721cb8d589574430480c40f">out_h_</a> = 0</td></tr>
+<tr class="memdesc:a480711332721cb8d589574430480c40f inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Высота выхода.  <br /></td></tr>
+<tr class="memitem:ae190caab317bac58b40a10957b21add6 inherit pro_attribs_classimagenn_1_1_spatial_layer" id="r_ae190caab317bac58b40a10957b21add6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="classimagenn_1_1_spatial_layer.html#ae190caab317bac58b40a10957b21add6">out_w_</a> = 0</td></tr>
+<tr class="memdesc:ae190caab317bac58b40a10957b21add6 inherit pro_attribs_classimagenn_1_1_spatial_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ширина выхода.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Свёрточный слой (аналог Conv2D), шаг 1, без дополнения краёв. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="af1ad8dd6fd1bc8054e5b8656d406860e" name="af1ad8dd6fd1bc8054e5b8656d406860e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ad8dd6fd1bc8054e5b8656d406860e">&#9670;&#160;</a></span>ConvLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">imagenn::ConvLayer::ConvLayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_channels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>in_width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>filters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kernel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>activation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>random_radius</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт свёрточный слой. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_channels</td><td>число входных каналов </td></tr>
+    <tr><td class="paramname">in_height</td><td>высота входа </td></tr>
+    <tr><td class="paramname">in_width</td><td>ширина входа </td></tr>
+    <tr><td class="paramname">filters</td><td>число фильтров (каналов выхода) </td></tr>
+    <tr><td class="paramname">kernel</td><td>сторона квадратного ядра </td></tr>
+    <tr><td class="paramname">activation</td><td>функция активации (применяется поэлементно) </td></tr>
+    <tr><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если параметры некорректны </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a68be358d4a8b5396946512a133bc1487" name="a68be358d4a8b5396946512a133bc1487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68be358d4a8b5396946512a133bc1487">&#9670;&#160;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::ConvLayer::apply </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>clip_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_clip</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Применяет накопленные градиенты весов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramname">clip_value</td><td>порог ограничения обновления </td></tr>
+    <tr><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="classimagenn_1_1_spatial_layer.html#a3431c8563a478d83d58ca92f04145b30">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="a63939c72048a8ec688d748809798bc17" name="a63939c72048a8ec688d748809798bc17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63939c72048a8ec688d748809798bc17">&#9670;&#160;</a></span>backward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::ConvLayer::backward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>grad_output</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обратный проход. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grad_output</td><td>градиент по выходу слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>градиент по входу слоя </dd></dl>
+
+<p>Замещает <a class="el" href="classimagenn_1_1_spatial_layer.html#a553a5dc8a84603e68ad6d813bbf2139f">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="a49f8414d7a0c11436cfbb3859d00b203" name="a49f8414d7a0c11436cfbb3859d00b203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f8414d7a0c11436cfbb3859d00b203">&#9670;&#160;</a></span>biases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; double &gt; &amp; imagenn::ConvLayer::biases </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает смещения фильтров (для сохранения модели). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>смещения по одному на фильтр </dd></dl>
+
+</div>
+</div>
+<a id="ab52752ddd30b250cfe3d82c501759695" name="ab52752ddd30b250cfe3d82c501759695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52752ddd30b250cfe3d82c501759695">&#9670;&#160;</a></span>export_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; imagenn::ConvLayer::export_weights </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Экспортирует обучаемые параметры слоя. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>параметры слоя (пустой вектор для слоёв без весов) </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="classimagenn_1_1_spatial_layer.html#ac8b9b7d8d52d97c2c6a85f5d17fc1da2">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="ad56ab16266a1f51b56e565c51af6fc24" name="ad56ab16266a1f51b56e565c51af6fc24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad56ab16266a1f51b56e565c51af6fc24">&#9670;&#160;</a></span>forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::ConvLayer::forward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Прямой проход. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>выходной тензор </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если форма входа не совпадает с ожидаемой </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещает <a class="el" href="classimagenn_1_1_spatial_layer.html#a66b4fd84567771052a96fcfb00cb265c">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="aef2c03209010d7f90e57221a4c6c4b27" name="aef2c03209010d7f90e57221a4c6c4b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2c03209010d7f90e57221a4c6c4b27">&#9670;&#160;</a></span>import_weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::ConvLayer::import_weights </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>weights</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает обучаемые параметры слоя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>параметры в порядке <a class="el" href="#ab52752ddd30b250cfe3d82c501759695" title="Экспортирует обучаемые параметры слоя.">export_weights()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="classimagenn_1_1_spatial_layer.html#a323f5fc6114b0ff574e70e83b8296f1c">imagenn::SpatialLayer</a>.</p>
+
+</div>
+</div>
+<a id="ac84469f84e28ef3a799676ce4611265b" name="ac84469f84e28ef3a799676ce4611265b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84469f84e28ef3a799676ce4611265b">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imagenn::ConvLayer::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>weights</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>biases</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает веса и смещения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>веса в том же порядке, что и <a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights()</a> </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a49f8414d7a0c11436cfbb3859d00b203" title="Возвращает смещения фильтров (для сохранения модели).">biases</a></td><td>смещения по одному на фильтр </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classimagenn_1_1_validation_error.html" title="Ошибка валидации данных.">ValidationError</a></td><td>если размеры не совпадают </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4209e6986e4d49d59346ddb31c5b67a" name="ad4209e6986e4d49d59346ddb31c5b67a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4209e6986e4d49d59346ddb31c5b67a">&#9670;&#160;</a></span>weight_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t imagenn::ConvLayer::weight_index </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ky</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kx</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Индекс веса в плоском массиве. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>фильтр </td></tr>
+    <tr><td class="paramname">c</td><td>канал </td></tr>
+    <tr><td class="paramname">ky</td><td>строка ядра </td></tr>
+    <tr><td class="paramname">kx</td><td>столбец ядра </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>индекс в weights_ </dd></dl>
+
+</div>
+</div>
+<a id="a26d991cbcf137624a420df5df5af9ee2" name="a26d991cbcf137624a420df5df5af9ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d991cbcf137624a420df5df5af9ee2">&#9670;&#160;</a></span>weights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; double &gt; &amp; imagenn::ConvLayer::weights </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает веса всех фильтров (для сохранения модели). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>веса в порядке (фильтр, канал, строка, столбец) </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a0f96def7ffe6dd106847345e56a9aaed" name="a0f96def7ffe6dd106847345e56a9aaed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f96def7ffe6dd106847345e56a9aaed">&#9670;&#160;</a></span>act_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classimagenn_1_1_activation_base.html">ActivationBase</a>* imagenn::ConvLayer::act_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Функция активации. </p>
+
+</div>
+</div>
+<a id="a9662f229fa9ab00d42035d9fcc354d59" name="a9662f229fa9ab00d42035d9fcc354d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9662f229fa9ab00d42035d9fcc354d59">&#9670;&#160;</a></span>bias_grads_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::ConvLayer::bias_grads_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Градиенты смещений. </p>
+
+</div>
+</div>
+<a id="ad0ab909c414e5ddb9144d77a5a7be853" name="ad0ab909c414e5ddb9144d77a5a7be853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ab909c414e5ddb9144d77a5a7be853">&#9670;&#160;</a></span>biases_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::ConvLayer::biases_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Смещения фильтров. </p>
+
+</div>
+</div>
+<a id="a2ebb959f8c2cb228e66f478d3dcd0b68" name="a2ebb959f8c2cb228e66f478d3dcd0b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebb959f8c2cb228e66f478d3dcd0b68">&#9670;&#160;</a></span>kernel_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int imagenn::ConvLayer::kernel_ = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сторона ядра. </p>
+
+</div>
+</div>
+<a id="a75b7975d7fea8fdb1bc3c678a1c80696" name="a75b7975d7fea8fdb1bc3c678a1c80696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b7975d7fea8fdb1bc3c678a1c80696">&#9670;&#160;</a></span>last_input_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structimagenn_1_1_tensor.html">Tensor</a> imagenn::ConvLayer::last_input_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вход прямого прохода (для backward). </p>
+
+</div>
+</div>
+<a id="a47567deb46e4f1ae705a0039892e2bf5" name="a47567deb46e4f1ae705a0039892e2bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47567deb46e4f1ae705a0039892e2bf5">&#9670;&#160;</a></span>last_z_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::ConvLayer::last_z_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Значения до активации (для backward). </p>
+
+</div>
+</div>
+<a id="a8e332689fef2e8448ac196e80e74223d" name="a8e332689fef2e8448ac196e80e74223d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e332689fef2e8448ac196e80e74223d">&#9670;&#160;</a></span>weight_grads_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::ConvLayer::weight_grads_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Градиенты весов. </p>
+
+</div>
+</div>
+<a id="aae395103e36295bc4119753994c3b22c" name="aae395103e36295bc4119753994c3b22c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae395103e36295bc4119753994c3b22c">&#9670;&#160;</a></span>weights_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; imagenn::ConvLayer::weights_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Веса ядер. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>include/imagenn/<a class="el" href="spatial_8hpp_source.html">spatial.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceimagenn.html">imagenn</a></li><li class="navelem"><a href="classimagenn_1_1_conv_layer.html">ConvLayer</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

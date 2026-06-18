@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageCNN: Исходный файл include/imagenn/dataset.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageCNN<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Neural network image classifier (C++ port of ImageNN)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('dataset_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dataset.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dataset_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGENN_DATASET_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGENN_DATASET_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="tensor_8hpp.html">imagenn/tensor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceimagenn.html">imagenn</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#aab561a499f8c9fd867a9a3e942bb0e4e">   16</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceimagenn.html#aab561a499f8c9fd867a9a3e942bb0e4e">kImageSize</a> = 16;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a513e2bbabdd17ec85182f06d8b13de7e">   18</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceimagenn.html#a513e2bbabdd17ec85182f06d8b13de7e">kInputSize</a> = <a class="code hl_variable" href="namespaceimagenn.html#aab561a499f8c9fd867a9a3e942bb0e4e">kImageSize</a> * <a class="code hl_variable" href="namespaceimagenn.html#aab561a499f8c9fd867a9a3e942bb0e4e">kImageSize</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a51affdb12444807ba9f7d1966d8a11f1">   20</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceimagenn.html#a51affdb12444807ba9f7d1966d8a11f1">kNumClasses</a> = 10;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structimagenn_1_1_named_image.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structimagenn_1_1_named_image.html">NamedImage</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structimagenn_1_1_named_image.html#a8fe3f30bb847fbecce18c0bfe60af27b">   24</a></span>    std::string <a class="code hl_variable" href="structimagenn_1_1_named_image.html#a8fe3f30bb847fbecce18c0bfe60af27b">name</a>; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structimagenn_1_1_named_image.html#a3f6d6af37f730d626519cbb3a8e56824">   25</a></span>    <a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_variable" href="structimagenn_1_1_named_image.html#a3f6d6af37f730d626519cbb3a8e56824">image</a>;     </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a420f0b3440d34a101008edc66c4c405f">   34</a></span><a class="code hl_struct" href="structimagenn_1_1_tensor.html">Tensor</a> <a class="code hl_function" href="namespaceimagenn.html#a420f0b3440d34a101008edc66c4c405f">image_to_tensor</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a39daeac9b81b723053af25629c649a19">   40</a></span>std::vector&lt;NamedImage&gt; <a class="code hl_function" href="namespaceimagenn.html#a39daeac9b81b723053af25629c649a19">load_images</a>(<span class="keyword">const</span> std::string&amp; directory);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>std::vector&lt;std::pair&lt;Tensor, std::vector&lt;double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespaceimagenn.html#a0d5ece2727486d164f86d7e9f83ef361">   50</a></span><a class="code hl_function" href="namespaceimagenn.html#a0d5ece2727486d164f86d7e9f83ef361">load_training_examples</a>(<span class="keyword">const</span> std::string&amp; directory);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace imagenn</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// IMAGENN_DATASET_HPP</span></div>
+<div class="ttc" id="anamespaceimagenn_html"><div class="ttname"><a href="namespaceimagenn.html">imagenn</a></div><div class="ttdoc">Корневое пространство имён всех компонентов проекта.</div><div class="ttdef"><b>Определения</b> activations.hpp:9</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a0d5ece2727486d164f86d7e9f83ef361"><div class="ttname"><a href="namespaceimagenn.html#a0d5ece2727486d164f86d7e9f83ef361">imagenn::load_training_examples</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Tensor, std::vector&lt; double &gt; &gt; &gt; load_training_examples(const std::string &amp;directory)</div><div class="ttdoc">Загружает обучающие примеры из папки.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a39daeac9b81b723053af25629c649a19"><div class="ttname"><a href="namespaceimagenn.html#a39daeac9b81b723053af25629c649a19">imagenn::load_images</a></div><div class="ttdeci">std::vector&lt; NamedImage &gt; load_images(const std::string &amp;directory)</div><div class="ttdoc">Загружает изображения из папки для распознавания.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a420f0b3440d34a101008edc66c4c405f"><div class="ttname"><a href="namespaceimagenn.html#a420f0b3440d34a101008edc66c4c405f">imagenn::image_to_tensor</a></div><div class="ttdeci">Tensor image_to_tensor(const std::string &amp;path)</div><div class="ttdoc">Преобразует файл изображения в нормированный тензор 1×kImageSize×kImageSize.</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a513e2bbabdd17ec85182f06d8b13de7e"><div class="ttname"><a href="namespaceimagenn.html#a513e2bbabdd17ec85182f06d8b13de7e">imagenn::kInputSize</a></div><div class="ttdeci">constexpr int kInputSize</div><div class="ttdoc">Число элементов изображения (для одноканального входа).</div><div class="ttdef"><b>Определения</b> dataset.hpp:18</div></div>
+<div class="ttc" id="anamespaceimagenn_html_a51affdb12444807ba9f7d1966d8a11f1"><div class="ttname"><a href="namespaceimagenn.html#a51affdb12444807ba9f7d1966d8a11f1">imagenn::kNumClasses</a></div><div class="ttdeci">constexpr int kNumClasses</div><div class="ttdoc">Число распознаваемых классов (цифры 0–9).</div><div class="ttdef"><b>Определения</b> dataset.hpp:20</div></div>
+<div class="ttc" id="anamespaceimagenn_html_aab561a499f8c9fd867a9a3e942bb0e4e"><div class="ttname"><a href="namespaceimagenn.html#aab561a499f8c9fd867a9a3e942bb0e4e">imagenn::kImageSize</a></div><div class="ttdeci">constexpr int kImageSize</div><div class="ttdoc">Сторона, к которой приводится изображение перед подачей в сеть.</div><div class="ttdef"><b>Определения</b> dataset.hpp:16</div></div>
+<div class="ttc" id="astructimagenn_1_1_named_image_html"><div class="ttname"><a href="structimagenn_1_1_named_image.html">imagenn::NamedImage</a></div><div class="ttdoc">Изображение вместе с именем файла.</div><div class="ttdef"><b>Определения</b> dataset.hpp:23</div></div>
+<div class="ttc" id="astructimagenn_1_1_named_image_html_a3f6d6af37f730d626519cbb3a8e56824"><div class="ttname"><a href="structimagenn_1_1_named_image.html#a3f6d6af37f730d626519cbb3a8e56824">imagenn::NamedImage::image</a></div><div class="ttdeci">Tensor image</div><div class="ttdoc">Нормированный тензор изображения.</div><div class="ttdef"><b>Определения</b> dataset.hpp:25</div></div>
+<div class="ttc" id="astructimagenn_1_1_named_image_html_a8fe3f30bb847fbecce18c0bfe60af27b"><div class="ttname"><a href="structimagenn_1_1_named_image.html#a8fe3f30bb847fbecce18c0bfe60af27b">imagenn::NamedImage::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Имя файла.</div><div class="ttdef"><b>Определения</b> dataset.hpp:24</div></div>
+<div class="ttc" id="astructimagenn_1_1_tensor_html"><div class="ttname"><a href="structimagenn_1_1_tensor.html">imagenn::Tensor</a></div><div class="ttdoc">Трёхмерный тензор (каналы, высота, ширина) с плоским хранением.</div><div class="ttdef"><b>Определения</b> tensor.hpp:16</div></div>
+<div class="ttc" id="atensor_8hpp_html"><div class="ttname"><a href="tensor_8hpp.html">tensor.hpp</a></div><div class="ttdoc">Трёхмерный тензор для спатиальных (свёрточных) слоёв.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_8aaea31fd34e5f02cd757d1614cd56fe.html">imagenn</a></li><li class="navelem"><a href="dataset_8hpp.html">dataset.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>
