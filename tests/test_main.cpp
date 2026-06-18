@@ -555,3 +555,113 @@ TEST_CASE("a saved convolution model reloads identically") {
     }
     std::filesystem::remove(path);
 }
+
+TEST_CASE("convolution constructor rejects non-positive parameters") {
+    CHECK_THROWS_AS(ConvLayer(1, 4, 4, 0, 2, relu_activation(), 0.1), ValidationError);
+    CHECK_THROWS_AS(ConvLayer(0, 4, 4, 2, 2, relu_activation(), 0.1), ValidationError);
+}
+
+TEST_CASE("convolution load and import reject mismatched sizes") {
+    ConvLayer conv(1, 4, 4, 2, 3, relu_activation(), 0.1);
+    CHECK_THROWS_AS(conv.load({1.0, 2.0}, {0.0, 0.0}), ValidationError);
+    CHECK_THROWS_AS(conv.import_weights({1.0, 2.0}), ValidationError);
+}
+
+TEST_CASE("max pooling constructor rejects invalid windows") {
+    CHECK_THROWS_AS(MaxPoolLayer(1, 4, 4, 0), ValidationError);
+    CHECK_THROWS_AS(MaxPoolLayer(1, 2, 2, 3), ValidationError);
+}
+
+TEST_CASE("max pooling forward rejects a wrong input shape") {
+    MaxPoolLayer pool(1, 4, 4, 2);
+    Tensor wrong(1, 3, 3);
+    CHECK_THROWS_AS(pool.forward(wrong), ValidationError);
+}
+
+TEST_CASE("flatten forward rejects a wrong input shape") {
+    FlattenLayer flatten(2, 2, 2);
+    Tensor wrong(1, 2, 2);
+    CHECK_THROWS_AS(flatten.forward(wrong), ValidationError);
+}
+
+TEST_CASE("model rejects a wrong spatial import and a wrong image shape") {
+    set_random_seed(2);
+    Model model = make_conv_model();
+    CHECK_THROWS_AS(model.import_spatial({}), ValidationError);
+    Tensor wrong(1, 4, 4);
+    CHECK_THROWS_AS(model.run(wrong), ValidationError);
+}
+
+TEST_CASE("config parsing rejects a missing file and a config without layers") {
+    CHECK_THROWS_AS(parse_config_file(temp_path("imagecnn_no_cfg.config")), PathError);
+    const std::string path = temp_path("imagecnn_empty.config");
+    {
+        std::ofstream file(path);
+        file << "# only comments\n";
+    }
+    CHECK_THROWS_AS(parse_config_file(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("config parsing rejects an unknown layer type") {
+    const std::string path = temp_path("imagecnn_unknown.config");
+    {
+        std::ofstream file(path);
+        file << "bogus:1:2\n";
+    }
+    CHECK_THROWS_AS(parse_config_file(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("build_model rejects invalid layer order, missing dense and conv softmax") {
+    NetworkConfig conv_after_flatten;
+    conv_after_flatten.layers.push_back({"flatten", 0, "", false, 0.1, 0, 0, 0});
+    conv_after_flatten.layers.push_back({"conv", 0, "relu", false, 0.1, 4, 3, 0});
+    conv_after_flatten.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    CHECK_THROWS_AS(build_model(conv_after_flatten), ValidationError);
+
+    NetworkConfig no_dense;
+    no_dense.layers.push_back({"conv", 0, "relu", false, 0.1, 4, 3, 0});
+    CHECK_THROWS_AS(build_model(no_dense), ValidationError);
+
+    NetworkConfig conv_softmax;
+    conv_softmax.layers.push_back({"conv", 0, "softmax", false, 0.1, 4, 3, 0});
+    conv_softmax.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    CHECK_THROWS_AS(build_model(conv_softmax), ValidationError);
+}
+
+TEST_CASE("loading training examples from a missing directory reports a path error") {
+    CHECK_THROWS_AS(load_training_examples(temp_path("imagecnn_absent_dir")), PathError);
+}
+
+TEST_CASE("loading training examples with an out-of-range label reports a validation error") {
+    const std::string dir = temp_path("imagecnn_badlabel");
+    std::filesystem::create_directories(dir);
+    std::filesystem::copy_file(std::string(IMAGENN_TEST_DATA_DIR) + "/0_1.png", dir + "/99_1.png",
+                               std::filesystem::copy_options::overwrite_existing);
+    CHECK_THROWS_AS(load_training_examples(dir), ValidationError);
+    std::filesystem::remove_all(dir);
+}
+
+TEST_CASE("loading invalid loss history reports a validation error") {
+    const std::string path = temp_path("imagecnn_bad_loss.txt");
+    {
+        std::ofstream file(path);
+        file << "not a number\n";
+    }
+    CHECK_THROWS_AS(load_losses(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("loading a missing or corrupted convolution model reports an error") {
+    Model model = make_conv_model();
+    CHECK_THROWS_AS(load_model(model, temp_path("imagecnn_no_conv.nn")), PathError);
+    const std::string path = temp_path("imagecnn_conv_corrupt.nn");
+    {
+        std::ofstream file(path);
+        file << "garbage\n";
+    }
+    Model other = make_conv_model();
+    CHECK_THROWS_AS(load_model(other, path), ValidationError);
+    std::filesystem::remove(path);
+}
