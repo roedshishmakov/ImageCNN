@@ -184,10 +184,10 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Создаёт слой заданного размера. </p>
 <p>Веса смещения инициализируются нулём: случайные смещения при активном bias заталкивают часть ReLU-нейронов в отрицательную зону и выключают их. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>тип нейронов слоя </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a2c4fcce9fc8b482fba034cf823d6b4f2" title="Возвращает число нейронов в слое.">size</a></td><td>количество нейронов </td></tr>
-    <tr><td class="paramname">activation</td><td>функция активации нейронов </td></tr>
-    <tr><td class="paramname">use_bias</td><td>добавлять ли нейрон смещения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>тип нейронов слоя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a2c4fcce9fc8b482fba034cf823d6b4f2" title="Возвращает число нейронов в слое.">size</a></td><td>количество нейронов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activation</td><td>функция активации нейронов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_bias</td><td>добавлять ли нейрон смещения </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,7 +257,7 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Считает дельты весов для скрытого слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
   </table>
   </dd>
 </dl>
@@ -294,8 +294,8 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Считает дельты весов для выходного слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">refs</td><td>эталонные значения </td></tr>
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">refs</td><td>эталонные значения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,7 +379,7 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Считает суммарную потерю слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">refs</td><td>эталонные значения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">refs</td><td>эталонные значения </td></tr>
   </table>
   </dd>
 </dl>
@@ -413,7 +413,7 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Импортирует веса слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>веса каждого нейрона </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>веса каждого нейрона </td></tr>
   </table>
   </dd>
 </dl>
@@ -519,7 +519,7 @@ $(function(){initNavTree('classimagenn_1_1_layer.html','','classimagenn_1_1_laye
 <p>Устанавливает входы нейронов заданными значениями. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>значения входов; длина должна совпадать с размером слоя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>значения входов; длина должна совпадать с размером слоя </td></tr>
   </table>
   </dd>
 </dl>

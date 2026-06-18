@@ -315,7 +315,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Строит модель по конфигурации. </p>
 <p>Свёрточные слои, подвыборка и выпрямление образуют экстрактор признаков; за ними следуют полносвязные слои. Если слой выпрямления не указан, он добавляется автоматически перед первым полносвязным слоем. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>конфигурация сети </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>конфигурация сети </td></tr>
   </table>
   </dd>
 </dl>
@@ -347,7 +347,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Создаёт файл-шаблон конфигурации со стандартной архитектурой. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>путь к создаваемому файлу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к создаваемому файлу </td></tr>
   </table>
   </dd>
 </dl>
@@ -398,7 +398,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Преобразует файл изображения в нормированный тензор 1×kImageSize×kImageSize. </p>
 <p>Изображение приводится к оттенкам серого, масштабируется и нормируется в [0, 1]. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>путь к файлу изображения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу изображения </td></tr>
   </table>
   </dd>
 </dl>
@@ -430,7 +430,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает изображения из папки для распознавания. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">directory</td><td>путь к папке с изображениями </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">directory</td><td>путь к папке с изображениями </td></tr>
   </table>
   </dd>
 </dl>
@@ -462,7 +462,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает историю потерь из файла. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>путь к файлу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу </td></tr>
   </table>
   </dd>
 </dl>
@@ -499,8 +499,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает веса в модель из текстового файла. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">model</td><td>модель, в которую загружаются веса </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу модели </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">model</td><td>модель, в которую загружаются веса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу модели </td></tr>
   </table>
   </dd>
 </dl>
@@ -536,8 +536,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает веса в сеть из текстового файла. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">network</td><td>сеть, в которую загружаются веса </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу модели </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">network</td><td>сеть, в которую загружаются веса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу модели </td></tr>
   </table>
   </dd>
 </dl>
@@ -569,7 +569,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает обучающие примеры из папки. </p>
 <p>Метка класса берётся из имени файла до первого символа '_'. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">directory</td><td>путь к папке с изображениями </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">directory</td><td>путь к папке с изображениями </td></tr>
   </table>
   </dd>
 </dl>
@@ -602,7 +602,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Загружает конфигурацию из файла. </p>
 <p>Метка порядка байтов (BOM), которую добавляют некоторые редакторы, в начале файла отбрасывается. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>путь к файлу конфигурации </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу конфигурации </td></tr>
   </table>
   </dd>
 </dl>
@@ -659,8 +659,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Возвращает случайное число из равномерного распределения на [lo, hi]. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lo</td><td>нижняя граница </td></tr>
-    <tr><td class="paramname">hi</td><td>верхняя граница </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lo</td><td>нижняя граница </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hi</td><td>верхняя граница </td></tr>
   </table>
   </dd>
 </dl>
@@ -710,8 +710,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Сохраняет конфигурацию в файл. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>конфигурация для сохранения </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>конфигурация для сохранения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу </td></tr>
   </table>
   </dd>
 </dl>
@@ -751,9 +751,9 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Сохраняет историю потерь в файл, по одному значению на строку. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">losses</td><td>значения потерь </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу </td></tr>
-    <tr><td class="paramname">append</td><td>дописывать ли в конец файла вместо перезаписи </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">losses</td><td>значения потерь </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">append</td><td>дописывать ли в конец файла вместо перезаписи </td></tr>
   </table>
   </dd>
 </dl>
@@ -788,8 +788,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Сохраняет модель (свёрточную и полносвязную части) в текстовый файл. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">model</td><td>модель для сохранения </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу модели </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>модель для сохранения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу модели </td></tr>
   </table>
   </dd>
 </dl>
@@ -824,8 +824,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Сохраняет веса сети в текстовый файл. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">network</td><td>сеть для сохранения </td></tr>
-    <tr><td class="paramname">path</td><td>путь к файлу модели </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">network</td><td>сеть для сохранения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>путь к файлу модели </td></tr>
   </table>
   </dd>
 </dl>
@@ -856,7 +856,7 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Задаёт начальное состояние генератора. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">seed</td><td>зерно генератора </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seed</td><td>зерно генератора </td></tr>
   </table>
   </dd>
 </dl>
@@ -885,8 +885,8 @@ $(function(){initNavTree('namespaceimagenn.html','',''); });
 <p>Рисует историю потерь горизонтальными столбцами. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">losses</td><td>значения потерь по эпохам </td></tr>
-    <tr><td class="paramname">out</td><td>поток вывода </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">losses</td><td>значения потерь по эпохам </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>поток вывода </td></tr>
   </table>
   </dd>
 </dl>

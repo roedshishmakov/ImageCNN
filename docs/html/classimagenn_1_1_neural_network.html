@@ -156,7 +156,7 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Добавляет входной слой из прозрачных нейронов. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>количество входов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>количество входов </td></tr>
   </table>
   </dd>
 </dl>
@@ -195,10 +195,10 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Добавляет слой и связывает его с предыдущим. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>количество нейронов </td></tr>
-    <tr><td class="paramname">activation</td><td>функция активации (softmax создаёт выходной softmax-слой) </td></tr>
-    <tr><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
-    <tr><td class="paramname">use_bias</td><td>добавлять ли нейрон смещения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>количество нейронов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activation</td><td>функция активации (softmax создаёт выходной softmax-слой) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_bias</td><td>добавлять ли нейрон смещения </td></tr>
   </table>
   </dd>
 </dl>
@@ -242,11 +242,11 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Выполняет обратный проход для одного примера; <a class="el" href="#a71296006cf63731e22a8d6768c545368" title="Прогоняет вход через сеть.">run()</a> должен быть уже вызван. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">target</td><td>эталонный вектор </td></tr>
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
-    <tr><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
-    <tr><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
-    <tr><td class="paramname">input_grad_out</td><td>если не nullptr, сюда записывается градиент по входу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>эталонный вектор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">input_grad_out</td><td>если не nullptr, сюда записывается градиент по входу </td></tr>
   </table>
   </dd>
 </dl>
@@ -280,7 +280,7 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Полностью связывает два последних добавленных слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
   </table>
   </dd>
 </dl>
@@ -377,7 +377,7 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Импортирует веса всех слоёв. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>веса по слоям и нейронам </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>веса по слоям и нейронам </td></tr>
   </table>
   </dd>
 </dl>
@@ -456,7 +456,7 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Прогоняет вход через сеть. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>входной вектор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>входной вектор </td></tr>
   </table>
   </dd>
 </dl>
@@ -506,11 +506,11 @@ $(function(){initNavTree('classimagenn_1_1_neural_network.html','','classimagenn
 <p>Обучает сеть на наборе примеров за один проход. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>обучающие примеры </td></tr>
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
-    <tr><td class="paramname">verbose</td><td>выводить ли потерю по каждому примеру </td></tr>
-    <tr><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
-    <tr><td class="paramname">use_clip</td><td>применять ли ограничение дельты </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>обучающие примеры </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">verbose</td><td>выводить ли потерю по каждому примеру </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_clip</td><td>применять ли ограничение дельты </td></tr>
   </table>
   </dd>
 </dl>

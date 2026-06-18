@@ -226,13 +226,13 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Создаёт свёрточный слой. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_channels</td><td>число входных каналов </td></tr>
-    <tr><td class="paramname">in_height</td><td>высота входа </td></tr>
-    <tr><td class="paramname">in_width</td><td>ширина входа </td></tr>
-    <tr><td class="paramname">filters</td><td>число фильтров (каналов выхода) </td></tr>
-    <tr><td class="paramname">kernel</td><td>сторона квадратного ядра </td></tr>
-    <tr><td class="paramname">activation</td><td>функция активации (применяется поэлементно) </td></tr>
-    <tr><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_channels</td><td>число входных каналов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_height</td><td>высота входа </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_width</td><td>ширина входа </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filters</td><td>число фильтров (каналов выхода) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kernel</td><td>сторона квадратного ядра </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activation</td><td>функция активации (применяется поэлементно) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">random_radius</td><td>радиус равномерной инициализации весов </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,9 +281,9 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Применяет накопленные градиенты весов. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
-    <tr><td class="paramname">clip_value</td><td>порог ограничения обновления </td></tr>
-    <tr><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clip_value</td><td>порог ограничения обновления </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
   </table>
   </dd>
 </dl>
@@ -318,7 +318,7 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Обратный проход. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">grad_output</td><td>градиент по выходу слоя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">grad_output</td><td>градиент по выходу слоя </td></tr>
   </table>
   </dd>
 </dl>
@@ -412,7 +412,7 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Прямой проход. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>входной тензор </td></tr>
   </table>
   </dd>
 </dl>
@@ -454,7 +454,7 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Загружает обучаемые параметры слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>параметры в порядке <a class="el" href="#ab52752ddd30b250cfe3d82c501759695" title="Экспортирует обучаемые параметры слоя.">export_weights()</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>параметры в порядке <a class="el" href="#ab52752ddd30b250cfe3d82c501759695" title="Экспортирует обучаемые параметры слоя.">export_weights()</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -485,8 +485,8 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Загружает веса и смещения. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>веса в том же порядке, что и <a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights()</a> </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a49f8414d7a0c11436cfbb3859d00b203" title="Возвращает смещения фильтров (для сохранения модели).">biases</a></td><td>смещения по одному на фильтр </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights</a></td><td>веса в том же порядке, что и <a class="el" href="#a26d991cbcf137624a420df5df5af9ee2" title="Возвращает веса всех фильтров (для сохранения модели).">weights()</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a49f8414d7a0c11436cfbb3859d00b203" title="Возвращает смещения фильтров (для сохранения модели).">biases</a></td><td>смещения по одному на фильтр </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,10 +539,10 @@ $(function(){initNavTree('classimagenn_1_1_conv_layer.html','','classimagenn_1_1
 <p>Индекс веса в плоском массиве. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td>фильтр </td></tr>
-    <tr><td class="paramname">c</td><td>канал </td></tr>
-    <tr><td class="paramname">ky</td><td>строка ядра </td></tr>
-    <tr><td class="paramname">kx</td><td>столбец ядра </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>фильтр </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>канал </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ky</td><td>строка ядра </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kx</td><td>столбец ядра </td></tr>
   </table>
   </dd>
 </dl>
