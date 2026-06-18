@@ -10,6 +10,8 @@
 #include "imagenn/exceptions.hpp"
 #include "imagenn/network.hpp"
 #include "imagenn/rng.hpp"
+#include "imagenn/spatial.hpp"
+#include "imagenn/tensor.hpp"
 
 using namespace imagenn;
 
@@ -161,4 +163,119 @@ TEST_CASE("best index points to the largest output") {
     REQUIRE(best >= 0);
     CHECK(out[static_cast<std::size_t>(best)] ==
           doctest::Approx(*std::max_element(out.begin(), out.end())));
+}
+
+TEST_CASE("tensor stores and reads elements by coordinates") {
+    Tensor t(2, 3, 4);
+    CHECK(t.size() == 24);
+    t.at(1, 2, 3) = 7.0;
+    CHECK(t.at(1, 2, 3) == doctest::Approx(7.0));
+    CHECK(t.index(1, 2, 3) == 23);
+}
+
+TEST_CASE("convolution computes a known result and output shape") {
+    ConvLayer conv(1, 3, 3, 1, 2, transparent_activation(), 0.0);
+    conv.load({1.0, 1.0, 1.0, 1.0}, {0.0});
+    Tensor input(1, 3, 3);
+    for (double& v : input.data) {
+        v = 1.0;
+    }
+    const Tensor out = conv.forward(input);
+    CHECK(out.channels == 1);
+    CHECK(out.height == 2);
+    CHECK(out.width == 2);
+    for (double v : out.data) {
+        CHECK(v == doctest::Approx(4.0));
+    }
+}
+
+TEST_CASE("convolution output dimensions follow filters and kernel") {
+    ConvLayer conv(2, 5, 5, 3, 3, relu_activation(), 0.1);
+    CHECK(conv.out_channels() == 3);
+    CHECK(conv.out_height() == 3);
+    CHECK(conv.out_width() == 3);
+}
+
+TEST_CASE("convolution rejects a wrong input shape and a too large kernel") {
+    ConvLayer conv(1, 4, 4, 1, 2, relu_activation(), 0.1);
+    Tensor wrong(1, 3, 3);
+    CHECK_THROWS_AS(conv.forward(wrong), ValidationError);
+    CHECK_THROWS_AS(ConvLayer(1, 2, 2, 1, 3, relu_activation(), 0.1), ValidationError);
+}
+
+TEST_CASE("convolution gradient matches a numeric estimate") {
+    ConvLayer conv(1, 3, 3, 1, 2, transparent_activation(), 0.0);
+    const std::vector<double> w0 = {0.1, -0.2, 0.3, 0.5};
+    conv.load(w0, {0.0});
+    Tensor input(1, 3, 3);
+    for (int i = 0; i < input.size(); ++i) {
+        input.data[static_cast<std::size_t>(i)] = 0.1 * (i + 1);
+    }
+    conv.forward(input);
+    Tensor ones(conv.out_channels(), conv.out_height(), conv.out_width());
+    for (double& v : ones.data) {
+        v = 1.0;
+    }
+    conv.backward(ones);
+    const std::vector<double> before = conv.weights();
+    conv.apply(1.0, 0.0, false);
+    const std::vector<double> after = conv.weights();
+
+    const double eps = 1e-6;
+    for (std::size_t i = 0; i < w0.size(); ++i) {
+        std::vector<double> wp = w0;
+        std::vector<double> wm = w0;
+        wp[i] += eps;
+        wm[i] -= eps;
+        conv.load(wp, {0.0});
+        const Tensor out_p = conv.forward(input);
+        conv.load(wm, {0.0});
+        const Tensor out_m = conv.forward(input);
+        double sum_p = 0.0;
+        double sum_m = 0.0;
+        for (double v : out_p.data) {
+            sum_p += v;
+        }
+        for (double v : out_m.data) {
+            sum_m += v;
+        }
+        const double analytic = before[i] - after[i];
+        const double numeric = (sum_p - sum_m) / (2.0 * eps);
+        CHECK(analytic == doctest::Approx(numeric).epsilon(1e-4));
+    }
+}
+
+TEST_CASE("max pooling takes the window maximum and routes the gradient back") {
+    MaxPoolLayer pool(1, 2, 2, 2);
+    Tensor input(1, 2, 2);
+    input.data = {1.0, 2.0, 3.0, 4.0};
+    const Tensor out = pool.forward(input);
+    CHECK(out.at(0, 0, 0) == doctest::Approx(4.0));
+    Tensor grad(1, 1, 1);
+    grad.data = {5.0};
+    const Tensor back = pool.backward(grad);
+    CHECK(back.data[3] == doctest::Approx(5.0));
+    CHECK(back.data[0] == doctest::Approx(0.0));
+}
+
+TEST_CASE("max pooling downsamples the spatial size") {
+    MaxPoolLayer pool(1, 4, 4, 2);
+    CHECK(pool.out_height() == 2);
+    CHECK(pool.out_width() == 2);
+}
+
+TEST_CASE("flatten reshapes to a vector and back") {
+    FlattenLayer flatten(2, 2, 2);
+    CHECK(flatten.out_channels() == 1);
+    CHECK(flatten.out_width() == 8);
+    Tensor input(2, 2, 2);
+    for (int i = 0; i < input.size(); ++i) {
+        input.data[static_cast<std::size_t>(i)] = static_cast<double>(i);
+    }
+    const Tensor flat = flatten.forward(input);
+    REQUIRE(flat.data.size() == 8);
+    CHECK(flat.data[5] == doctest::Approx(5.0));
+    const Tensor back = flatten.backward(flat);
+    CHECK(back.channels == 2);
+    CHECK(back.data[5] == doctest::Approx(5.0));
 }

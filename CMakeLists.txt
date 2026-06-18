@@ -41,6 +41,7 @@ add_library(imagecnn_core STATIC
     src/link.cpp
     src/layer.cpp
     src/network.cpp
+    src/spatial.cpp
 )
 target_include_directories(imagecnn_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(imagecnn_core PUBLIC cxx_std_17)
