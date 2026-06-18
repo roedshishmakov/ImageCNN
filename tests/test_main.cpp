@@ -2,15 +2,21 @@
 #include <doctest/doctest.h>
 
 #include <algorithm>
+#include <filesystem>
+#include <fstream>
 #include <memory>
 #include <numeric>
+#include <sstream>
 #include <stdexcept>
 #include <vector>
 
 #include "imagenn/activations.hpp"
+#include "imagenn/config.hpp"
+#include "imagenn/dataset.hpp"
 #include "imagenn/exceptions.hpp"
 #include "imagenn/model.hpp"
 #include "imagenn/network.hpp"
+#include "imagenn/plot.hpp"
 #include "imagenn/rng.hpp"
 #include "imagenn/spatial.hpp"
 #include "imagenn/tensor.hpp"
@@ -24,6 +30,10 @@ NeuralNetwork make_small_network() {
     nn.add_layer(3, sigmoid_activation(), 0.5, true);
     nn.add_layer(2, softmax_activation(), 0.5, false);
     return nn;
+}
+
+std::string temp_path(const std::string& name) {
+    return (std::filesystem::temp_directory_path() / name).string();
 }
 } // namespace
 
@@ -348,4 +358,123 @@ TEST_CASE("model weights restore an identical convolution network") {
     for (std::size_t i = 0; i < expected.size(); ++i) {
         CHECK(restored[i] == doctest::Approx(expected[i]));
     }
+}
+
+TEST_CASE("config parsing reads layers and training parameters") {
+    const std::string path = temp_path("imagecnn_cfg_ok.config");
+    {
+        std::ofstream file(path);
+        file << "# network\ndense:32:relu:true:0.1\ndense:10:softmax:false:0.2\n";
+        file << "\nlearning_rate=0.05\nepochs=7\nclip_value=3.0\nuse_cross_entropy=false\n";
+    }
+    const NetworkConfig config = parse_config_file(path);
+    REQUIRE(config.layers.size() == 2);
+    CHECK(config.layers[0].size == 32);
+    CHECK(config.layers[0].activation == "relu");
+    CHECK(config.layers[1].activation == "softmax");
+    CHECK(config.training.epochs == 7);
+    CHECK(config.training.learning_rate == doctest::Approx(0.05));
+    CHECK(config.training.use_cross_entropy == false);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("config parsing rejects a malformed layer line") {
+    const std::string path = temp_path("imagecnn_cfg_bad.config");
+    {
+        std::ofstream file(path);
+        file << "dense:32:relu:true\n";
+    }
+    CHECK_THROWS_AS(parse_config_file(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("a convolution config survives a save/load round trip") {
+    NetworkConfig config;
+    config.layers.push_back({"conv", 0, "relu", false, 0.1, 8, 3, 0});
+    config.layers.push_back({"maxpool", 0, "", false, 0.1, 0, 0, 2});
+    config.layers.push_back({"flatten", 0, "", false, 0.1, 0, 0, 0});
+    config.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    const std::string path = temp_path("imagecnn_conv.config");
+    save_config(config, path);
+    const NetworkConfig restored = parse_config_file(path);
+    REQUIRE(restored.layers.size() == 4);
+    CHECK(restored.layers[0].type == "conv");
+    CHECK(restored.layers[0].filters == 8);
+    CHECK(restored.layers[1].pool == 2);
+    CHECK(restored.layers[2].type == "flatten");
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("build_model builds the configured layers and rejects unknown activation") {
+    const Model ok = build_model(default_config());
+    CHECK(ok.dense().layer_count() == 4);
+    CHECK(ok.spatial_count() == 1);
+    NetworkConfig bad;
+    bad.layers.push_back({"dense", 4, "bogus", false, 0.1, 0, 0, 0});
+    CHECK_THROWS_AS(build_model(bad), ValidationError);
+}
+
+TEST_CASE("build_model builds a convolution model from config") {
+    NetworkConfig config;
+    config.layers.push_back({"conv", 0, "relu", false, 0.1, 4, 3, 0});
+    config.layers.push_back({"maxpool", 0, "", false, 0.1, 0, 0, 2});
+    config.layers.push_back({"flatten", 0, "", false, 0.1, 0, 0, 0});
+    config.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    const Model model = build_model(config);
+    CHECK(model.spatial_count() == 3);
+}
+
+TEST_CASE("loss plot renders a header and rejects empty input") {
+    std::ostringstream out;
+    show_loss_ascii({1.0, 0.5, 0.25}, out);
+    CHECK(out.str().find("Total loss") != std::string::npos);
+    CHECK_THROWS_AS(show_loss_ascii({}, out), ValidationError);
+}
+
+TEST_CASE("training examples are loaded with one-hot targets") {
+    const auto data = load_training_examples(IMAGENN_TEST_DATA_DIR);
+    REQUIRE_FALSE(data.empty());
+    for (const auto& example : data) {
+        CHECK(example.first.size() == kInputSize);
+        CHECK(example.second.size() == static_cast<std::size_t>(kNumClasses));
+        CHECK(std::accumulate(example.second.begin(), example.second.end(), 0.0) ==
+              doctest::Approx(1.0));
+    }
+}
+
+TEST_CASE("image is converted to a normalized tensor") {
+    const std::string image = std::string(IMAGENN_TEST_DATA_DIR) + "/0_1.png";
+    const Tensor input = image_to_tensor(image);
+    CHECK(input.channels == 1);
+    CHECK(input.size() == kInputSize);
+    double min_v = input.data[0];
+    double max_v = input.data[0];
+    for (double value : input.data) {
+        CHECK(value >= 0.0);
+        CHECK(value <= 1.0);
+        if (value < min_v) {
+            min_v = value;
+        }
+        if (value > max_v) {
+            max_v = value;
+        }
+    }
+    CHECK(max_v > min_v);
+}
+
+TEST_CASE("reading a missing image reports a path error") {
+    CHECK_THROWS_AS(image_to_tensor(temp_path("imagecnn_no_image.png")), PathError);
+}
+
+TEST_CASE("images are loaded with file names") {
+    const std::vector<NamedImage> images = load_images(IMAGENN_TEST_DATA_DIR);
+    REQUIRE_FALSE(images.empty());
+    for (const NamedImage& sample : images) {
+        CHECK_FALSE(sample.name.empty());
+        CHECK(sample.image.size() == kInputSize);
+    }
+}
+
+TEST_CASE("loading from a missing directory reports a path error") {
+    CHECK_THROWS_AS(load_images(temp_path("imagecnn_no_such_dir")), PathError);
 }
