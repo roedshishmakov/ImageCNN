@@ -39,6 +39,8 @@ add_library(imagecnn_core STATIC
     src/rng.cpp
     src/neuron.cpp
     src/link.cpp
+    src/layer.cpp
+    src/network.cpp
 )
 target_include_directories(imagecnn_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(imagecnn_core PUBLIC cxx_std_17)
