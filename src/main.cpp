@@ -13,14 +13,14 @@
 #include "imagenn/plot.hpp"
 #include "imagenn/version.hpp"
 
-/// @file main.cpp
-/// @brief Интерфейс командной строки приложения.
+/// \file main.cpp
+/// \brief Интерфейс командной строки приложения.
 
 namespace {
 
 using namespace imagenn;
 
-/// @brief Базовые папки для файлов модели, конфигурации и истории потерь.
+/// \brief Базовые папки для файлов модели, конфигурации и истории потерь.
 struct CliOptions {
     std::string configs_dir = "configs";      ///< Папка с конфигурациями.
     std::string weights_dir = "weight_saves"; ///< Папка с сохранёнными моделями.
@@ -105,7 +105,7 @@ void require_existing_path(const std::string& path, const std::string& descripti
     }
 }
 
-/// @brief Обучает модель и сохраняет её, конфигурацию и историю потерь.
+/// \brief Обучает модель и сохраняет её, конфигурацию и историю потерь.
 void train_and_save(Model& model, const NetworkConfig& config,
                     const std::vector<SpatialExample>& data, const CliOptions& opt,
                     const std::string& name, bool append_losses) {
@@ -216,7 +216,7 @@ void command_load(const std::vector<std::string>& args, const CliOptions& opt, b
     }
 }
 
-/// @brief Делит токены на опции путей, флаги и позиционные аргументы.
+/// \brief Делит токены на опции путей, флаги и позиционные аргументы.
 void parse_tokens(const std::vector<std::string>& tokens, CliOptions& opt,
                   std::vector<std::string>& flags, std::vector<std::string>& args) {
     for (std::size_t i = 0; i < tokens.size(); ++i) {
@@ -241,7 +241,7 @@ void parse_tokens(const std::vector<std::string>& tokens, CliOptions& opt,
     }
 }
 
-/// @brief Проверяет наличие команды, число аргументов и существование путей.
+/// \brief Проверяет наличие команды, число аргументов и существование путей.
 void validate_arguments(const std::vector<std::string>& flags, const std::vector<std::string>& args,
                         const CliOptions& opt) {
     const bool load = has_command(flags, "-l", "--load");
