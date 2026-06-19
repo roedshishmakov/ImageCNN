@@ -74,8 +74,17 @@ Tensor image_to_tensor(const std::string& path) {
     stbi_image_free(pixels);
 
     Tensor tensor(1, kImageSize, kImageSize);
+    double sum = 0.0;
     for (int i = 0; i < kInputSize; ++i) {
-        tensor.data[static_cast<std::size_t>(i)] = resized[static_cast<std::size_t>(i)] / 255.0;
+        const double value = resized[static_cast<std::size_t>(i)] / 255.0;
+        tensor.data[static_cast<std::size_t>(i)] = value;
+        sum += value;
+    }
+    if (sum / kInputSize > 0.5) {
+        for (int i = 0; i < kInputSize; ++i) {
+            tensor.data[static_cast<std::size_t>(i)] =
+                1.0 - tensor.data[static_cast<std::size_t>(i)];
+        }
     }
     return tensor;
 }

@@ -22,9 +22,9 @@ using namespace imagenn;
 
 /// \brief Базовые папки для файлов модели, конфигурации и истории потерь.
 struct CliOptions {
-    std::string configs_dir = "configs";      ///< Папка с конфигурациями.
-    std::string weights_dir = "weight_saves"; ///< Папка с сохранёнными моделями.
-    std::string loss_dir = "loss_saves";      ///< Папка с историей потерь.
+    std::string configs_dir = "configs"; ///< Папка с конфигурациями.
+    std::string weights_dir = "models";  ///< Папка с сохранёнными моделями.
+    std::string loss_dir = "loss_saves"; ///< Папка с историей потерь.
 };
 
 void print_logo() {
@@ -47,7 +47,7 @@ void print_help() {
                  "  --help, -h                               show this help\n\n"
                  "Path options (override default folders):\n"
                  "  --configs-dir <dir>   default: configs\n"
-                 "  --weights-dir <dir>   default: weight_saves\n"
+                 "  --weights-dir <dir>   default: models\n"
                  "  --loss-dir <dir>      default: loss_saves\n";
 }
 

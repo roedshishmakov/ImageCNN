@@ -19,8 +19,7 @@ endif()
 
 include(FetchContent)
 
-# SOURCE_SUBDIR points at a missing directory so that only the headers are
-# fetched, without doctest's own (outdated) CMakeLists.txt.
+#DOCTEST
 FetchContent_Declare(
     doctest
     GIT_REPOSITORY https://github.com/doctest/doctest.git
@@ -33,8 +32,7 @@ add_library(doctest INTERFACE)
 target_include_directories(doctest INTERFACE ${doctest_SOURCE_DIR})
 add_library(doctest::doctest ALIAS doctest)
 
-# stb: single-header image loading. The repository ships no CMakeLists.txt, so it
-# is only populated and exposed through an INTERFACE target.
+#STB
 FetchContent_Declare(
     stb
     GIT_REPOSITORY https://github.com/nothings/stb.git
