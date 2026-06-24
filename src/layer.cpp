@@ -14,7 +14,6 @@ std::unique_ptr<Neuron> make_neuron(NeuronType type, const ActivationBase& activ
         return std::make_unique<TransparentNeuron>(activation);
     case NeuronType::Softmax:
         return std::make_unique<NeuronSoftmax>(activation);
-    case NeuronType::Regular:
     default:
         return std::make_unique<Neuron>(activation);
     }
