@@ -39,11 +39,12 @@ void save_model(const Model& model, const std::string& path);
 void load_model(Model& model, const std::string& path);
 
 /// \brief Сохраняет историю потерь в файл, по одному значению на строку.
+///
+/// Файл каждый раз перезаписывается заново.
 /// \param[in] losses значения потерь
 /// \param[in] path путь к файлу
-/// \param[in] append дописывать ли в конец файла вместо перезаписи
 /// \throw PathError если файл не удаётся открыть на запись
-void save_losses(const std::vector<double>& losses, const std::string& path, bool append = false);
+void save_losses(const std::vector<double>& losses, const std::string& path);
 
 /// \brief Загружает историю потерь из файла.
 /// \param[in] path путь к файлу

@@ -17,6 +17,7 @@
 #include "imagenn/model.hpp"
 #include "imagenn/model_io.hpp"
 #include "imagenn/network.hpp"
+#include "imagenn/neuron.hpp"
 #include "imagenn/plot.hpp"
 #include "imagenn/rng.hpp"
 #include "imagenn/spatial.hpp"
@@ -517,14 +518,13 @@ TEST_CASE("loading a corrupted model file reports a validation error") {
     std::filesystem::remove(path);
 }
 
-TEST_CASE("loss history survives a save/load round trip and append") {
+TEST_CASE("saving loss history overwrites the file each time") {
     const std::string path = temp_path("imagecnn_loss.txt");
-    save_losses({0.1}, path, false);
-    save_losses({0.2}, path, true);
+    save_losses({0.1, 0.2, 0.3}, path);
+    save_losses({0.9}, path);
     const std::vector<double> restored = load_losses(path);
-    REQUIRE(restored.size() == 2);
-    CHECK(restored[0] == doctest::Approx(0.1));
-    CHECK(restored[1] == doctest::Approx(0.2));
+    REQUIRE(restored.size() == 1);
+    CHECK(restored[0] == doctest::Approx(0.9));
     std::filesystem::remove(path);
 }
 
@@ -664,4 +664,108 @@ TEST_CASE("loading a missing or corrupted convolution model reports an error") {
     Model other = make_conv_model();
     CHECK_THROWS_AS(load_model(other, path), ValidationError);
     std::filesystem::remove(path);
+}
+
+namespace {
+
+/// \brief Мок функции активации: записывает вызовы и возвращает заданные значения.
+class MockActivation : public ActivationBase {
+  public:
+    mutable int calc_calls = 0;             ///< Сколько раз вызвана calc.
+    mutable int derivative_calls = 0;       ///< Сколько раз вызвана derivative.
+    mutable double last_calc_x = 0.0;       ///< Аргумент последнего вызова calc.
+    mutable double last_derivative_x = 0.0; ///< Аргумент последнего вызова derivative.
+    double calc_result = 0.0;               ///< Что вернуть из calc.
+    double derivative_result = 1.0;         ///< Что вернуть из derivative.
+
+    double calc(double x) const override {
+        ++calc_calls;
+        last_calc_x = x;
+        return calc_result;
+    }
+
+    double derivative(double x) const override {
+        ++derivative_calls;
+        last_derivative_x = x;
+        return derivative_result;
+    }
+};
+
+/// \brief Слой-шпион: считает вызовы forward/backward и возвращает заданный тензор.
+class SpySpatialLayer : public SpatialLayer {
+  public:
+    int forward_calls = 0;   ///< Сколько раз вызван forward.
+    int backward_calls = 0;  ///< Сколько раз вызван backward.
+    int last_input_size = 0; ///< Размер последнего входного тензора.
+    Tensor output_to_return; ///< Тензор, который forward возвращает.
+
+    explicit SpySpatialLayer(Tensor output) : output_to_return(std::move(output)) {}
+
+    Tensor forward(const Tensor& input) override {
+        ++forward_calls;
+        last_input_size = static_cast<int>(input.data.size());
+        return output_to_return;
+    }
+
+    Tensor backward(const Tensor& grad_output) override {
+        ++backward_calls;
+        return grad_output;
+    }
+};
+
+} // namespace
+
+TEST_CASE("neuron delegates its output to the activation object (mock)") {
+    MockActivation mock;
+    mock.calc_result = 0.42;
+    Neuron neuron(mock);
+
+    neuron.reset();
+    neuron.add(2.5);
+    neuron.activation();
+
+    CHECK(mock.calc_calls == 1);
+    CHECK(mock.last_calc_x == doctest::Approx(2.5));
+    CHECK(neuron.output() == doctest::Approx(0.42));
+}
+
+TEST_CASE("neuron derivative is forwarded to the activation object (mock)") {
+    MockActivation mock;
+    mock.derivative_result = 0.9;
+    Neuron neuron(mock);
+
+    const double d = neuron.get_activation_derivative(-1.5);
+
+    CHECK(mock.derivative_calls == 1);
+    CHECK(mock.last_derivative_x == doctest::Approx(-1.5));
+    CHECK(d == doctest::Approx(0.9));
+}
+
+TEST_CASE("model runs spatial layers in sequence, each feeding the next (mock)") {
+    Model model;
+    SpySpatialLayer* first = nullptr;
+    SpySpatialLayer* second = nullptr;
+    {
+        auto spy1 = std::make_unique<SpySpatialLayer>(Tensor(1, 1, 4));
+        auto spy2 = std::make_unique<SpySpatialLayer>(Tensor(1, 1, 3));
+        first = spy1.get();
+        second = spy2.get();
+        model.add_spatial(std::move(spy1));
+        model.add_spatial(std::move(spy2));
+    }
+    model.dense().add_input_layer(3);
+    model.dense().add_layer(2, softmax_activation(), 0.5, false);
+
+    Tensor image(1, 5, 5);
+    for (double& v : image.data) {
+        v = 1.0;
+    }
+    model.run(image);
+
+    CHECK(model.spatial_count() == 2);
+    CHECK(first->forward_calls == 1);
+    CHECK(second->forward_calls == 1);
+    CHECK(first->last_input_size == 25);
+    CHECK(second->last_input_size == 4);
+    CHECK(model.get_output().size() == 2);
 }

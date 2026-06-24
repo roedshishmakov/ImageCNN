@@ -108,7 +108,7 @@ void require_existing_path(const std::string& path, const std::string& descripti
 /// \brief Обучает модель и сохраняет её, конфигурацию и историю потерь.
 void train_and_save(Model& model, const NetworkConfig& config,
                     const std::vector<SpatialExample>& data, const CliOptions& opt,
-                    const std::string& name, bool append_losses) {
+                    const std::string& name) {
     std::vector<double> history;
     for (int epoch = 0; epoch < config.training.epochs; ++epoch) {
         const double loss = model.train(data, config.training.learning_rate, false,
@@ -123,7 +123,7 @@ void train_and_save(Model& model, const NetworkConfig& config,
     ensure_parent_dir(model_file);
     ensure_parent_dir(loss_file);
     save_model(model, model_file);
-    save_losses(history, loss_file, append_losses);
+    save_losses(history, loss_file);
     std::cout << "Model saved: " << model_file << "\n";
 }
 
@@ -150,7 +150,7 @@ void command_train(const std::vector<std::string>& args, const CliOptions& opt, 
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " training examples\n";
 
-    train_and_save(model, config, data, opt, name, false);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
@@ -169,7 +169,7 @@ void command_simple_train(const std::vector<std::string>& args, const CliOptions
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " training examples\n";
 
-    train_and_save(model, config, data, opt, name, false);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
@@ -191,7 +191,7 @@ void command_fine(const std::vector<std::string>& args, const CliOptions& opt, b
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " examples for fine-tuning\n";
 
-    train_and_save(model, config, data, opt, name, true);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
