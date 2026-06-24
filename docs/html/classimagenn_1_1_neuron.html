@@ -199,7 +199,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Создаёт нейрон с заданной функцией активации. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aabb257782076d3ff3e06c22e3663be87" title="Вычисляет выход нейрона по накопленному входу.">activation</a></td><td>функция активации (хранится по ссылке, не копируется) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#aabb257782076d3ff3e06c22e3663be87" title="Вычисляет выход нейрона по накопленному входу.">activation</a></td><td>функция активации (хранится по ссылке, не копируется) </td></tr>
   </table>
   </dd>
 </dl>
@@ -287,7 +287,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Подаёт сигнал на вход нейрона (накапливается). </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">signal</td><td>входной сигнал </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signal</td><td>входной сигнал </td></tr>
   </table>
   </dd>
 </dl>
@@ -320,7 +320,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Добавляет входящую связь. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">link</td><td>указатель на связь </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">link</td><td>указатель на связь </td></tr>
   </table>
   </dd>
 </dl>
@@ -353,7 +353,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Добавляет исходящую связь. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">link</td><td>указатель на связь </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">link</td><td>указатель на связь </td></tr>
   </table>
   </dd>
 </dl>
@@ -397,7 +397,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Считает дельты весов входящих связей для скрытого слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
   </table>
   </dd>
 </dl>
@@ -426,8 +426,8 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Считает дельты весов входящих связей для выходного слоя. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ref</td><td>эталонное значение </td></tr>
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ref</td><td>эталонное значение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
   </table>
   </dd>
 </dl>
@@ -480,7 +480,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Применяет функцию активации к значению. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>входное значение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>входное значение </td></tr>
   </table>
   </dd>
 </dl>
@@ -516,7 +516,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Применяет производную функции активации к значению. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>входное значение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>входное значение </td></tr>
   </table>
   </dd>
 </dl>
@@ -556,8 +556,8 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Вычисляет квадратичную потерю. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a22c1aeba6d97f06dfb6af53d578dc543" title="Возвращает выход нейрона.">output</a></td><td>выход нейрона </td></tr>
-    <tr><td class="paramname">ref</td><td>эталонное значение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a22c1aeba6d97f06dfb6af53d578dc543" title="Возвращает выход нейрона.">output</a></td><td>выход нейрона </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ref</td><td>эталонное значение </td></tr>
   </table>
   </dd>
 </dl>
@@ -583,7 +583,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Импортирует веса входящих связей. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>веса в порядке входящих связей </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>веса в порядке входящих связей </td></tr>
   </table>
   </dd>
 </dl>
@@ -728,7 +728,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Сбрасывает вход нейрона. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a50c700dd74d9dd4ffb71126eda88c4a0" title="Возвращает накопленный вход нейрона.">input</a></td><td>новое значение входа </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="#a50c700dd74d9dd4ffb71126eda88c4a0" title="Возвращает накопленный вход нейрона.">input</a></td><td>новое значение входа </td></tr>
   </table>
   </dd>
 </dl>
@@ -782,7 +782,7 @@ $(function(){initNavTree('classimagenn_1_1_neuron.html','','classimagenn_1_1_neu
 <p>Устанавливает выход нейрона напрямую. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>новое значение выхода </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>новое значение выхода </td></tr>
   </table>
   </dd>
 </dl>

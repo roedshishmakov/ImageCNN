@@ -174,8 +174,8 @@ void load_model(Model& model, const std::string& path) {
     model.dense().import_weights(dense);
 }
 
-void save_losses(const std::vector<double>& losses, const std::string& path, bool append) {
-    std::ofstream file(path, append ? std::ios::app : std::ios::out);
+void save_losses(const std::vector<double>& losses, const std::string& path) {
+    std::ofstream file(path);
     if (!file) {
         throw PathError("Cannot open loss file for writing: " + path);
     }

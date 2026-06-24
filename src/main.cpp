@@ -13,18 +13,18 @@
 #include "imagenn/plot.hpp"
 #include "imagenn/version.hpp"
 
-/// @file main.cpp
-/// @brief Интерфейс командной строки приложения.
+/// \file main.cpp
+/// \brief Интерфейс командной строки приложения.
 
 namespace {
 
 using namespace imagenn;
 
-/// @brief Базовые папки для файлов модели, конфигурации и истории потерь.
+/// \brief Базовые папки для файлов модели, конфигурации и истории потерь.
 struct CliOptions {
-    std::string configs_dir = "configs";      ///< Папка с конфигурациями.
-    std::string weights_dir = "weight_saves"; ///< Папка с сохранёнными моделями.
-    std::string loss_dir = "loss_saves";      ///< Папка с историей потерь.
+    std::string configs_dir = "configs"; ///< Папка с конфигурациями.
+    std::string weights_dir = "models";  ///< Папка с сохранёнными моделями.
+    std::string loss_dir = "loss_saves"; ///< Папка с историей потерь.
 };
 
 void print_logo() {
@@ -47,7 +47,7 @@ void print_help() {
                  "  --help, -h                               show this help\n\n"
                  "Path options (override default folders):\n"
                  "  --configs-dir <dir>   default: configs\n"
-                 "  --weights-dir <dir>   default: weight_saves\n"
+                 "  --weights-dir <dir>   default: models\n"
                  "  --loss-dir <dir>      default: loss_saves\n";
 }
 
@@ -105,10 +105,10 @@ void require_existing_path(const std::string& path, const std::string& descripti
     }
 }
 
-/// @brief Обучает модель и сохраняет её, конфигурацию и историю потерь.
+/// \brief Обучает модель и сохраняет её, конфигурацию и историю потерь.
 void train_and_save(Model& model, const NetworkConfig& config,
                     const std::vector<SpatialExample>& data, const CliOptions& opt,
-                    const std::string& name, bool append_losses) {
+                    const std::string& name) {
     std::vector<double> history;
     for (int epoch = 0; epoch < config.training.epochs; ++epoch) {
         const double loss = model.train(data, config.training.learning_rate, false,
@@ -123,7 +123,7 @@ void train_and_save(Model& model, const NetworkConfig& config,
     ensure_parent_dir(model_file);
     ensure_parent_dir(loss_file);
     save_model(model, model_file);
-    save_losses(history, loss_file, append_losses);
+    save_losses(history, loss_file);
     std::cout << "Model saved: " << model_file << "\n";
 }
 
@@ -150,7 +150,7 @@ void command_train(const std::vector<std::string>& args, const CliOptions& opt, 
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " training examples\n";
 
-    train_and_save(model, config, data, opt, name, false);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
@@ -169,7 +169,7 @@ void command_simple_train(const std::vector<std::string>& args, const CliOptions
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " training examples\n";
 
-    train_and_save(model, config, data, opt, name, false);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
@@ -191,7 +191,7 @@ void command_fine(const std::vector<std::string>& args, const CliOptions& opt, b
     const std::vector<SpatialExample> data = load_training_examples(args[2]);
     std::cout << "Loaded " << data.size() << " examples for fine-tuning\n";
 
-    train_and_save(model, config, data, opt, name, true);
+    train_and_save(model, config, data, opt, name);
     if (graph) {
         show_loss_ascii(load_losses(loss_path(opt, name)), std::cout);
     }
@@ -216,7 +216,7 @@ void command_load(const std::vector<std::string>& args, const CliOptions& opt, b
     }
 }
 
-/// @brief Делит токены на опции путей, флаги и позиционные аргументы.
+/// \brief Делит токены на опции путей, флаги и позиционные аргументы.
 void parse_tokens(const std::vector<std::string>& tokens, CliOptions& opt,
                   std::vector<std::string>& flags, std::vector<std::string>& args) {
     for (std::size_t i = 0; i < tokens.size(); ++i) {
@@ -241,7 +241,7 @@ void parse_tokens(const std::vector<std::string>& tokens, CliOptions& opt,
     }
 }
 
-/// @brief Проверяет наличие команды, число аргументов и существование путей.
+/// \brief Проверяет наличие команды, число аргументов и существование путей.
 void validate_arguments(const std::vector<std::string>& flags, const std::vector<std::string>& args,
                         const CliOptions& opt) {
     const bool load = has_command(flags, "-l", "--load");

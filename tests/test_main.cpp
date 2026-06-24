@@ -17,6 +17,7 @@
 #include "imagenn/model.hpp"
 #include "imagenn/model_io.hpp"
 #include "imagenn/network.hpp"
+#include "imagenn/neuron.hpp"
 #include "imagenn/plot.hpp"
 #include "imagenn/rng.hpp"
 #include "imagenn/spatial.hpp"
@@ -517,14 +518,13 @@ TEST_CASE("loading a corrupted model file reports a validation error") {
     std::filesystem::remove(path);
 }
 
-TEST_CASE("loss history survives a save/load round trip and append") {
+TEST_CASE("saving loss history overwrites the file each time") {
     const std::string path = temp_path("imagecnn_loss.txt");
-    save_losses({0.1}, path, false);
-    save_losses({0.2}, path, true);
+    save_losses({0.1, 0.2, 0.3}, path);
+    save_losses({0.9}, path);
     const std::vector<double> restored = load_losses(path);
-    REQUIRE(restored.size() == 2);
-    CHECK(restored[0] == doctest::Approx(0.1));
-    CHECK(restored[1] == doctest::Approx(0.2));
+    REQUIRE(restored.size() == 1);
+    CHECK(restored[0] == doctest::Approx(0.9));
     std::filesystem::remove(path);
 }
 
@@ -554,4 +554,218 @@ TEST_CASE("a saved convolution model reloads identically") {
         CHECK(restored[i] == doctest::Approx(expected[i]));
     }
     std::filesystem::remove(path);
+}
+
+TEST_CASE("convolution constructor rejects non-positive parameters") {
+    CHECK_THROWS_AS(ConvLayer(1, 4, 4, 0, 2, relu_activation(), 0.1), ValidationError);
+    CHECK_THROWS_AS(ConvLayer(0, 4, 4, 2, 2, relu_activation(), 0.1), ValidationError);
+}
+
+TEST_CASE("convolution load and import reject mismatched sizes") {
+    ConvLayer conv(1, 4, 4, 2, 3, relu_activation(), 0.1);
+    CHECK_THROWS_AS(conv.load({1.0, 2.0}, {0.0, 0.0}), ValidationError);
+    CHECK_THROWS_AS(conv.import_weights({1.0, 2.0}), ValidationError);
+}
+
+TEST_CASE("max pooling constructor rejects invalid windows") {
+    CHECK_THROWS_AS(MaxPoolLayer(1, 4, 4, 0), ValidationError);
+    CHECK_THROWS_AS(MaxPoolLayer(1, 2, 2, 3), ValidationError);
+}
+
+TEST_CASE("max pooling forward rejects a wrong input shape") {
+    MaxPoolLayer pool(1, 4, 4, 2);
+    Tensor wrong(1, 3, 3);
+    CHECK_THROWS_AS(pool.forward(wrong), ValidationError);
+}
+
+TEST_CASE("flatten forward rejects a wrong input shape") {
+    FlattenLayer flatten(2, 2, 2);
+    Tensor wrong(1, 2, 2);
+    CHECK_THROWS_AS(flatten.forward(wrong), ValidationError);
+}
+
+TEST_CASE("model rejects a wrong spatial import and a wrong image shape") {
+    set_random_seed(2);
+    Model model = make_conv_model();
+    CHECK_THROWS_AS(model.import_spatial({}), ValidationError);
+    Tensor wrong(1, 4, 4);
+    CHECK_THROWS_AS(model.run(wrong), ValidationError);
+}
+
+TEST_CASE("config parsing rejects a missing file and a config without layers") {
+    CHECK_THROWS_AS(parse_config_file(temp_path("imagecnn_no_cfg.config")), PathError);
+    const std::string path = temp_path("imagecnn_empty.config");
+    {
+        std::ofstream file(path);
+        file << "# only comments\n";
+    }
+    CHECK_THROWS_AS(parse_config_file(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("config parsing rejects an unknown layer type") {
+    const std::string path = temp_path("imagecnn_unknown.config");
+    {
+        std::ofstream file(path);
+        file << "bogus:1:2\n";
+    }
+    CHECK_THROWS_AS(parse_config_file(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("build_model rejects invalid layer order, missing dense and conv softmax") {
+    NetworkConfig conv_after_flatten;
+    conv_after_flatten.layers.push_back({"flatten", 0, "", false, 0.1, 0, 0, 0});
+    conv_after_flatten.layers.push_back({"conv", 0, "relu", false, 0.1, 4, 3, 0});
+    conv_after_flatten.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    CHECK_THROWS_AS(build_model(conv_after_flatten), ValidationError);
+
+    NetworkConfig no_dense;
+    no_dense.layers.push_back({"conv", 0, "relu", false, 0.1, 4, 3, 0});
+    CHECK_THROWS_AS(build_model(no_dense), ValidationError);
+
+    NetworkConfig conv_softmax;
+    conv_softmax.layers.push_back({"conv", 0, "softmax", false, 0.1, 4, 3, 0});
+    conv_softmax.layers.push_back({"dense", 10, "softmax", false, 0.1, 0, 0, 0});
+    CHECK_THROWS_AS(build_model(conv_softmax), ValidationError);
+}
+
+TEST_CASE("loading training examples from a missing directory reports a path error") {
+    CHECK_THROWS_AS(load_training_examples(temp_path("imagecnn_absent_dir")), PathError);
+}
+
+TEST_CASE("loading training examples with an out-of-range label reports a validation error") {
+    const std::string dir = temp_path("imagecnn_badlabel");
+    std::filesystem::create_directories(dir);
+    std::filesystem::copy_file(std::string(IMAGENN_TEST_DATA_DIR) + "/0_1.png", dir + "/99_1.png",
+                               std::filesystem::copy_options::overwrite_existing);
+    CHECK_THROWS_AS(load_training_examples(dir), ValidationError);
+    std::filesystem::remove_all(dir);
+}
+
+TEST_CASE("loading invalid loss history reports a validation error") {
+    const std::string path = temp_path("imagecnn_bad_loss.txt");
+    {
+        std::ofstream file(path);
+        file << "not a number\n";
+    }
+    CHECK_THROWS_AS(load_losses(path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+TEST_CASE("loading a missing or corrupted convolution model reports an error") {
+    Model model = make_conv_model();
+    CHECK_THROWS_AS(load_model(model, temp_path("imagecnn_no_conv.nn")), PathError);
+    const std::string path = temp_path("imagecnn_conv_corrupt.nn");
+    {
+        std::ofstream file(path);
+        file << "garbage\n";
+    }
+    Model other = make_conv_model();
+    CHECK_THROWS_AS(load_model(other, path), ValidationError);
+    std::filesystem::remove(path);
+}
+
+namespace {
+
+/// \brief Мок функции активации: записывает вызовы и возвращает заданные значения.
+class MockActivation : public ActivationBase {
+  public:
+    mutable int calc_calls = 0;             ///< Сколько раз вызвана calc.
+    mutable int derivative_calls = 0;       ///< Сколько раз вызвана derivative.
+    mutable double last_calc_x = 0.0;       ///< Аргумент последнего вызова calc.
+    mutable double last_derivative_x = 0.0; ///< Аргумент последнего вызова derivative.
+    double calc_result = 0.0;               ///< Что вернуть из calc.
+    double derivative_result = 1.0;         ///< Что вернуть из derivative.
+
+    double calc(double x) const override {
+        ++calc_calls;
+        last_calc_x = x;
+        return calc_result;
+    }
+
+    double derivative(double x) const override {
+        ++derivative_calls;
+        last_derivative_x = x;
+        return derivative_result;
+    }
+};
+
+/// \brief Слой-шпион: считает вызовы forward/backward и возвращает заданный тензор.
+class SpySpatialLayer : public SpatialLayer {
+  public:
+    int forward_calls = 0;   ///< Сколько раз вызван forward.
+    int backward_calls = 0;  ///< Сколько раз вызван backward.
+    int last_input_size = 0; ///< Размер последнего входного тензора.
+    Tensor output_to_return; ///< Тензор, который forward возвращает.
+
+    explicit SpySpatialLayer(Tensor output) : output_to_return(std::move(output)) {}
+
+    Tensor forward(const Tensor& input) override {
+        ++forward_calls;
+        last_input_size = static_cast<int>(input.data.size());
+        return output_to_return;
+    }
+
+    Tensor backward(const Tensor& grad_output) override {
+        ++backward_calls;
+        return grad_output;
+    }
+};
+
+} // namespace
+
+TEST_CASE("neuron delegates its output to the activation object (mock)") {
+    MockActivation mock;
+    mock.calc_result = 0.42;
+    Neuron neuron(mock);
+
+    neuron.reset();
+    neuron.add(2.5);
+    neuron.activation();
+
+    CHECK(mock.calc_calls == 1);
+    CHECK(mock.last_calc_x == doctest::Approx(2.5));
+    CHECK(neuron.output() == doctest::Approx(0.42));
+}
+
+TEST_CASE("neuron derivative is forwarded to the activation object (mock)") {
+    MockActivation mock;
+    mock.derivative_result = 0.9;
+    Neuron neuron(mock);
+
+    const double d = neuron.get_activation_derivative(-1.5);
+
+    CHECK(mock.derivative_calls == 1);
+    CHECK(mock.last_derivative_x == doctest::Approx(-1.5));
+    CHECK(d == doctest::Approx(0.9));
+}
+
+TEST_CASE("model runs spatial layers in sequence, each feeding the next (mock)") {
+    Model model;
+    SpySpatialLayer* first = nullptr;
+    SpySpatialLayer* second = nullptr;
+    {
+        auto spy1 = std::make_unique<SpySpatialLayer>(Tensor(1, 1, 4));
+        auto spy2 = std::make_unique<SpySpatialLayer>(Tensor(1, 1, 3));
+        first = spy1.get();
+        second = spy2.get();
+        model.add_spatial(std::move(spy1));
+        model.add_spatial(std::move(spy2));
+    }
+    model.dense().add_input_layer(3);
+    model.dense().add_layer(2, softmax_activation(), 0.5, false);
+
+    Tensor image(1, 5, 5);
+    for (double& v : image.data) {
+        v = 1.0;
+    }
+    model.run(image);
+
+    CHECK(model.spatial_count() == 2);
+    CHECK(first->forward_calls == 1);
+    CHECK(second->forward_calls == 1);
+    CHECK(first->last_input_size == 25);
+    CHECK(second->last_input_size == 4);
+    CHECK(model.get_output().size() == 2);
 }

@@ -154,7 +154,7 @@ $(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_mode
 <p>Добавляет спатиальный слой в экстрактор признаков. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">layer</td><td>слой свёртки, подвыборки или выпрямления </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">layer</td><td>слой свёртки, подвыборки или выпрямления </td></tr>
   </table>
   </dd>
 </dl>
@@ -247,7 +247,7 @@ $(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_mode
 <p>Прогоняет вход через спатиальные слои. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>входной тензор </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,7 +313,7 @@ $(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_mode
 <p>Загружает параметры спатиальных слоёв. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>параметры по слоям в порядке слоёв </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>параметры по слоям в порядке слоёв </td></tr>
   </table>
   </dd>
 </dl>
@@ -344,7 +344,7 @@ $(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_mode
 <p>Прогоняет изображение через всю модель. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>входной тензор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>входной тензор </td></tr>
   </table>
   </dd>
 </dl>
@@ -416,11 +416,11 @@ $(function(){initNavTree('classimagenn_1_1_model.html','','classimagenn_1_1_mode
 <p>Обучает модель на наборе примеров за один проход. </p>
 <p>Порядок примеров перемешивается на каждом проходе: иначе данные, отсортированные по классам, приводят к катастрофическому забыванию и предсказанию одного класса. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>обучающие примеры </td></tr>
-    <tr><td class="paramname">speed</td><td>скорость обучения </td></tr>
-    <tr><td class="paramname">verbose</td><td>выводить ли потерю по каждому примеру </td></tr>
-    <tr><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
-    <tr><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>обучающие примеры </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>скорость обучения </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">verbose</td><td>выводить ли потерю по каждому примеру </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clip_value</td><td>порог ограничения дельты веса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">use_clip</td><td>применять ли ограничение </td></tr>
   </table>
   </dd>
 </dl>
